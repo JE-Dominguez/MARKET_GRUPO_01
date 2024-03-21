@@ -10,6 +10,7 @@ namespace Capa_Datos
     {
         Repository<Clientes> _repository;
 
+        //Hi
         public D_Clientes()
         {
             _repository = new Repository<Clientes>();
