@@ -57,7 +57,11 @@
     <Compile Include="D_Categoria.cs" />
     <Compile Include="D_Clientes.cs" />
     <Compile Include="D_CondicionPago.cs" />
+    <Compile Include="D_Factura.cs" />
+    <Compile Include="D_FacturaDetalle.cs" />
     <Compile Include="D_GrupoDescuento.cs" />
+    <Compile Include="D_Pedido.cs" />
+    <Compile Include="D_PedidoDatalle.cs" />
     <Compile Include="D_Productos.cs" />
     <Compile Include="D_Roles.cs" />
     <Compile Include="D_UnidadMedida.cs" />
@@ -74,7 +78,11 @@
     <Compile Include="Modelos\Categoria.cs" />
     <Compile Include="Modelos\Clientes.cs" />
     <Compile Include="Modelos\CondicionPago.cs" />
+    <Compile Include="Modelos\Factura.cs" />
+    <Compile Include="Modelos\FacturaDetalle.cs" />
     <Compile Include="Modelos\GrupoDescuento.cs" />
+    <Compile Include="Modelos\Pedido.cs" />
+    <Compile Include="Modelos\PedidoDetalle.cs" />
     <Compile Include="Modelos\Productos.cs" />
     <Compile Include="Modelos\Roles.cs" />
     <Compile Include="Modelos\UnidadMedida.cs" />
