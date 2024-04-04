@@ -8,16 +8,16 @@ namespace Capa_Datos
 {
     public class D_Usuarios
     {
-        Repository<Usuarios> _repository;
+        private readonly UnitOfWork _unitOfWork;
 
         public D_Usuarios()
         {
-            _repository = new Repository<Usuarios>();
+            _unitOfWork = new UnitOfWork();
         }
 
         public List<Usuarios> ObtenerTodosLosUsuarios()
         {
-            return _repository.Consulta().ToList();
+            return _unitOfWork.Repository<Usuarios>().Consulta().ToList();
         }
 
         public int AgregarUsuario(Usuarios usuario)
@@ -26,13 +26,13 @@ namespace Capa_Datos
             usuario.FechaModificacion = DateTime.Now;
             usuario.UsuarioCreador = "JDOMINGUEZ";
             usuario.UsuarioModifica = "JDOMINGUEZ";
-            _repository.Agregar(usuario);
+            _unitOfWork.Repository<Usuarios>().Agregar(usuario);
             return 1;
         }
 
         public int EditarUsuario(Usuarios usuario)
         {
-            var usuarioEnDB = _repository.Consulta().FirstOrDefault(u => u.ID == usuario.ID);
+            var usuarioEnDB = _unitOfWork.Repository<Usuarios>().Consulta().FirstOrDefault(u => u.ID == usuario.ID);
 
             if (usuarioEnDB != null)
             {
@@ -42,9 +42,9 @@ namespace Capa_Datos
                 usuarioEnDB.Correo = usuario.Correo;
                 usuarioEnDB.RolID = usuario.RolID;
                 usuarioEnDB.FechaModificacion = DateTime.Now;
-                usuarioEnDB.UsuarioModifica = "JDOMINGUEZ";
+                usuarioEnDB.UsuarioModifica = "JMODIFICA";
                 usuarioEnDB.Estado = usuario.Estado;
-                _repository.Editar(usuarioEnDB);
+                _unitOfWork.Repository<Usuarios>().Editar(usuarioEnDB);
                 return 1;
             }
             return 0;
@@ -52,10 +52,10 @@ namespace Capa_Datos
 
         public int EliminarUsuario(int usuarioId)
         {
-            var usuarioEnDB = _repository.Consulta().FirstOrDefault(u => u.ID == usuarioId);
+            var usuarioEnDB = _unitOfWork.Repository<Usuarios>().Consulta().FirstOrDefault(u => u.ID == usuarioId);
             if (usuarioEnDB != null)
             {
-                _repository.Eliminar(usuarioEnDB);
+                _unitOfWork.Repository<Usuarios>().Eliminar(usuarioEnDB);
                 return 1;
             }
             return 0;

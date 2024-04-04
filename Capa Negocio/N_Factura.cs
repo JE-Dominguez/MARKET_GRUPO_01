@@ -8,42 +8,35 @@ using System.Threading.Tasks;
 
 namespace Capa_Negocio
 {
-   public class N_Factura
+    public class N_Factura
     {
-        D_Factura dProducto;
+        D_Factura dFactura;
 
         public N_Factura()
         {
-            dProducto = new Fatura();
+            dFactura = new D_Factura();
         }
 
         public List<Factura> ObtenerFactura()
         {
-            return Factura.ObtenerTodosLasFacturas();
+            return dFactura.ObtenerTodalasFacturas();
         }
 
         public int GuardarProducto(Factura factura)
         {
-            if (Factura.FacturaId == 0)
+            if (factura.FacturaId == 0)
             {
-                return Factura.AgregarFactura(Factura);
+                return dFactura.AgregarFactura(factura);
             }
             else
             {
-                return Factura.EditarFactura(Factura);
+                return dFactura.EditarFactura(factura);
             }
         }
 
         public int EliminarFactura(int FacturaId)
         {
-            return  Factura.EliminarFactura(FacturaId);
+            return dFactura.EliminarFactura(FacturaId);
         }
-
-
-
-    }
-
-    internal class Fatura : D_Factura
-    {
     }
 }

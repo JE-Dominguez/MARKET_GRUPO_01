@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -14,12 +16,12 @@ namespace Capa_Datos.Modelos
         [Required]
         public int ClienteId { get; set; }
 
+        [ForeignKey("ClienteId")]
+        public virtual Clientes Clientes { get; set; }
 
         [Required]
         public DateTime FechaCreacion { get; set; }
 
-        [Required]
-        public DateTime FechaCreacion { get; set; }
         [Required]
         public DateTime FechaPedido { get; set; }
 
@@ -32,7 +34,5 @@ namespace Capa_Datos.Modelos
         public decimal Subtotal { get; set; }
         [Required]
         public decimal Descuento { get; set; }
-
-
     }
 }

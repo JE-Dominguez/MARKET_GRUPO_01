@@ -8,29 +8,27 @@ namespace Capa_Datos
 {
     public class D_Clientes
     {
-        Repository<Clientes> _repository;
-
-        //Hi
+        private readonly UnitOfWork _unitOfWork;
         public D_Clientes()
         {
-            _repository = new Repository<Clientes>();
+            _unitOfWork = new UnitOfWork();
         }
 
         public List<Clientes> ObtenerTodosLosClientes()
         {
-            return _repository.Consulta().ToList();
+            return _unitOfWork.Repository<Clientes>().Consulta().ToList();
         }
 
         public int AgregarCliente(Clientes cliente)
         {
             cliente.FechaCreacion = DateTime.Now;
-            _repository.Agregar(cliente);
+            _unitOfWork.Repository<Clientes>().Agregar(cliente);
             return 1;
         }
 
         public int EditarCliente(Clientes cliente)
         {
-            var clienteEnDB = _repository.Consulta().FirstOrDefault(c => c.ClienteId == cliente.ClienteId);
+            var clienteEnDB = _unitOfWork.Repository<Clientes>().Consulta().FirstOrDefault(c => c.ClienteId == cliente.ClienteId);
 
             if (clienteEnDB != null)
             {
@@ -40,7 +38,7 @@ namespace Capa_Datos
                 clienteEnDB.GrupoDescuentoId = cliente.GrupoDescuentoId;
                 clienteEnDB.CondicionPagoId = cliente.CondicionPagoId;
                 clienteEnDB.Estado = cliente.Estado;
-                _repository.Editar(clienteEnDB);
+                _unitOfWork.Repository<Clientes>().Editar(clienteEnDB);
                 return 1;
             }
             return 0;
@@ -48,10 +46,10 @@ namespace Capa_Datos
 
         public int EliminarCliente(int clienteId)
         {
-            var clienteEnDB = _repository.Consulta().FirstOrDefault(c => c.ClienteId == clienteId);
+            var clienteEnDB = _unitOfWork.Repository<Clientes>().Consulta().FirstOrDefault(c => c.ClienteId == clienteId);
             if (clienteEnDB != null)
             {
-                _repository.Eliminar(clienteEnDB);
+                _unitOfWork.Repository<Clientes>().Eliminar(clienteEnDB);
                 return 1;
             }
             return 0;

@@ -1,4 +1,6 @@
 ﻿using Capa_Datos.BaseDatos;
+using Capa_Datos.Modelos;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -6,7 +8,7 @@ namespace Capa_Datos.Core
 {
     public class Repository<T> : IRepository<T> where T : class
     {
-        private readonly MarketContext dbcontext;
+        public MarketContext dbcontext;
 
         public Repository()
         {
@@ -15,13 +17,13 @@ namespace Capa_Datos.Core
         public void Agregar(T entidad)
         {
             dbcontext.Set<T>().Add(entidad);
-            dbcontext.SaveChanges();
+            //dbcontext.SaveChanges();
         }
 
         public void AgregarRango(IEnumerable<T> entidades)
         {
             dbcontext.Set<T>().AddRange(entidades);
-            dbcontext.SaveChanges();
+            //dbcontext.SaveChanges();
         }
 
         public IQueryable<T> Consulta()
@@ -32,13 +34,13 @@ namespace Capa_Datos.Core
         public void Editar(T entidad)
         {
             dbcontext.Set<T>();
-            dbcontext.SaveChanges();
+            //dbcontext.SaveChanges();
         }
 
         public void Eliminar(T entidad)
         {
             dbcontext.Set<T>().Remove(entidad);
-            dbcontext.SaveChanges();
+            //dbcontext.SaveChanges();
         }
     }
 }
