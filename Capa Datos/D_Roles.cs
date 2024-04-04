@@ -8,15 +8,15 @@ namespace Capa_Datos
 {
     public class D_Roles
     {
-        Repository<Roles> _repository;
+        private readonly UnitOfWork _unitOfWork;
         public D_Roles()
         {
-            _repository = new Repository<Roles>();
+            _unitOfWork = new UnitOfWork();
         }
 
         public List<Roles> ObtenerTodosLosRoles()
         {
-            return _repository.Consulta().ToList();
+            return _unitOfWork.Repository<Roles>().Consulta().ToList();
         }
 
         public int AgregarRol(Roles rol)
@@ -25,13 +25,13 @@ namespace Capa_Datos
             rol.FechaModificacion = DateTime.Now;
             rol.UsuarioCreador = "JDOMINGUEZ";
             rol.UsuarioModifica = "JDOMINGUEZ";
-            _repository.Agregar(rol);
+            _unitOfWork.Repository<Roles>().Agregar(rol);
             return 1;
         }
 
         public int EditarRol(Roles rol)
         {
-            var rolEnDB = _repository.Consulta().FirstOrDefault(r => r.RolID == rol.RolID);
+            var rolEnDB = _unitOfWork.Repository<Roles>().Consulta().FirstOrDefault(r => r.RolID == rol.RolID);
 
             if (rolEnDB != null)
             {
@@ -40,7 +40,7 @@ namespace Capa_Datos
                 rolEnDB.FechaModificacion = DateTime.Now;
                 rolEnDB.UsuarioModifica = rol.UsuarioModifica;
                 rolEnDB.Estado = rol.Estado;
-                _repository.Editar(rolEnDB);
+                _unitOfWork.Repository<Roles>().Editar(rolEnDB);
                 return 1;
             }
             return 0;
@@ -48,10 +48,10 @@ namespace Capa_Datos
 
         public int EliminarRol(int rolId)
         {
-            var rolEnDB = _repository.Consulta().FirstOrDefault(r => r.RolID == rolId);
+            var rolEnDB = _unitOfWork.Repository<Roles>().Consulta().FirstOrDefault(r => r.RolID == rolId);
             if (rolEnDB != null)
             {
-                _repository.Eliminar(rolEnDB);
+                _unitOfWork.Repository<Roles>().Eliminar(rolEnDB);
                 return 1;
             }
             return 0;

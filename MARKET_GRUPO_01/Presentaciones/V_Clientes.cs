@@ -23,9 +23,8 @@ namespace MARKET_GRUPO_01.Presentaciones
         }
         void SeleccionarSoloUno(DataGridViewCellEventArgs e, DataGridView dgv)
         {
-            if (e.ColumnIndex == 0 && e.RowIndex != -1) // 0 es el índice de la columna de CheckBox
+            if (e.ColumnIndex == 0 && e.RowIndex != -1)
             {
-                DataGridViewCheckBoxCell chk = (DataGridViewCheckBoxCell)dgv.Rows[e.RowIndex].Cells[e.ColumnIndex];
                 foreach (DataGridViewRow row in dgv.Rows)
                 {
                     DataGridViewCheckBoxCell otherChk = (DataGridViewCheckBoxCell)row.Cells[e.ColumnIndex];

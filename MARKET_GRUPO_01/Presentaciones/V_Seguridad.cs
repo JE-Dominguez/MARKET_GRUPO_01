@@ -66,11 +66,13 @@ namespace MARKET_GRUPO_01.Presentaciones
         private void BtnNuevoUsuario_Click(object sender, EventArgs e)
         {
             AF.VentanaEmergente(new V_Usuario(), inicio, true);
+            CargarDatos();
         }
 
         private void BtnNuevoRol_Click(object sender, EventArgs e)
         {
             AF.VentanaEmergente(new V_Rol(), inicio, true);
+
         }
         void ConsultarPorId(int IdUsuario)
         {
@@ -90,6 +92,7 @@ namespace MARKET_GRUPO_01.Presentaciones
                     vUsuario.ChkActivo.Checked = usuario.Estado;
                     vUsuario.CmbRol.SelectedValue = usuario.RolID;
                     AF.VentanaEmergente(vUsuario, inicio, true);
+
                 }
             }
         }
@@ -103,8 +106,7 @@ namespace MARKET_GRUPO_01.Presentaciones
         {
             CargarDatos();
         }
-
-        private void BtnEditar_Click(object sender, EventArgs e)
+        void editar()
         {
             if (DgvDatos.SelectedCells.Count > 0)
             {
@@ -119,7 +121,13 @@ namespace MARKET_GRUPO_01.Presentaciones
                         ConsultarPorId(id);
                     }
                 }
+
             }
+        }
+        private void BtnEditar_Click(object sender, EventArgs e)
+        {
+            editar();
+            CargarDatos();
         }
     }
 }
