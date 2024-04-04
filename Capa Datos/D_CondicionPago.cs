@@ -8,28 +8,28 @@ namespace Capa_Datos
 {
     public class D_CondicionPago
     {
-        Repository<CondicionPago> _repository;
+        private readonly UnitOfWork _unitOfWork;
 
         public D_CondicionPago()
         {
-            _repository = new Repository<CondicionPago>();
+            _unitOfWork = new UnitOfWork();
         }
 
         public List<CondicionPago> ObtenerTodasLasCondicionesPago()
         {
-            return _repository.Consulta().ToList();
+            return _unitOfWork.Repository<CondicionPago>().Consulta().ToList();
         }
 
         public int AgregarCondicionPago(CondicionPago condicionPago)
         {
             condicionPago.FechaCreacion = DateTime.Now;
-            _repository.Agregar(condicionPago);
+            _unitOfWork.Repository<CondicionPago>().Agregar(condicionPago);
             return 1;
         }
 
         public int EditarCondicionPago(CondicionPago condicionPago)
         {
-            var condicionPagoEnDB = _repository.Consulta().FirstOrDefault(c => c.CondicionPagoId == condicionPago.CondicionPagoId);
+            var condicionPagoEnDB = _unitOfWork.Repository<CondicionPago>().Consulta().FirstOrDefault(c => c.CondicionPagoId == condicionPago.CondicionPagoId);
 
             if (condicionPagoEnDB != null)
             {
@@ -37,7 +37,7 @@ namespace Capa_Datos
                 condicionPagoEnDB.Descripcion = condicionPago.Descripcion;
                 condicionPagoEnDB.Estado = condicionPago.Estado;
                 condicionPagoEnDB.Dias = condicionPago.Dias;
-                _repository.Editar(condicionPagoEnDB);
+                _unitOfWork.Repository<CondicionPago>().Editar(condicionPagoEnDB);
                 return 1;
             }
             return 0;
@@ -45,10 +45,10 @@ namespace Capa_Datos
 
         public int EliminarCondicionPago(int condicionPagoId)
         {
-            var condicionPagoEnDB = _repository.Consulta().FirstOrDefault(c => c.CondicionPagoId == condicionPagoId);
+            var condicionPagoEnDB = _unitOfWork.Repository<CondicionPago>().Consulta().FirstOrDefault(c => c.CondicionPagoId == condicionPagoId);
             if (condicionPagoEnDB != null)
             {
-                _repository.Eliminar(condicionPagoEnDB);
+                _unitOfWork.Repository<CondicionPago>().Eliminar(condicionPagoEnDB);
                 return 1;
             }
             return 0;

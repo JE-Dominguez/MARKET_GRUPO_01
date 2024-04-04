@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace Capa_Negocio
 {
-    internal class N_PEDIDO
+    public class N_PEDIDO
     {
+        public N_PEDIDO() { }
     }
 }

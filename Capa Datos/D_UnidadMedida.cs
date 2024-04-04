@@ -8,35 +8,35 @@ namespace Capa_Datos
 {
     public class D_UnidadMedida
     {
-        Repository<UnidadMedida> _repository;
+        private readonly UnitOfWork _unitOfWork;
 
         public D_UnidadMedida()
         {
-            _repository = new Repository<UnidadMedida>();
+            _unitOfWork = new UnitOfWork();
         }
 
         public List<UnidadMedida> ObtenerTodasLasUnidadesMedida()
         {
-            return _repository.Consulta().ToList();
+            return _unitOfWork.Repository<UnidadMedida>().Consulta().ToList();
         }
 
         public int AgregarUnidadMedida(UnidadMedida unidadMedida)
         {
             unidadMedida.FechaCreacion = DateTime.Now;
-            _repository.Agregar(unidadMedida);
+            _unitOfWork.Repository<UnidadMedida>().Agregar(unidadMedida);
             return 1;
         }
 
         public int EditarUnidadMedida(UnidadMedida unidadMedida)
         {
-            var unidadMedidaEnDB = _repository.Consulta().FirstOrDefault(u => u.UnidadMedidaId == unidadMedida.UnidadMedidaId);
+            var unidadMedidaEnDB = _unitOfWork.Repository<UnidadMedida>().Consulta().FirstOrDefault(u => u.UnidadMedidaId == unidadMedida.UnidadMedidaId);
 
             if (unidadMedidaEnDB != null)
             {
                 unidadMedidaEnDB.Codigo = unidadMedida.Codigo;
                 unidadMedidaEnDB.Descripcion = unidadMedida.Descripcion;
                 unidadMedidaEnDB.Estado = unidadMedida.Estado;
-                _repository.Editar(unidadMedidaEnDB);
+                _unitOfWork.Repository<UnidadMedida>().Editar(unidadMedidaEnDB);
                 return 1;
             }
             return 0;
@@ -44,10 +44,10 @@ namespace Capa_Datos
 
         public int EliminarUnidadMedida(int unidadMedidaId)
         {
-            var unidadMedidaEnDB = _repository.Consulta().FirstOrDefault(u => u.UnidadMedidaId == unidadMedidaId);
+            var unidadMedidaEnDB = _unitOfWork.Repository<UnidadMedida>().Consulta().FirstOrDefault(u => u.UnidadMedidaId == unidadMedidaId);
             if (unidadMedidaEnDB != null)
             {
-                _repository.Eliminar(unidadMedidaEnDB);
+                _unitOfWork.Repository<UnidadMedida>().Eliminar(unidadMedidaEnDB);
                 return 1;
             }
             return 0;

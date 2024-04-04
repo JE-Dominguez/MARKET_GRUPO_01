@@ -8,55 +8,54 @@ using System.Threading.Tasks;
 
 namespace Capa_Datos
 {
-     public class D_FacturaDetalle
+    public class D_FacturaDetalle
     {
-        Repository<FacturaDetalle> _repository;
+        private readonly UnitOfWork _unitOfWork;
 
         public D_FacturaDetalle()
         {
-            _repository = new Repository<Factura>();
+            _unitOfWork = new UnitOfWork();
         }
 
-        public List< FacturaDetalle> ObtenerTodosLasFacturaDetalle()
+        public List<FacturaDetalle> ObtenerTodosFacturasDetalle()
         {
-            return _repository.Consulta().ToList();
+            return _unitOfWork.Repository<FacturaDetalle>().Consulta().ToList();
         }
 
-        public int AgregarProducto(FacturaDetalle facturaDetalle)
+        public int AgregarFaturaDetalle(FacturaDetalle facturaDetalle)
         {
-             Factura.FechaCreacion = DateTime.Now;
-            _repository.Agregar(Factura);
+            facturaDetalle.FechaCreacion = DateTime.Now;
+            _unitOfWork.Repository<FacturaDetalle>().Agregar(facturaDetalle);
             return 1;
         }
 
         public int EditarFacturaDetalle(FacturaDetalle facturaDetalle)
         {
-            var FacturaDetalleEnDB = _repository.Consulta().FirstOrDefault(p => p. FacturaId == FacturaDetalle.FacturaDetalleId);
+            var FacturaDetalleEnDB = _unitOfWork.Repository<FacturaDetalle>().Consulta().FirstOrDefault(p => p.FacturaId == facturaDetalle.FacturaDetalleId);
 
             if (FacturaDetalleEnDB != null)
             {
-                FacturaDetalleEnDB.FacturaId = FacturaDetalle.FacturaId;
-                FacturaDetalleEnDB.ProductoId = FacturaDetalle.UnidadMedidaId;
-                FacturaDetalleEnDB.precio = FacturaDetalle.precio;
-                FacturaDetalleEnDB.Total = FacturaDetalle.Total;
-                FacturaDetalleEnDB.Subtotal = FacturaDetalle.Subtotal;
-                FacturaDetalleEnDB.Descuento = FacturaDetalle.Descuento;
-                _repository.Editar(FacturaDetalleEnDB);
+                FacturaDetalleEnDB.FacturaId = facturaDetalle.FacturaId;
+                FacturaDetalleEnDB.ProductoId = facturaDetalle.ProductoId;
+                FacturaDetalleEnDB.Precio = facturaDetalle.Precio;
+                FacturaDetalleEnDB.Total = facturaDetalle.Total;
+                FacturaDetalleEnDB.Subtotal = facturaDetalle.Subtotal;
+                FacturaDetalleEnDB.Descuento = facturaDetalle.Descuento;
+                _unitOfWork.Repository<FacturaDetalle>().Editar(FacturaDetalleEnDB);
                 return 1;
             }
             return 0;
         }
 
-        public int EliminarProducto(int productoId)
+        public int EliminarFacturaDetalle(int FacturaID)
         {
-            var FacturaDetalleEnDB = _repository.Consulta().FirstOrDefault(p => p.FacturaDetalleId == FacturaId);
+            var FacturaDetalleEnDB = _unitOfWork.Repository<FacturaDetalle>().Consulta().FirstOrDefault(p => p.FacturaDetalleId == FacturaID);
             if (FacturaDetalleEnDB != null)
             {
-                _repository.Eliminar(FacturaDetalleEnDB);
+                _unitOfWork.Repository<FacturaDetalle>().Eliminar(FacturaDetalleEnDB);
                 return 1;
             }
             return 0;
         }
-
     }
 }

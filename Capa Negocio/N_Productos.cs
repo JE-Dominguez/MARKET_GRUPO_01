@@ -1,6 +1,7 @@
 ﻿using Capa_Datos;
 using Capa_Datos.Modelos;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace Capa_Negocio
 {
@@ -16,6 +17,12 @@ namespace Capa_Negocio
         public List<Productos> ObtenerProductos()
         {
             return dProducto.ObtenerTodosLosProductos();
+        }
+
+        public List<object> ObtenerProductosGrid()
+        {
+            var productoss = dProducto.ObtenerTodosLosProductos().Select(p => new { ID = p.ProductoId }).ToList<object>();
+            return productoss;
         }
 
         public int GuardarProducto(Productos producto)

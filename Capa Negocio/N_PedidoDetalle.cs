@@ -8,35 +8,35 @@ using System.Threading.Tasks;
 
 namespace Capa_Negocio
 {
-    internal class N_PedidoDetalle
+    public class N_PedidoDetalle
     {
-        N_PedidoDetalle dPedidoDetalle;
+        D_PedidoDatalle dPedidoDetalle;
 
-        public N_PedidoDetalle)
+        public N_PedidoDetalle()
         {
-            dPedidoDetalle = new PedidoDetalle();
+            dPedidoDetalle = new D_PedidoDatalle();
         }
 
-        public List<PedidoDetalle> Obtener PedidoDetalle()
+        public List<PedidoDetalle> ObtenerPedidoDetalle()
         {
-            return dPedidoDetalle.ObtenerTodoslosPedidosDetalles();
+            return dPedidoDetalle.ObtenerTodalospedidoDetalle();
         }
 
         public int GuardarPedidoDetalle(PedidoDetalle pedidoDetalle)
         {
-            if (PedidoDetalle.PedidoDetalleId == 0)
+            if (pedidoDetalle.PedidoDetalleId == 0)
             {
-                return PedidoDetalle.AgregarPedidodetalle(PedidoDetalle);
+                return dPedidoDetalle.AgregarPedidoDetalle(pedidoDetalle);
             }
             else
             {
-                return PedidoDetalle.EditarPedidoDetalle(PedidoDetalle);
+                return dPedidoDetalle.EditarPedidoDetalle(pedidoDetalle);
             }
         }
 
-        public int EliminarPedidoDetalle(int PedidoDetalle)
+        public int EliminarPedidoDetalle(int PedidoDetalleID)
         {
-            return PedidoDetalle.EliminarPedidoDetalle(PedidoDetalle);
+            return dPedidoDetalle.EliminarPedidoDetalle(PedidoDetalleID);
         }
 
 

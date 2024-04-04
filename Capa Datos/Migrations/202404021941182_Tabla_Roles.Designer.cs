@@ -7,13 +7,13 @@ namespace Capa_Datos.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.4.4")]
-    public sealed partial class Migración_AdicionReparacionClientes : IMigrationMetadata
+    public sealed partial class Tabla_Roles : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(Migración_AdicionReparacionClientes));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(Tabla_Roles));
         
         string IMigrationMetadata.Id
         {
-            get { return "202403182144360_Migración_AdicionReparacionClientes"; }
+            get { return "202404021941182_Tabla_Roles"; }
         }
         
         string IMigrationMetadata.Source

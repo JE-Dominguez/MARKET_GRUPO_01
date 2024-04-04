@@ -8,28 +8,28 @@ namespace Capa_Datos
 {
     public class D_GrupoDescuento
     {
-        Repository<GrupoDescuento> _repository;
+        private readonly UnitOfWork _unitOfWork;
 
         public D_GrupoDescuento()
         {
-            _repository = new Repository<GrupoDescuento>();
+            _unitOfWork = new UnitOfWork();
         }
 
         public List<GrupoDescuento> ObtenerTodosLosGruposDescuento()
         {
-            return _repository.Consulta().ToList();
+            return _unitOfWork.Repository<GrupoDescuento>().Consulta().ToList();
         }
 
         public int AgregarGrupoDescuento(GrupoDescuento grupoDescuento)
         {
             grupoDescuento.FechaCreacion = DateTime.Now;
-            _repository.Agregar(grupoDescuento);
+            _unitOfWork.Repository<GrupoDescuento>().Agregar(grupoDescuento);
             return 1;
         }
 
         public int EditarGrupoDescuento(GrupoDescuento grupoDescuento)
         {
-            var grupoDescuentoEnDB = _repository.Consulta().FirstOrDefault(g => g.GrupoDescuentoId == grupoDescuento.GrupoDescuentoId);
+            var grupoDescuentoEnDB = _unitOfWork.Repository<GrupoDescuento>().Consulta().FirstOrDefault(g => g.GrupoDescuentoId == grupoDescuento.GrupoDescuentoId);
 
             if (grupoDescuentoEnDB != null)
             {
@@ -37,7 +37,7 @@ namespace Capa_Datos
                 grupoDescuentoEnDB.Descripcion = grupoDescuento.Descripcion;
                 grupoDescuentoEnDB.Estado = grupoDescuento.Estado;
                 grupoDescuentoEnDB.Porcentaje = grupoDescuento.Porcentaje;
-                _repository.Editar(grupoDescuentoEnDB);
+                _unitOfWork.Repository<GrupoDescuento>().Editar(grupoDescuentoEnDB);
                 return 1;
             }
             return 0;
@@ -45,10 +45,10 @@ namespace Capa_Datos
 
         public int EliminarGrupoDescuento(int grupoDescuentoId)
         {
-            var grupoDescuentoEnDB = _repository.Consulta().FirstOrDefault(g => g.GrupoDescuentoId == grupoDescuentoId);
+            var grupoDescuentoEnDB = _unitOfWork.Repository<GrupoDescuento>().Consulta().FirstOrDefault(g => g.GrupoDescuentoId == grupoDescuentoId);
             if (grupoDescuentoEnDB != null)
             {
-                _repository.Eliminar(grupoDescuentoEnDB);
+                _unitOfWork.Repository<GrupoDescuento>().Eliminar(grupoDescuentoEnDB);
                 return 1;
             }
             return 0;

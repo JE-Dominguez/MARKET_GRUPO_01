@@ -24,7 +24,7 @@ namespace Capa_Negocio
 
         public List<object> ObtenerCategoriaGrid()
         {
-            var categoria = dCategoria.ObtenerTodalascategorias().Select(r => new { r.CategoriaId, r.Codigo, r.Descripcion, r.FechaCreacion, r.Estado }).ToList<object>();
+            var categoria = dCategoria.ObtenerTodalascategorias().Select(r => new { ID = r.CategoriaId, r.Codigo, r.Descripcion, r.FechaCreacion, r.Estado }).ToList<object>();
             return categoria;
         }
 
