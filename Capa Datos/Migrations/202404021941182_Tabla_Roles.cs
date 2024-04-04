@@ -3,7 +3,7 @@
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class Migración_Tablas : DbMigration
+    public partial class Tabla_Roles : DbMigration
     {
         public override void Up()
         {

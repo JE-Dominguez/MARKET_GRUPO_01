@@ -21,6 +21,11 @@ namespace Capa_Negocio
         {
             return dUnidadMedida.ObtenerTodasLasUnidadesMedida();
         }
+        public List<object> ObtenerUnidadesMedidaGrid()
+        {
+            var unidadMedida = dUnidadMedida.ObtenerTodasLasUnidadesMedida().Select(p => new { ID = p.UnidadMedidaId }).ToList<object>();
+            return unidadMedida;
+        }
 
         public int GuardarUnidadMedida(UnidadMedida unidadMedida)
         {

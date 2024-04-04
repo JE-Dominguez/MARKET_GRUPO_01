@@ -25,13 +25,13 @@ namespace Capa_Datos.Modelos
         public int GrupoDescuentoId { get; set; }
 
         [ForeignKey("GrupoDescuentoId")]
-        public GrupoDescuento grupoDescuento { get; set; }
+        public virtual GrupoDescuento grupoDescuento { get; set; }
 
         [Required]
         public int CondicionPagoId { get; set; }
 
         [ForeignKey("CondicionPagoId")]
-        public CondicionPago condicionPago { get; set; }
+        public virtual CondicionPago condicionPago { get; set; }
 
         [Required]
         public bool Estado { get; set; }

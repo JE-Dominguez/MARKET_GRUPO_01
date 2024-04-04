@@ -17,7 +17,7 @@ namespace MARKET_GRUPO_01
         {
         }
 
-        public void Abrir(Form formHijo, Guna2Panel panelContenedor, bool permiso)
+        public void Abrir(Form formHijo, Panel panelContenedor, bool permiso)
         {
             if (permiso == true)
             {

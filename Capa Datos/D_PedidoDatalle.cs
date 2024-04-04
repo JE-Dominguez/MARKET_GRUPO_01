@@ -8,42 +8,40 @@ using System.Threading.Tasks;
 
 namespace Capa_Datos
 {
-  public class D_PedidoDatalle
+    public class D_PedidoDatalle
     {
-        repository< PedidoDetalle> _repository;
+        private readonly UnitOfWork _unitOfWork;
 
-        public object FacturaEnDB { get; private set; }
-
-        public PedidoDetalle()
+        public D_PedidoDatalle()
         {
-            _repository = new Repository<PedidoDetalle>();
+            _unitOfWork = new UnitOfWork();
         }
 
         public List<PedidoDetalle> ObtenerTodalospedidoDetalle()
         {
-            return _repository.Consulta().ToList();
-         
+            return _unitOfWork.Repository<PedidoDetalle>().Consulta().ToList();
+        }
 
-        public int AgregarCategoria(PedidoDetalle PedidoDetalle)
+        public int AgregarPedidoDetalle(PedidoDetalle PedidoDetalle)
         {
             PedidoDetalle.FechaCreacion = DateTime.Now;
-            _repository.Agregar(PedidoDetalle);
+            _unitOfWork.Repository<PedidoDetalle>().Agregar(PedidoDetalle);
             return 1;
         }
 
-        public int EditarPedidoDetalle(PedidoDetalle PedidoDetalle)
+        public int EditarPedidoDetalle(PedidoDetalle pedidoDetalle)
         {
-            var PedidoDetalleEnDB = _repository.Consulta().FirstOrDefault(r => r. PedidoDetalleId == PedidoDetalle .PedidoDetalleId);
+            var PedidoDetalleEnDB = _unitOfWork.Repository<PedidoDetalle>().Consulta().FirstOrDefault(r => r.PedidoDetalleId == pedidoDetalle.PedidoDetalleId);
 
             if (PedidoDetalleEnDB != null)
             {
-                PedidoDetalleEnDB.PedidoID = PedidoDetalle.PedidoID;
-                PedidoDetalleEnDB.ProductoID = PedidoDetalle.ProductoID;
-                PedidoDetalleEnDB.precio = PedidoDetalle.precio;
-                    PedidoDetalleEnDB.Total = PedidoDetalle.Total;
-                    PedidoDetalleEnDB.SubTotal = PedidoDetalle.SubTotal;
-                PedidoDetalleEnDB.Descuento = PedidoDetalle.Descuento;
-         _repository.Editar(PedidoDetalleEnDB);
+                PedidoDetalleEnDB.PedidoId = pedidoDetalle.PedidoDetalleId;
+                PedidoDetalleEnDB.ProductoId = pedidoDetalle.ProductoId;
+                PedidoDetalleEnDB.Precio = pedidoDetalle.Precio;
+                PedidoDetalleEnDB.Total = pedidoDetalle.Total;
+                PedidoDetalleEnDB.Subtotal = pedidoDetalle.Subtotal;
+                PedidoDetalleEnDB.Descuento = pedidoDetalle.Descuento;
+                _unitOfWork.Repository<PedidoDetalle>().Editar(PedidoDetalleEnDB);
                 return 1;
             }
             return 0;
@@ -51,14 +49,13 @@ namespace Capa_Datos
 
         public int EliminarPedidoDetalle(int PedidoDetalleId)
         {
-            var PedidoDetalleEnDB = _repository.Consulta().FirstOrDefault(r => r.FacturaId == PedidoDetalleId);
+            var PedidoDetalleEnDB = _unitOfWork.Repository<PedidoDetalle>().Consulta().FirstOrDefault(r => r.PedidoDetalleId == PedidoDetalleId);
             if (PedidoDetalleEnDB != null)
             {
-                _repository.Eliminar(PedidoDetalleEnDB);
+                _unitOfWork.Repository<PedidoDetalle>().Eliminar(PedidoDetalleEnDB);
                 return 1;
             }
             return 0;
         }
-
     }
 }

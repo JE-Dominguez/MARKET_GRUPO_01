@@ -13,13 +13,13 @@ namespace Capa_Datos.Modelos
         public int CategoriaId { get; set; }
 
         [ForeignKey("CategoriaId")]
-        public Categoria Categoria { get; set; }
+        public virtual Categoria Categoria { get; set; }
 
         [Required]
         public int UnidadMedidaId { get; set; }
 
         [ForeignKey("UnidadMedidaId")]
-        public UnidadMedida UnidadMedida { get; set; }
+        public virtual UnidadMedida UnidadMedida { get; set; }
 
         [Required]
         public DateTime FechaCreacion { get; set; }

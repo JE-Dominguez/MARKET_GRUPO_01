@@ -33,7 +33,7 @@ namespace Capa_Datos.Modelos
         public int RolID { get; set; }
 
         [ForeignKey("RolID")]
-        public Roles Rol { get; set; }
+        public virtual Roles Rol { get; set; }
 
         [Required]
         public DateTime FechaCreacion { get; set; }

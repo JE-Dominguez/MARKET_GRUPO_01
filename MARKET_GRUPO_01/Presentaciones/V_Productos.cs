@@ -7,7 +7,6 @@ namespace MARKET_GRUPO_01.Presentaciones
 {
     public partial class V_Productos : Form
     {
-        //Referencias
         AbrirForm AF;
         public V_Inicio inicio;
         N_Productos nProductos;
@@ -18,14 +17,14 @@ namespace MARKET_GRUPO_01.Presentaciones
         public V_Productos(V_Inicio ini)
         {
             InitializeComponent();
+            inicio = ini;
             AF = new AbrirForm();
             nProductos = new N_Productos();
             nUnidadMedida = new N_UnidadMedida();
             nCategoria = new N_Categoria();
-            inicio = ini;
+
         }
 
-        //metodoSeleccionar Solo Un Registro
         void SeleccionarSoloUno(DataGridViewCellEventArgs e, DataGridView dgv)
         {
             if (e.ColumnIndex == 0 && e.RowIndex != -1)
@@ -41,30 +40,16 @@ namespace MARKET_GRUPO_01.Presentaciones
 
         void HabilitarSoloColumnaSeleccion(DataGridView dgv)
         {
-            foreach (DataGridViewColumn column in dgv.Columns)
+            if (DgvDatos.DataSource != null)
             {
-                column.ReadOnly = true;
-            }
-            dgv.Columns[0].ReadOnly = false;
-        }
-        void cargar()
-        {
-            if (BtnProductos.Checked)
-            {
-                DgvProductos.DataSource = nProductos.ObtenerProductos();
-                HabilitarSoloColumnaSeleccion(DgvProductos);
-            }
-            else if (BtnCategoria.Checked)
-            {
-                DgvCategoria.DataSource = nCategoria.ObtenerCategoria();
-                HabilitarSoloColumnaSeleccion(DgvCategoria);
-            }
-            else if (BtnUnidadMedida.Checked)
-            {
-                DgvUnidades.DataSource = nUnidadMedida.ObtenerUnidadesMedida();
-                HabilitarSoloColumnaSeleccion(DgvUnidades);
+                foreach (DataGridViewColumn column in dgv.Columns)
+                {
+                    column.ReadOnly = true;
+                }
+                dgv.Columns[0].ReadOnly = false;
             }
         }
+
         void ConsultarCategoria(int CategoriaID)
         {
             V_Categoria vcategoria = new V_Categoria();
@@ -108,76 +93,51 @@ namespace MARKET_GRUPO_01.Presentaciones
                 AF.VentanaEmergente(vProducto, inicio, true);
             }
         }
-
         private void BtnProductos_Click(object sender, EventArgs e)
         {
-            TabControlMain.SelectedTab = TabProductos;
-            cargar();
+            Recargar();
         }
-
         private void BtnCategoria_Click(object sender, EventArgs e)
         {
-            TabControlMain.SelectedTab = TabCategoria;
-            cargar();
+            Recargar();
         }
-
         private void BtnUnidadMedida_Click(object sender, EventArgs e)
         {
-            TabControlMain.SelectedTab = tabUnidadMedida;
-            cargar();
+            Recargar();
         }
 
         private void V_Productos_Load(object sender, EventArgs e)
         {
-            cargar();
+            Recargar();
         }
         void editar()
         {
-            if (BtnProductos.Checked == true)
+            if (DgvDatos.SelectedCells.Count > 0)
             {
-                if (DgvProductos.SelectedCells.Count > 0)
-                {
-                    int rowIndex = DgvProductos.SelectedCells[0].RowIndex;
-                    DataGridViewCheckBoxCell checkBoxCell = DgvProductos.Rows[rowIndex].Cells["Selecion"] as DataGridViewCheckBoxCell;
+                int rowIndex = DgvDatos.SelectedCells[0].RowIndex;
+                DataGridViewCheckBoxCell checkBoxCell = DgvDatos.Rows[rowIndex].Cells["Selecion"] as DataGridViewCheckBoxCell;
 
-                    if (checkBoxCell?.Value is true)
+                if (checkBoxCell?.Value is true)
+                {
+                    if (BtnProductos.Checked == true)
                     {
-                        // Obtener el ID directamente de la celda
-                        if (DgvProductos.Rows[rowIndex].Cells["ProductoId"].Value is int id)
+                        if (DgvDatos.Rows[rowIndex].Cells["ProductoId"].Value is int id)
                         {
                             ConsultarProducto(id);
                         }
                     }
-                }
-            }
-            else if (BtnCategoria.Checked == true)
-            {
-                if (DgvCategoria.SelectedCells.Count > 0)
-                {
-                    int rowIndex = DgvCategoria.SelectedCells[0].RowIndex;
-                    DataGridViewCheckBoxCell checkBoxCell = DgvCategoria.Rows[rowIndex].Cells["SeleccionCategoria"] as DataGridViewCheckBoxCell;
 
-                    if (checkBoxCell?.Value is true)
+                    if (BtnCategoria.Checked == true)
                     {
-                        // Obtener el ID directamente de la celda
-                        if (DgvCategoria.Rows[rowIndex].Cells["CategoriaId"].Value is int id)
+                        if (DgvDatos.Rows[rowIndex].Cells["ID"].Value is int id)
                         {
                             ConsultarCategoria(id);
                         }
                     }
-                }
-            }
-            else if (BtnUnidadMedida.Checked == true)
-            {
-                if (DgvUnidades.SelectedCells.Count > 0)
-                {
-                    int rowIndex = DgvUnidades.SelectedCells[0].RowIndex;
-                    DataGridViewCheckBoxCell checkBoxCell = DgvUnidades.Rows[rowIndex].Cells["SeleccionUnidad"] as DataGridViewCheckBoxCell;
 
-                    if (checkBoxCell?.Value is true)
+                    if (BtnUnidadMedida.Checked == true)
                     {
-                        // Obtener el ID directamente de la celda
-                        if (DgvUnidades.Rows[rowIndex].Cells["UnidadMedidaId"].Value is int id)
+                        if (DgvDatos.Rows[rowIndex].Cells["ID"].Value is int id)
                         {
                             ConsultarUnidadMedida(id);
                         }
@@ -186,39 +146,54 @@ namespace MARKET_GRUPO_01.Presentaciones
             }
         }
 
+        private void DgvDatos_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            SeleccionarSoloUno(e, DgvDatos);
+        }
         private void BtnEditar_Click(object sender, EventArgs e)
         {
             editar();
+            Recargar();
         }
 
-        private void DgvUnidades_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void BtnNuevo_Click(object sender, EventArgs e)
         {
-            SeleccionarSoloUno(e, DgvUnidades);
+            if (BtnProductos.Checked == true)
+            {
+                AF.VentanaEmergente(new V_Producto(), inicio, true);
+            }
+            if (BtnCategoria.Checked == true)
+            {
+                AF.VentanaEmergente(new V_Categoria(), inicio, true);
+            }
+            if (BtnUnidadMedida.Checked == true)
+            {
+                AF.VentanaEmergente(new V_UnidadMedida(), inicio, true);
+            }
+            Recargar();
         }
-
-        private void DgvCategoria_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        #region HELPER
+        private void Recargar()
         {
-            SeleccionarSoloUno(e, DgvCategoria);
+            if (BtnProductos.Checked == true)
+            {
+                DgvDatos.DataSource = nProductos.ObtenerProductos();
+            }
+            if (BtnCategoria.Checked == true)
+            {
+                DgvDatos.DataSource = nCategoria.ObtenerCategoriaGrid();
+            }
+            if (BtnUnidadMedida.Checked == true)
+            {
+                DgvDatos.DataSource = nUnidadMedida.ObtenerUnidadesMedidaGrid();
+            }
+
         }
+        #endregion
 
-        private void DgvProductos_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void BtnEiminar_Click(object sender, EventArgs e)
         {
-            SeleccionarSoloUno(e, DgvProductos);
-        }
-
-        private void BtnNuevoProducto_Click(object sender, EventArgs e)
-        {
-            AF.VentanaEmergente(new V_Producto(), inicio, true);
-        }
-
-        private void BtnNuevoCategoria_Click(object sender, EventArgs e)
-        {
-            AF.VentanaEmergente(new V_Categoria(), inicio, true);
-        }
-
-        private void BtnNuevUnidadMedida_Click(object sender, EventArgs e)
-        {
-            AF.VentanaEmergente(new V_UnidadMedida(), inicio, true);
+            Recargar();
         }
     }
 }

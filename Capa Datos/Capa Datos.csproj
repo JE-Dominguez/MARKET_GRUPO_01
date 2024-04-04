@@ -53,7 +53,9 @@
   <ItemGroup>
     <Compile Include="BaseDatos\MarketContext.cs" />
     <Compile Include="Core\IRepository.cs" />
+    <Compile Include="Core\IUnitOfWork.cs" />
     <Compile Include="Core\Repository.cs" />
+    <Compile Include="Core\UnitOfWork.cs" />
     <Compile Include="D_Categoria.cs" />
     <Compile Include="D_Clientes.cs" />
     <Compile Include="D_CondicionPago.cs" />
@@ -66,13 +68,53 @@
     <Compile Include="D_Roles.cs" />
     <Compile Include="D_UnidadMedida.cs" />
     <Compile Include="D_Usuarios.cs" />
-    <Compile Include="Migrations\202403181628409_Migración_Tablas.cs" />
-    <Compile Include="Migrations\202403181628409_Migración_Tablas.Designer.cs">
-      <DependentUpon>202403181628409_Migración_Tablas.cs</DependentUpon>
+    <Compile Include="Migrations\202404021938340_Tabla_Usuarios.cs" />
+    <Compile Include="Migrations\202404021938340_Tabla_Usuarios.Designer.cs">
+      <DependentUpon>202404021938340_Tabla_Usuarios.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202403182144360_Migración_AdicionReparacionClientes.cs" />
-    <Compile Include="Migrations\202403182144360_Migración_AdicionReparacionClientes.Designer.cs">
-      <DependentUpon>202403182144360_Migración_AdicionReparacionClientes.cs</DependentUpon>
+    <Compile Include="Migrations\202404021941182_Tabla_Roles.cs" />
+    <Compile Include="Migrations\202404021941182_Tabla_Roles.Designer.cs">
+      <DependentUpon>202404021941182_Tabla_Roles.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202404021942263_Tabla_Categorias.cs" />
+    <Compile Include="Migrations\202404021942263_Tabla_Categorias.Designer.cs">
+      <DependentUpon>202404021942263_Tabla_Categorias.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202404021944195_Tabla_UnidadMedidas.cs" />
+    <Compile Include="Migrations\202404021944195_Tabla_UnidadMedidas.Designer.cs">
+      <DependentUpon>202404021944195_Tabla_UnidadMedidas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202404021949502_Tabla_Clientes.cs" />
+    <Compile Include="Migrations\202404021949502_Tabla_Clientes.Designer.cs">
+      <DependentUpon>202404021949502_Tabla_Clientes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202404021953517_Tabla_GrupoDescuentos.cs" />
+    <Compile Include="Migrations\202404021953517_Tabla_GrupoDescuentos.Designer.cs">
+      <DependentUpon>202404021953517_Tabla_GrupoDescuentos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202404021955181_Tabla_CondicionPagos.cs" />
+    <Compile Include="Migrations\202404021955181_Tabla_CondicionPagos.Designer.cs">
+      <DependentUpon>202404021955181_Tabla_CondicionPagos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202404021956310_Tabla_Productos.cs" />
+    <Compile Include="Migrations\202404021956310_Tabla_Productos.Designer.cs">
+      <DependentUpon>202404021956310_Tabla_Productos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202404021958066_Tabla_Pedidos.cs" />
+    <Compile Include="Migrations\202404021958066_Tabla_Pedidos.Designer.cs">
+      <DependentUpon>202404021958066_Tabla_Pedidos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202404021959428_Tabla_Facturas.cs" />
+    <Compile Include="Migrations\202404021959428_Tabla_Facturas.Designer.cs">
+      <DependentUpon>202404021959428_Tabla_Facturas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202404022001301_Tabla_FacturasDetalles.cs" />
+    <Compile Include="Migrations\202404022001301_Tabla_FacturasDetalles.Designer.cs">
+      <DependentUpon>202404022001301_Tabla_FacturasDetalles.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202404022003153_Tabla_PedidosDetalles.cs" />
+    <Compile Include="Migrations\202404022003153_Tabla_PedidosDetalles.Designer.cs">
+      <DependentUpon>202404022003153_Tabla_PedidosDetalles.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Modelos\Categoria.cs" />
@@ -94,11 +136,41 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202403181628409_Migración_Tablas.resx">
-      <DependentUpon>202403181628409_Migración_Tablas.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202404021938340_Tabla_Usuarios.resx">
+      <DependentUpon>202404021938340_Tabla_Usuarios.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202403182144360_Migración_AdicionReparacionClientes.resx">
-      <DependentUpon>202403182144360_Migración_AdicionReparacionClientes.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202404021941182_Tabla_Roles.resx">
+      <DependentUpon>202404021941182_Tabla_Roles.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202404021942263_Tabla_Categorias.resx">
+      <DependentUpon>202404021942263_Tabla_Categorias.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202404021944195_Tabla_UnidadMedidas.resx">
+      <DependentUpon>202404021944195_Tabla_UnidadMedidas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202404021949502_Tabla_Clientes.resx">
+      <DependentUpon>202404021949502_Tabla_Clientes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202404021953517_Tabla_GrupoDescuentos.resx">
+      <DependentUpon>202404021953517_Tabla_GrupoDescuentos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202404021955181_Tabla_CondicionPagos.resx">
+      <DependentUpon>202404021955181_Tabla_CondicionPagos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202404021956310_Tabla_Productos.resx">
+      <DependentUpon>202404021956310_Tabla_Productos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202404021958066_Tabla_Pedidos.resx">
+      <DependentUpon>202404021958066_Tabla_Pedidos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202404021959428_Tabla_Facturas.resx">
+      <DependentUpon>202404021959428_Tabla_Facturas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202404022001301_Tabla_FacturasDetalles.resx">
+      <DependentUpon>202404022001301_Tabla_FacturasDetalles.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202404022003153_Tabla_PedidosDetalles.resx">
+      <DependentUpon>202404022003153_Tabla_PedidosDetalles.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

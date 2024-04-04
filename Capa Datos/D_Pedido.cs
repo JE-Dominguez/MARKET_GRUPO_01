@@ -10,39 +10,37 @@ namespace Capa_Datos
 {
     internal class D_Pedido
     {
-        repository<D_Pedido> _repository;
-
-        public object FacturaEnDB { get; private set; }
-
+        private readonly UnitOfWork _unitOfWork;
         public D_Pedido()
         {
-            _repository = new Repository<Pedido>();
+            _unitOfWork = new UnitOfWork();
         }
 
         public List<Pedido> ObtenerTodalasFacturas()
         {
-            return _repository.Consulta().ToList();
+            return _unitOfWork.Repository<Pedido>().Consulta().ToList();
         }
 
-        public int AgregarCategoria(Pedido pedido)
+        public int AgregarPedido(Pedido pedido)
         {
             pedido.FechaCreacion = DateTime.Now;
-            _repository.Agregar(pedido);
+            pedido.FechaPedido = DateTime.Now;
+            _unitOfWork.Repository<Pedido>().Agregar(pedido);
             return 1;
         }
 
-        public int EditarFactura(Pedido pedido)
+        public int EditarPedido(Pedido pedido)
         {
-            var PedidoEnDB = _repository.Consulta().FirstOrDefault(r => r.CategoriaId == Pedido.PedidoId);
+            var PedidoEnDB = _unitOfWork.Repository<Pedido>().Consulta().FirstOrDefault(r => r.PedidoId == pedido.PedidoId);
 
             if (PedidoEnDB != null)
             {
-                PedidoEnDB.ClienteID = Pedido.ClienteiD;
-                PedidoEnDB.Estado = Pedido.Estado;
-                PedidoEnDB.Total = Pedido.Total;
-                PedidoEnDB.SubTotal = Pedido.SubTotal;
-                PedidoEnDB.Descuento = Pedido.Descuento;
-                _repository.Editar(PedidoEnDB);
+                PedidoEnDB.ClienteId = pedido.ClienteId;
+                PedidoEnDB.Estado = pedido.Estado;
+                PedidoEnDB.Total = pedido.Total;
+                PedidoEnDB.Subtotal = pedido.Subtotal;
+                PedidoEnDB.Descuento = pedido.Descuento;
+                _unitOfWork.Repository<Pedido>().Editar(PedidoEnDB);
                 return 1;
             }
             return 0;
@@ -50,15 +48,15 @@ namespace Capa_Datos
 
         public int EliminarPedido(int PedidoId)
         {
-            var PedidoEnDB = _repository.Consulta().FirstOrDefault(r => r.FacturaId == PedidoId);
+            var PedidoEnDB = _unitOfWork.Repository<Pedido>().Consulta().FirstOrDefault(r => r.PedidoId == PedidoId);
             if (PedidoEnDB != null)
             {
-                _repository.Eliminar( PedidoEnDB);
+                _unitOfWork.Repository<Pedido>().Eliminar(PedidoEnDB);
                 return 1;
             }
             return 0;
         }
 
-         
+
     }
 }
