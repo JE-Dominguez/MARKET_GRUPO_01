@@ -10,6 +10,10 @@ namespace Capa_Datos.Modelos
         public int ProductoId { get; set; }
 
         [Required]
+        public string Nombre { get; set; }
+        [Required]
+        public string Codigo { get; set; }
+        [Required]
         public int CategoriaId { get; set; }
 
         [ForeignKey("CategoriaId")]
@@ -29,5 +33,9 @@ namespace Capa_Datos.Modelos
 
         [Required]
         public decimal PrecioCompra { get; set; }
+        public int ImpuestoId { get; set; }
+
+        [ForeignKey("ImpuestoId")]
+        public virtual Impuestos Impuestos { get; set; }
     }
 }

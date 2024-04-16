@@ -26,12 +26,6 @@ namespace Capa_Datos.Modelos
         public virtual Pedido Pedido { get; set; }
 
         [Required]
-        public int UnidadMedidaId { get; set; }
-
-        [ForeignKey("UnidadMedidaId")]
-        public virtual UnidadMedida UnidadMedida { get; set; }
-
-        [Required]
         public DateTime FechaCreacion { get; set; }
 
         [Required]

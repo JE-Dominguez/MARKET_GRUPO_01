@@ -24,7 +24,7 @@ namespace Capa_Datos
         {
             producto.FechaCreacion = DateTime.Now;
             _unitOfWork.Repository<Productos>().Agregar(producto);
-            return 1;
+            return _unitOfWork.Guardar();
         }
 
         public int EditarProducto(Productos producto)
@@ -33,12 +33,15 @@ namespace Capa_Datos
 
             if (productoEnDB != null)
             {
+                productoEnDB.Nombre = producto.Nombre;
                 productoEnDB.CategoriaId = producto.CategoriaId;
                 productoEnDB.UnidadMedidaId = producto.UnidadMedidaId;
                 productoEnDB.Estado = producto.Estado;
                 productoEnDB.PrecioCompra = producto.PrecioCompra;
+                productoEnDB.ImpuestoId = producto.ImpuestoId;
+                productoEnDB.Codigo = producto.Codigo;
                 _unitOfWork.Repository<Productos>().Editar(productoEnDB);
-                return 1;
+                return _unitOfWork.Guardar();
             }
             return 0;
         }
@@ -49,7 +52,7 @@ namespace Capa_Datos
             if (productoEnDB != null)
             {
                 _unitOfWork.Repository<Productos>().Eliminar(productoEnDB);
-                return 1;
+                return _unitOfWork.Guardar();
             }
             return 0;
         }

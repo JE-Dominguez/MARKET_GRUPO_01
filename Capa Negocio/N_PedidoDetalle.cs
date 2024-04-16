@@ -21,6 +21,12 @@ namespace Capa_Negocio
         {
             return dPedidoDetalle.ObtenerTodalospedidoDetalle();
         }
+        public List<object> ObtenerPedidoDetalleGrid(int id)
+        {
+            var DetallesPedido = dPedidoDetalle.ObtenerTodalospedidoDetalle();
+            var DetallesPedidoFil = DetallesPedido.Where(u => u.PedidoId == id);
+            return DetallesPedidoFil.Select(prd => new { prd.PedidoDetalleId, prd.PedidoId, prd.ProductoId, Codigo = prd.CodigoProducto, prd.Descripcion, prd.Precio, prd.Impuesto, prd.Subtotal, prd.Total, prd.FechaPedido }).ToList<object>();
+        }
 
         public int GuardarPedidoDetalle(PedidoDetalle pedidoDetalle)
         {
@@ -37,6 +43,10 @@ namespace Capa_Negocio
         public int EliminarPedidoDetalle(int PedidoDetalleID)
         {
             return dPedidoDetalle.EliminarPedidoDetalle(PedidoDetalleID);
+        }
+        public int EliminarPedidoConDetalle(int ID)
+        {
+            return dPedidoDetalle.EliminarPedidoConDetalle(ID);
         }
 
 

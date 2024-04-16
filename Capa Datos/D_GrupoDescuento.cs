@@ -24,7 +24,7 @@ namespace Capa_Datos
         {
             grupoDescuento.FechaCreacion = DateTime.Now;
             _unitOfWork.Repository<GrupoDescuento>().Agregar(grupoDescuento);
-            return 1;
+            return _unitOfWork.Guardar();
         }
 
         public int EditarGrupoDescuento(GrupoDescuento grupoDescuento)
@@ -38,7 +38,7 @@ namespace Capa_Datos
                 grupoDescuentoEnDB.Estado = grupoDescuento.Estado;
                 grupoDescuentoEnDB.Porcentaje = grupoDescuento.Porcentaje;
                 _unitOfWork.Repository<GrupoDescuento>().Editar(grupoDescuentoEnDB);
-                return 1;
+                return _unitOfWork.Guardar();
             }
             return 0;
         }
@@ -49,7 +49,7 @@ namespace Capa_Datos
             if (grupoDescuentoEnDB != null)
             {
                 _unitOfWork.Repository<GrupoDescuento>().Eliminar(grupoDescuentoEnDB);
-                return 1;
+                return _unitOfWork.Guardar();
             }
             return 0;
         }

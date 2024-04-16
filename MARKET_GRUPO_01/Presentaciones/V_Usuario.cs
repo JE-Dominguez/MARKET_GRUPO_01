@@ -8,13 +8,17 @@ namespace MARKET_GRUPO_01.Presentaciones
 {
     public partial class V_Usuario : Form
     {
+        public int? id;
         N_Usuarios n_usuario;
         N_Roles n_roles;
-        public V_Usuario()
+        public V_Usuario(int? id = null)
         {
             InitializeComponent();
             n_usuario = new N_Usuarios();
             n_roles = new N_Roles();
+            this.id = id;
+
+            if (id != null) { ConsultarPorId(); }
         }
         private void Limpiar()
         {
@@ -38,12 +42,13 @@ namespace MARKET_GRUPO_01.Presentaciones
             string Contraseña = TxtContraseña.Text;
             string Correo = TxtCorreo.Text;
             int Rol = Convert.ToInt32(CmbRol.SelectedValue);
+
+
             if (string.IsNullOrEmpty(Usuario) || string.IsNullOrWhiteSpace(Usuario))
             {
                 errorProvider1.SetError(TxtUsuario, "Debe colocar el codigo de la clasificacion");
                 return;
             }
-
             if (string.IsNullOrEmpty(Nombre) || string.IsNullOrWhiteSpace(Nombre))
             {
                 errorProvider1.SetError(TxtNombre, "Debe colocar la descripcion");
@@ -53,11 +58,16 @@ namespace MARKET_GRUPO_01.Presentaciones
             {
                 UsuarioId = "0";
             }
+
+
             var usuarios = new Usuarios();
+
             if (int.Parse(UsuarioId) != 0)
             {
                 usuarios.ID = int.Parse(UsuarioId);
             }
+
+
             usuarios.Usuario = Usuario;
             usuarios.Nombre = Nombre;
             usuarios.Apellido = Apellido;
@@ -89,6 +99,22 @@ namespace MARKET_GRUPO_01.Presentaciones
             catch (Exception ex)
             {
                 MessageBox.Show($"Se produjo un error al cargar los roles: {ex.Message}");
+            }
+        }
+        private void ConsultarPorId()
+        {
+            var usuario = n_usuario.ObtenerUsuarios().FirstOrDefault(g => g.ID == id);
+            if (usuario != null)
+            {
+                LblTitulo.Text = "Editar Usuario";
+                TxtIdUsuario.Text = usuario.ID.ToString();
+                TxtNombre.Text = usuario.Nombre;
+                TxtApellido.Text = usuario.Apellido;
+                TxtContraseña.Text = usuario.Contraseña;
+                TxtCorreo.Text = usuario.Correo;
+                TxtUsuario.Text = usuario.Usuario;
+                ChkActivo.Checked = usuario.Estado;
+                CmbRol.SelectedValue = usuario.RolID;
             }
         }
 
