@@ -39,7 +39,7 @@ namespace MARKET_GRUPO_01
             }
         }
 
-        private void CerrarFormActual()
+        public void CerrarFormActual()
         {
             if (formActual != null)
             {

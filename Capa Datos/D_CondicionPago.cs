@@ -24,7 +24,7 @@ namespace Capa_Datos
         {
             condicionPago.FechaCreacion = DateTime.Now;
             _unitOfWork.Repository<CondicionPago>().Agregar(condicionPago);
-            return 1;
+            return _unitOfWork.Guardar();
         }
 
         public int EditarCondicionPago(CondicionPago condicionPago)
@@ -38,7 +38,7 @@ namespace Capa_Datos
                 condicionPagoEnDB.Estado = condicionPago.Estado;
                 condicionPagoEnDB.Dias = condicionPago.Dias;
                 _unitOfWork.Repository<CondicionPago>().Editar(condicionPagoEnDB);
-                return 1;
+                return _unitOfWork.Guardar();
             }
             return 0;
         }
@@ -49,7 +49,7 @@ namespace Capa_Datos
             if (condicionPagoEnDB != null)
             {
                 _unitOfWork.Repository<CondicionPago>().Eliminar(condicionPagoEnDB);
-                return 1;
+                return _unitOfWork.Guardar();
             }
             return 0;
         }

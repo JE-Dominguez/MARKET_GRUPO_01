@@ -1,17 +1,25 @@
 ﻿using Capa_Datos.Modelos;
 using Capa_Negocio;
 using System;
+using System.Linq;
 using System.Windows.Forms;
 
 namespace MARKET_GRUPO_01.Presentaciones
 {
     public partial class V_Categoria : Form
     {
+        int? ID;
         N_Categoria nCategoria;
-        public V_Categoria()
+        public V_Categoria(int? iD=null)
         {
             InitializeComponent();
             nCategoria = new N_Categoria();
+            ID = iD;
+
+            if (iD != null )
+            {
+                CargarPorID();
+            }
         }
         private void Limpiar()
         {
@@ -48,6 +56,18 @@ namespace MARKET_GRUPO_01.Presentaciones
             nCategoria.GuardarCategoria(categoria);
 
             Limpiar();
+        }
+        void CargarPorID()
+        {
+            var categoria = nCategoria.ObtenerCategoria().FirstOrDefault(g => g.CategoriaId == ID);
+            if (categoria != null)
+            {
+                LblTitulo.Text = "Editar Categoria";
+                TxtIdCategoria.Text = categoria.CategoriaId.ToString();
+                TxtDescripcion.Text = categoria.Descripcion;
+                TxtCodigo.Text = categoria.Codigo;
+                ChkActivo.Checked = categoria.Estado;
+            }
         }
 
         private void BtnGuardar_Click(object sender, EventArgs e)

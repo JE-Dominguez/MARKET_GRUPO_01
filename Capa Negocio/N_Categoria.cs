@@ -1,10 +1,7 @@
-﻿using Capa_Datos.Modelos;
-using Capa_Datos;
-using System;
+﻿using Capa_Datos;
+using Capa_Datos.Modelos;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Capa_Negocio
 {
@@ -24,7 +21,9 @@ namespace Capa_Negocio
 
         public List<object> ObtenerCategoriaGrid()
         {
-            var categoria = dCategoria.ObtenerTodalascategorias().Select(r => new { ID = r.CategoriaId, r.Codigo, r.Descripcion, r.FechaCreacion, r.Estado }).ToList<object>();
+            var categoria = dCategoria.ObtenerTodalascategorias().ToList()
+                                 .Select(cat => new { cat.CategoriaId, cat.Codigo, cat.Descripcion, cat.FechaCreacion, cat.Estado })
+                                 .ToList<object>();
             return categoria;
         }
 

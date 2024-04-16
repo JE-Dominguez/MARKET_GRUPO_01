@@ -80,7 +80,7 @@
             // BtnDescartar
             // 
             this.BtnDescartar.BackColor = System.Drawing.Color.Transparent;
-            this.BtnDescartar.BorderRadius = 8;
+            this.BtnDescartar.BorderRadius = 3;
             this.BtnDescartar.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.BtnDescartar.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.BtnDescartar.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
@@ -103,7 +103,7 @@
             // BtnGuardar
             // 
             this.BtnGuardar.BackColor = System.Drawing.Color.Transparent;
-            this.BtnGuardar.BorderRadius = 8;
+            this.BtnGuardar.BorderRadius = 3;
             this.BtnGuardar.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.BtnGuardar.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.BtnGuardar.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
@@ -178,7 +178,7 @@
             // TxtDescripcion
             // 
             this.TxtDescripcion.BackColor = System.Drawing.Color.Transparent;
-            this.TxtDescripcion.BorderRadius = 10;
+            this.TxtDescripcion.BorderRadius = 3;
             this.TxtDescripcion.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.TxtDescripcion.DefaultText = "";
             this.TxtDescripcion.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
@@ -215,7 +215,7 @@
             // TxtCodigo
             // 
             this.TxtCodigo.BackColor = System.Drawing.Color.Transparent;
-            this.TxtCodigo.BorderRadius = 10;
+            this.TxtCodigo.BorderRadius = 3;
             this.TxtCodigo.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.TxtCodigo.DefaultText = "";
             this.TxtCodigo.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
@@ -252,7 +252,7 @@
             // TxtIdCategoria
             // 
             this.TxtIdCategoria.BackColor = System.Drawing.Color.Transparent;
-            this.TxtIdCategoria.BorderRadius = 10;
+            this.TxtIdCategoria.BorderRadius = 3;
             this.TxtIdCategoria.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.TxtIdCategoria.DefaultText = "";
             this.TxtIdCategoria.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));

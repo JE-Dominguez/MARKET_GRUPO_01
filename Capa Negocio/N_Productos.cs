@@ -1,6 +1,7 @@
 ﻿using Capa_Datos;
 using Capa_Datos.Modelos;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 
 namespace Capa_Negocio
@@ -21,7 +22,10 @@ namespace Capa_Negocio
 
         public List<object> ObtenerProductosGrid()
         {
-            var productoss = dProducto.ObtenerTodosLosProductos().Select(p => new { ID = p.ProductoId }).ToList<object>();
+            var productoss = dProducto.ObtenerTodosLosProductos()
+                                     .ToList()
+                                     .Select(prd => new { prd.ProductoId, prd.Codigo, prd.Nombre, Categoria = prd.Categoria.Descripcion, UnidadMedida = prd.UnidadMedida.Descripcion, prd.FechaCreacion, prd.PrecioCompra, prd.Estado })
+                                     .ToList<object>();
             return productoss;
         }
 

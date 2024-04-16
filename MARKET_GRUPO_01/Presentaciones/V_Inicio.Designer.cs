@@ -33,6 +33,7 @@
             this.Form = new Guna.UI2.WinForms.Guna2BorderlessForm(this.components);
             this.pnlPrincipal = new System.Windows.Forms.Panel();
             this.PnlAtras = new Guna.UI2.WinForms.Guna2Panel();
+            this.PnlContenedor = new System.Windows.Forms.Panel();
             this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
             this.PnlSuperior = new Guna.UI2.WinForms.Guna2Panel();
             this.DtpFehca = new Guna.UI2.WinForms.Guna2DateTimePicker();
@@ -43,12 +44,13 @@
             this.BtnSeguridad = new Guna.UI2.WinForms.Guna2GradientButton();
             this.BtnClientes = new Guna.UI2.WinForms.Guna2GradientButton();
             this.BtnProductos = new Guna.UI2.WinForms.Guna2GradientButton();
+            this.guna2GradientButton1 = new Guna.UI2.WinForms.Guna2GradientButton();
+            this.guna2GradientButton2 = new Guna.UI2.WinForms.Guna2GradientButton();
             this.guna2GradientButton5 = new Guna.UI2.WinForms.Guna2GradientButton();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
             this.PnlSeparador = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2CirclePictureBox1 = new Guna.UI2.WinForms.Guna2CirclePictureBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.PnlContenedor = new System.Windows.Forms.Panel();
             this.pnlPrincipal.SuspendLayout();
             this.PnlAtras.SuspendLayout();
             this.PnlSuperior.SuspendLayout();
@@ -92,6 +94,14 @@
             this.PnlAtras.Padding = new System.Windows.Forms.Padding(10, 10, 10, 0);
             this.PnlAtras.Size = new System.Drawing.Size(975, 646);
             this.PnlAtras.TabIndex = 17;
+            // 
+            // PnlContenedor
+            // 
+            this.PnlContenedor.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.PnlContenedor.Location = new System.Drawing.Point(10, 10);
+            this.PnlContenedor.Name = "PnlContenedor";
+            this.PnlContenedor.Size = new System.Drawing.Size(955, 636);
+            this.PnlContenedor.TabIndex = 0;
             // 
             // guna2Panel2
             // 
@@ -179,6 +189,8 @@
             this.PnlMenu.Controls.Add(this.BtnSeguridad);
             this.PnlMenu.Controls.Add(this.BtnClientes);
             this.PnlMenu.Controls.Add(this.BtnProductos);
+            this.PnlMenu.Controls.Add(this.guna2GradientButton1);
+            this.PnlMenu.Controls.Add(this.guna2GradientButton2);
             this.PnlMenu.Controls.Add(this.guna2GradientButton5);
             this.PnlMenu.Controls.Add(this.guna2Panel1);
             this.PnlMenu.Controls.Add(this.PnlSeparador);
@@ -196,8 +208,8 @@
             this.BtnSeguridad.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
             this.BtnSeguridad.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(106)))), ((int)(((byte)(127)))), ((int)(((byte)(193)))));
             this.BtnSeguridad.CheckedState.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(106)))), ((int)(((byte)(127)))), ((int)(((byte)(193)))));
-            this.BtnSeguridad.CheckedState.FillColor = System.Drawing.Color.White;
-            this.BtnSeguridad.CheckedState.FillColor2 = System.Drawing.Color.White;
+            this.BtnSeguridad.CheckedState.FillColor = System.Drawing.Color.Gainsboro;
+            this.BtnSeguridad.CheckedState.FillColor2 = System.Drawing.Color.Gainsboro;
             this.BtnSeguridad.CheckedState.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnSeguridad.CheckedState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(106)))), ((int)(((byte)(127)))), ((int)(((byte)(193)))));
             this.BtnSeguridad.CheckedState.Image = global::MARKET_GRUPO_01.Properties.Resources.Security_Configuration;
@@ -218,10 +230,10 @@
             this.BtnSeguridad.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.BtnSeguridad.ImageOffset = new System.Drawing.Point(12, 0);
             this.BtnSeguridad.ImageSize = new System.Drawing.Size(27, 27);
-            this.BtnSeguridad.Location = new System.Drawing.Point(5, 228);
+            this.BtnSeguridad.Location = new System.Drawing.Point(5, 339);
             this.BtnSeguridad.Name = "BtnSeguridad";
             this.BtnSeguridad.Size = new System.Drawing.Size(189, 45);
-            this.BtnSeguridad.TabIndex = 25;
+            this.BtnSeguridad.TabIndex = 30;
             this.BtnSeguridad.Text = "Seguridad";
             this.BtnSeguridad.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.BtnSeguridad.TextOffset = new System.Drawing.Point(15, 0);
@@ -233,8 +245,8 @@
             this.BtnClientes.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
             this.BtnClientes.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(106)))), ((int)(((byte)(127)))), ((int)(((byte)(193)))));
             this.BtnClientes.CheckedState.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(106)))), ((int)(((byte)(127)))), ((int)(((byte)(193)))));
-            this.BtnClientes.CheckedState.FillColor = System.Drawing.Color.White;
-            this.BtnClientes.CheckedState.FillColor2 = System.Drawing.Color.White;
+            this.BtnClientes.CheckedState.FillColor = System.Drawing.Color.Gainsboro;
+            this.BtnClientes.CheckedState.FillColor2 = System.Drawing.Color.Gainsboro;
             this.BtnClientes.CheckedState.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnClientes.CheckedState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(106)))), ((int)(((byte)(127)))), ((int)(((byte)(193)))));
             this.BtnClientes.CheckedState.Image = global::MARKET_GRUPO_01.Properties.Resources.People;
@@ -255,10 +267,10 @@
             this.BtnClientes.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.BtnClientes.ImageOffset = new System.Drawing.Point(12, 0);
             this.BtnClientes.ImageSize = new System.Drawing.Size(27, 27);
-            this.BtnClientes.Location = new System.Drawing.Point(5, 183);
+            this.BtnClientes.Location = new System.Drawing.Point(5, 294);
             this.BtnClientes.Name = "BtnClientes";
             this.BtnClientes.Size = new System.Drawing.Size(189, 45);
-            this.BtnClientes.TabIndex = 23;
+            this.BtnClientes.TabIndex = 29;
             this.BtnClientes.Text = "Clientes";
             this.BtnClientes.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.BtnClientes.TextOffset = new System.Drawing.Point(15, 0);
@@ -270,8 +282,8 @@
             this.BtnProductos.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
             this.BtnProductos.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(106)))), ((int)(((byte)(127)))), ((int)(((byte)(193)))));
             this.BtnProductos.CheckedState.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(106)))), ((int)(((byte)(127)))), ((int)(((byte)(193)))));
-            this.BtnProductos.CheckedState.FillColor = System.Drawing.Color.White;
-            this.BtnProductos.CheckedState.FillColor2 = System.Drawing.Color.White;
+            this.BtnProductos.CheckedState.FillColor = System.Drawing.Color.Gainsboro;
+            this.BtnProductos.CheckedState.FillColor2 = System.Drawing.Color.Gainsboro;
             this.BtnProductos.CheckedState.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnProductos.CheckedState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(106)))), ((int)(((byte)(127)))), ((int)(((byte)(193)))));
             this.BtnProductos.CheckedState.Image = global::MARKET_GRUPO_01.Properties.Resources.Boxes;
@@ -292,37 +304,111 @@
             this.BtnProductos.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.BtnProductos.ImageOffset = new System.Drawing.Point(12, 0);
             this.BtnProductos.ImageSize = new System.Drawing.Size(27, 27);
-            this.BtnProductos.Location = new System.Drawing.Point(5, 138);
+            this.BtnProductos.Location = new System.Drawing.Point(5, 249);
             this.BtnProductos.Name = "BtnProductos";
             this.BtnProductos.Size = new System.Drawing.Size(189, 45);
-            this.BtnProductos.TabIndex = 22;
+            this.BtnProductos.TabIndex = 28;
             this.BtnProductos.Text = "Productos";
             this.BtnProductos.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.BtnProductos.TextOffset = new System.Drawing.Point(15, 0);
             this.BtnProductos.Click += new System.EventHandler(this.BtnProductos_Click);
+            // 
+            // guna2GradientButton1
+            // 
+            this.guna2GradientButton1.BorderRadius = 4;
+            this.guna2GradientButton1.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
+            this.guna2GradientButton1.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(106)))), ((int)(((byte)(127)))), ((int)(((byte)(193)))));
+            this.guna2GradientButton1.CheckedState.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(106)))), ((int)(((byte)(127)))), ((int)(((byte)(193)))));
+            this.guna2GradientButton1.CheckedState.FillColor = System.Drawing.Color.Gainsboro;
+            this.guna2GradientButton1.CheckedState.FillColor2 = System.Drawing.Color.Gainsboro;
+            this.guna2GradientButton1.CheckedState.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2GradientButton1.CheckedState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(106)))), ((int)(((byte)(127)))), ((int)(((byte)(193)))));
+            this.guna2GradientButton1.CheckedState.Image = global::MARKET_GRUPO_01.Properties.Resources.icons8_caja_de_mano_30;
+            this.guna2GradientButton1.CustomBorderThickness = new System.Windows.Forms.Padding(6, 0, 0, 0);
+            this.guna2GradientButton1.CustomizableEdges.BottomLeft = false;
+            this.guna2GradientButton1.CustomizableEdges.TopLeft = false;
+            this.guna2GradientButton1.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.guna2GradientButton1.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.guna2GradientButton1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.guna2GradientButton1.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.guna2GradientButton1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.guna2GradientButton1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.guna2GradientButton1.FillColor = System.Drawing.Color.White;
+            this.guna2GradientButton1.FillColor2 = System.Drawing.Color.White;
+            this.guna2GradientButton1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2GradientButton1.ForeColor = System.Drawing.Color.Black;
+            this.guna2GradientButton1.Image = global::MARKET_GRUPO_01.Properties.Resources.icons8_caja_de_mano_30__1_;
+            this.guna2GradientButton1.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.guna2GradientButton1.ImageOffset = new System.Drawing.Point(12, 0);
+            this.guna2GradientButton1.ImageSize = new System.Drawing.Size(27, 27);
+            this.guna2GradientButton1.Location = new System.Drawing.Point(5, 204);
+            this.guna2GradientButton1.Name = "guna2GradientButton1";
+            this.guna2GradientButton1.Size = new System.Drawing.Size(189, 45);
+            this.guna2GradientButton1.TabIndex = 27;
+            this.guna2GradientButton1.Text = "Pedidos";
+            this.guna2GradientButton1.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.guna2GradientButton1.TextOffset = new System.Drawing.Point(15, 0);
+            this.guna2GradientButton1.Click += new System.EventHandler(this.guna2GradientButton1_Click);
+            // 
+            // guna2GradientButton2
+            // 
+            this.guna2GradientButton2.BorderRadius = 4;
+            this.guna2GradientButton2.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
+            this.guna2GradientButton2.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(106)))), ((int)(((byte)(127)))), ((int)(((byte)(193)))));
+            this.guna2GradientButton2.CheckedState.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(106)))), ((int)(((byte)(127)))), ((int)(((byte)(193)))));
+            this.guna2GradientButton2.CheckedState.FillColor = System.Drawing.Color.Gainsboro;
+            this.guna2GradientButton2.CheckedState.FillColor2 = System.Drawing.Color.Gainsboro;
+            this.guna2GradientButton2.CheckedState.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2GradientButton2.CheckedState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(106)))), ((int)(((byte)(127)))), ((int)(((byte)(193)))));
+            this.guna2GradientButton2.CheckedState.Image = global::MARKET_GRUPO_01.Properties.Resources.icons8_casa_30;
+            this.guna2GradientButton2.CustomBorderThickness = new System.Windows.Forms.Padding(6, 0, 0, 0);
+            this.guna2GradientButton2.CustomizableEdges.BottomLeft = false;
+            this.guna2GradientButton2.CustomizableEdges.TopLeft = false;
+            this.guna2GradientButton2.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.guna2GradientButton2.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.guna2GradientButton2.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.guna2GradientButton2.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.guna2GradientButton2.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.guna2GradientButton2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.guna2GradientButton2.FillColor = System.Drawing.Color.White;
+            this.guna2GradientButton2.FillColor2 = System.Drawing.Color.White;
+            this.guna2GradientButton2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.guna2GradientButton2.ForeColor = System.Drawing.Color.Black;
+            this.guna2GradientButton2.Image = global::MARKET_GRUPO_01.Properties.Resources.icons8_casa_30__1_;
+            this.guna2GradientButton2.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.guna2GradientButton2.ImageOffset = new System.Drawing.Point(12, 0);
+            this.guna2GradientButton2.ImageSize = new System.Drawing.Size(27, 27);
+            this.guna2GradientButton2.Location = new System.Drawing.Point(5, 159);
+            this.guna2GradientButton2.Name = "guna2GradientButton2";
+            this.guna2GradientButton2.Size = new System.Drawing.Size(189, 45);
+            this.guna2GradientButton2.TabIndex = 26;
+            this.guna2GradientButton2.Text = "Darhboard";
+            this.guna2GradientButton2.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.guna2GradientButton2.TextOffset = new System.Drawing.Point(15, 0);
             // 
             // guna2GradientButton5
             // 
             this.guna2GradientButton5.BorderRadius = 8;
             this.guna2GradientButton5.CheckedState.FillColor = System.Drawing.Color.DimGray;
             this.guna2GradientButton5.CheckedState.FillColor2 = System.Drawing.Color.CornflowerBlue;
-            this.guna2GradientButton5.CheckedState.Font = new System.Drawing.Font("Franklin Gothic Medium", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2GradientButton5.CheckedState.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2GradientButton5.CheckedState.ForeColor = System.Drawing.Color.White;
             this.guna2GradientButton5.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.guna2GradientButton5.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.guna2GradientButton5.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.guna2GradientButton5.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.guna2GradientButton5.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.guna2GradientButton5.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.guna2GradientButton5.FillColor = System.Drawing.Color.White;
             this.guna2GradientButton5.FillColor2 = System.Drawing.Color.White;
-            this.guna2GradientButton5.Font = new System.Drawing.Font("Franklin Gothic Medium", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2GradientButton5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2GradientButton5.ForeColor = System.Drawing.Color.Black;
             this.guna2GradientButton5.Image = ((System.Drawing.Image)(resources.GetObject("guna2GradientButton5.Image")));
             this.guna2GradientButton5.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.guna2GradientButton5.ImageOffset = new System.Drawing.Point(8, 0);
-            this.guna2GradientButton5.Location = new System.Drawing.Point(8, 580);
+            this.guna2GradientButton5.Location = new System.Drawing.Point(5, 628);
             this.guna2GradientButton5.Name = "guna2GradientButton5";
-            this.guna2GradientButton5.Size = new System.Drawing.Size(176, 43);
+            this.guna2GradientButton5.Size = new System.Drawing.Size(189, 43);
             this.guna2GradientButton5.TabIndex = 14;
             this.guna2GradientButton5.Text = "Seguridad";
             this.guna2GradientButton5.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -343,14 +429,14 @@
             this.PnlSeparador.Dock = System.Windows.Forms.DockStyle.Top;
             this.PnlSeparador.Location = new System.Drawing.Point(5, 5);
             this.PnlSeparador.Name = "PnlSeparador";
-            this.PnlSeparador.Size = new System.Drawing.Size(189, 133);
+            this.PnlSeparador.Size = new System.Drawing.Size(189, 154);
             this.PnlSeparador.TabIndex = 1;
             // 
             // guna2CirclePictureBox1
             // 
             this.guna2CirclePictureBox1.Image = global::MARKET_GRUPO_01.Properties.Resources.ok__3_;
             this.guna2CirclePictureBox1.ImageRotate = 0F;
-            this.guna2CirclePictureBox1.Location = new System.Drawing.Point(56, 10);
+            this.guna2CirclePictureBox1.Location = new System.Drawing.Point(56, 25);
             this.guna2CirclePictureBox1.Name = "guna2CirclePictureBox1";
             this.guna2CirclePictureBox1.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
             this.guna2CirclePictureBox1.Size = new System.Drawing.Size(70, 70);
@@ -364,19 +450,11 @@
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Arial Black", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label1.Location = new System.Drawing.Point(38, 83);
+            this.label1.Location = new System.Drawing.Point(38, 98);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(113, 30);
             this.label1.TabIndex = 20;
             this.label1.Text = "MARKET";
-            // 
-            // PnlContenedor
-            // 
-            this.PnlContenedor.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.PnlContenedor.Location = new System.Drawing.Point(10, 10);
-            this.PnlContenedor.Name = "PnlContenedor";
-            this.PnlContenedor.Size = new System.Drawing.Size(955, 636);
-            this.PnlContenedor.TabIndex = 0;
             // 
             // V_Inicio
             // 
@@ -390,6 +468,7 @@
             this.Name = "V_Inicio";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Inicio";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.V_Inicio_FormClosing);
             this.Load += new System.EventHandler(this.Inicio_Load);
             this.pnlPrincipal.ResumeLayout(false);
             this.PnlAtras.ResumeLayout(false);
@@ -413,14 +492,16 @@
         private Guna.UI2.WinForms.Guna2ControlBox guna2ControlBox2;
         private Guna.UI2.WinForms.Guna2ControlBox guna2ControlBox1;
         private Guna.UI2.WinForms.Guna2Panel PnlMenu;
-        private Guna.UI2.WinForms.Guna2GradientButton BtnSeguridad;
-        private Guna.UI2.WinForms.Guna2GradientButton BtnClientes;
-        private Guna.UI2.WinForms.Guna2GradientButton BtnProductos;
         private Guna.UI2.WinForms.Guna2GradientButton guna2GradientButton5;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel1;
         private Guna.UI2.WinForms.Guna2Panel PnlSeparador;
         private Guna.UI2.WinForms.Guna2CirclePictureBox guna2CirclePictureBox1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel PnlContenedor;
+        private Guna.UI2.WinForms.Guna2GradientButton BtnSeguridad;
+        private Guna.UI2.WinForms.Guna2GradientButton BtnClientes;
+        private Guna.UI2.WinForms.Guna2GradientButton BtnProductos;
+        private Guna.UI2.WinForms.Guna2GradientButton guna2GradientButton1;
+        private Guna.UI2.WinForms.Guna2GradientButton guna2GradientButton2;
     }
 }

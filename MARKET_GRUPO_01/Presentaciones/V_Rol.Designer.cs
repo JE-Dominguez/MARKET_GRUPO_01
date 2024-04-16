@@ -38,7 +38,7 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.guna2ControlBox2 = new Guna.UI2.WinForms.Guna2ControlBox();
             this.guna2ControlBox1 = new Guna.UI2.WinForms.Guna2ControlBox();
-            this.label1 = new System.Windows.Forms.Label();
+            this.LblTitulo = new System.Windows.Forms.Label();
             this.BtnDescartar = new Guna.UI2.WinForms.Guna2GradientButton();
             this.BtnGuardar = new Guna.UI2.WinForms.Guna2GradientButton();
             this.FormBr = new Guna.UI2.WinForms.Guna2BorderlessForm(this.components);
@@ -193,15 +193,15 @@
             this.guna2ControlBox1.Size = new System.Drawing.Size(45, 33);
             this.guna2ControlBox1.TabIndex = 58;
             // 
-            // label1
+            // LblTitulo
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Franklin Gothic Medium", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(143, 36);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(128, 26);
-            this.label1.TabIndex = 60;
-            this.label1.Text = "Agregar Rol";
+            this.LblTitulo.AutoSize = true;
+            this.LblTitulo.Font = new System.Drawing.Font("Franklin Gothic Medium", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblTitulo.Location = new System.Drawing.Point(143, 36);
+            this.LblTitulo.Name = "LblTitulo";
+            this.LblTitulo.Size = new System.Drawing.Size(128, 26);
+            this.LblTitulo.TabIndex = 60;
+            this.LblTitulo.Text = "Agregar Rol";
             // 
             // BtnDescartar
             // 
@@ -301,7 +301,7 @@
             this.Controls.Add(this.BtnDescartar);
             this.Controls.Add(this.BtnGuardar);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.LblTitulo);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.TxtDescripcion);
             this.Controls.Add(this.LblNombre);
@@ -329,7 +329,7 @@
         private System.Windows.Forms.Panel panel1;
         private Guna.UI2.WinForms.Guna2ControlBox guna2ControlBox2;
         private Guna.UI2.WinForms.Guna2ControlBox guna2ControlBox1;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label LblTitulo;
         private Guna.UI2.WinForms.Guna2GradientButton BtnDescartar;
         private Guna.UI2.WinForms.Guna2GradientButton BtnGuardar;
         private Guna.UI2.WinForms.Guna2BorderlessForm FormBr;

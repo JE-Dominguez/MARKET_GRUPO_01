@@ -26,7 +26,7 @@ namespace Capa_Datos
         {
             PedidoDetalle.FechaCreacion = DateTime.Now;
             _unitOfWork.Repository<PedidoDetalle>().Agregar(PedidoDetalle);
-            return 1;
+            return _unitOfWork.Guardar();
         }
 
         public int EditarPedidoDetalle(PedidoDetalle pedidoDetalle)
@@ -35,14 +35,19 @@ namespace Capa_Datos
 
             if (PedidoDetalleEnDB != null)
             {
-                PedidoDetalleEnDB.PedidoId = pedidoDetalle.PedidoDetalleId;
+                PedidoDetalleEnDB.PedidoId = pedidoDetalle.PedidoId;
                 PedidoDetalleEnDB.ProductoId = pedidoDetalle.ProductoId;
+                PedidoDetalleEnDB.CodigoProducto = pedidoDetalle.CodigoProducto;
+                PedidoDetalleEnDB.Descripcion = pedidoDetalle.Descripcion;
+                PedidoDetalleEnDB.Cantidad = pedidoDetalle.Cantidad;
                 PedidoDetalleEnDB.Precio = pedidoDetalle.Precio;
                 PedidoDetalleEnDB.Total = pedidoDetalle.Total;
                 PedidoDetalleEnDB.Subtotal = pedidoDetalle.Subtotal;
                 PedidoDetalleEnDB.Descuento = pedidoDetalle.Descuento;
+                PedidoDetalleEnDB.Impuesto = pedidoDetalle.Impuesto;
+                PedidoDetalleEnDB.FechaPedido = pedidoDetalle.FechaPedido;
                 _unitOfWork.Repository<PedidoDetalle>().Editar(PedidoDetalleEnDB);
-                return 1;
+                return _unitOfWork.Guardar();
             }
             return 0;
         }
@@ -53,7 +58,17 @@ namespace Capa_Datos
             if (PedidoDetalleEnDB != null)
             {
                 _unitOfWork.Repository<PedidoDetalle>().Eliminar(PedidoDetalleEnDB);
-                return 1;
+                return _unitOfWork.Guardar();
+            }
+            return 0;
+        }
+        public int EliminarPedidoConDetalle(int PedidoID)
+        {
+            var PedidoDetalleEnDB = _unitOfWork.Repository<PedidoDetalle>().Consulta().FirstOrDefault(r => r.PedidoId == PedidoID);
+            if (PedidoDetalleEnDB != null)
+            {
+                _unitOfWork.Repository<PedidoDetalle>().Eliminar(PedidoDetalleEnDB);
+                return _unitOfWork.Guardar();
             }
             return 0;
         }

@@ -27,7 +27,7 @@ namespace Capa_Datos
             usuario.UsuarioCreador = "JDOMINGUEZ";
             usuario.UsuarioModifica = "JDOMINGUEZ";
             _unitOfWork.Repository<Usuarios>().Agregar(usuario);
-            return 1;
+            return _unitOfWork.Guardar();
         }
 
         public int EditarUsuario(Usuarios usuario)
@@ -45,7 +45,7 @@ namespace Capa_Datos
                 usuarioEnDB.UsuarioModifica = "JMODIFICA";
                 usuarioEnDB.Estado = usuario.Estado;
                 _unitOfWork.Repository<Usuarios>().Editar(usuarioEnDB);
-                return 1;
+                return _unitOfWork.Guardar();
             }
             return 0;
         }
@@ -56,7 +56,7 @@ namespace Capa_Datos
             if (usuarioEnDB != null)
             {
                 _unitOfWork.Repository<Usuarios>().Eliminar(usuarioEnDB);
-                return 1;
+                return _unitOfWork.Guardar();
             }
             return 0;
         }

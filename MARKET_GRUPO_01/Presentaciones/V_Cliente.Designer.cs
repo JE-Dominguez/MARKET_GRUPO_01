@@ -68,7 +68,7 @@
             // TxtApellido
             // 
             this.TxtApellido.BackColor = System.Drawing.Color.Transparent;
-            this.TxtApellido.BorderRadius = 10;
+            this.TxtApellido.BorderRadius = 3;
             this.TxtApellido.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.TxtApellido.DefaultText = "";
             this.TxtApellido.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
@@ -85,7 +85,7 @@
             this.TxtApellido.PasswordChar = '\0';
             this.TxtApellido.PlaceholderText = "Apellidos";
             this.TxtApellido.SelectedText = "";
-            this.TxtApellido.ShadowDecoration.BorderRadius = 10;
+            this.TxtApellido.ShadowDecoration.BorderRadius = 4;
             this.TxtApellido.ShadowDecoration.Depth = 10;
             this.TxtApellido.ShadowDecoration.Enabled = true;
             this.TxtApellido.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(0, 0, 5, 5);
@@ -105,7 +105,7 @@
             // TxtNombre
             // 
             this.TxtNombre.BackColor = System.Drawing.Color.Transparent;
-            this.TxtNombre.BorderRadius = 10;
+            this.TxtNombre.BorderRadius = 3;
             this.TxtNombre.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.TxtNombre.DefaultText = "";
             this.TxtNombre.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
@@ -122,7 +122,7 @@
             this.TxtNombre.PasswordChar = '\0';
             this.TxtNombre.PlaceholderText = "Nombres";
             this.TxtNombre.SelectedText = "";
-            this.TxtNombre.ShadowDecoration.BorderRadius = 10;
+            this.TxtNombre.ShadowDecoration.BorderRadius = 4;
             this.TxtNombre.ShadowDecoration.Depth = 10;
             this.TxtNombre.ShadowDecoration.Enabled = true;
             this.TxtNombre.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(0, 0, 5, 5);
@@ -142,7 +142,7 @@
             // TxtCodigo
             // 
             this.TxtCodigo.BackColor = System.Drawing.Color.Transparent;
-            this.TxtCodigo.BorderRadius = 10;
+            this.TxtCodigo.BorderRadius = 3;
             this.TxtCodigo.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.TxtCodigo.DefaultText = "";
             this.TxtCodigo.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
@@ -159,7 +159,7 @@
             this.TxtCodigo.PasswordChar = '\0';
             this.TxtCodigo.PlaceholderText = "Codigo";
             this.TxtCodigo.SelectedText = "";
-            this.TxtCodigo.ShadowDecoration.BorderRadius = 10;
+            this.TxtCodigo.ShadowDecoration.BorderRadius = 4;
             this.TxtCodigo.ShadowDecoration.Depth = 10;
             this.TxtCodigo.ShadowDecoration.Enabled = true;
             this.TxtCodigo.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(0, 0, 5, 5);
@@ -179,7 +179,7 @@
             // TxtIdCliente
             // 
             this.TxtIdCliente.BackColor = System.Drawing.Color.Transparent;
-            this.TxtIdCliente.BorderRadius = 10;
+            this.TxtIdCliente.BorderRadius = 3;
             this.TxtIdCliente.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.TxtIdCliente.DefaultText = "";
             this.TxtIdCliente.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
@@ -196,7 +196,7 @@
             this.TxtIdCliente.PasswordChar = '\0';
             this.TxtIdCliente.PlaceholderText = "Id Cliente";
             this.TxtIdCliente.SelectedText = "";
-            this.TxtIdCliente.ShadowDecoration.BorderRadius = 10;
+            this.TxtIdCliente.ShadowDecoration.BorderRadius = 4;
             this.TxtIdCliente.ShadowDecoration.Depth = 10;
             this.TxtIdCliente.ShadowDecoration.Enabled = true;
             this.TxtIdCliente.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(0, 0, 5, 5);
@@ -248,7 +248,7 @@
             // CmbGrupoDescuento
             // 
             this.CmbGrupoDescuento.BackColor = System.Drawing.Color.Transparent;
-            this.CmbGrupoDescuento.BorderRadius = 10;
+            this.CmbGrupoDescuento.BorderRadius = 3;
             this.CmbGrupoDescuento.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
             this.CmbGrupoDescuento.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.CmbGrupoDescuento.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
@@ -258,6 +258,7 @@
             this.CmbGrupoDescuento.ItemHeight = 30;
             this.CmbGrupoDescuento.Location = new System.Drawing.Point(50, 257);
             this.CmbGrupoDescuento.Name = "CmbGrupoDescuento";
+            this.CmbGrupoDescuento.ShadowDecoration.BorderRadius = 4;
             this.CmbGrupoDescuento.ShadowDecoration.Depth = 10;
             this.CmbGrupoDescuento.ShadowDecoration.Enabled = true;
             this.CmbGrupoDescuento.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(0, 0, 6, 6);
@@ -277,7 +278,7 @@
             // CmbCondicoonPAGO
             // 
             this.CmbCondicoonPAGO.BackColor = System.Drawing.Color.Transparent;
-            this.CmbCondicoonPAGO.BorderRadius = 10;
+            this.CmbCondicoonPAGO.BorderRadius = 3;
             this.CmbCondicoonPAGO.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
             this.CmbCondicoonPAGO.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.CmbCondicoonPAGO.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
@@ -287,6 +288,7 @@
             this.CmbCondicoonPAGO.ItemHeight = 30;
             this.CmbCondicoonPAGO.Location = new System.Drawing.Point(305, 257);
             this.CmbCondicoonPAGO.Name = "CmbCondicoonPAGO";
+            this.CmbCondicoonPAGO.ShadowDecoration.BorderRadius = 4;
             this.CmbCondicoonPAGO.ShadowDecoration.Depth = 10;
             this.CmbCondicoonPAGO.ShadowDecoration.Enabled = true;
             this.CmbCondicoonPAGO.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(0, 0, 6, 6);
@@ -334,7 +336,7 @@
             // BtnDescartar
             // 
             this.BtnDescartar.BackColor = System.Drawing.Color.Transparent;
-            this.BtnDescartar.BorderRadius = 8;
+            this.BtnDescartar.BorderRadius = 3;
             this.BtnDescartar.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.BtnDescartar.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.BtnDescartar.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
@@ -346,7 +348,7 @@
             this.BtnDescartar.ForeColor = System.Drawing.Color.White;
             this.BtnDescartar.Location = new System.Drawing.Point(139, 374);
             this.BtnDescartar.Name = "BtnDescartar";
-            this.BtnDescartar.ShadowDecoration.BorderRadius = 8;
+            this.BtnDescartar.ShadowDecoration.BorderRadius = 4;
             this.BtnDescartar.ShadowDecoration.Depth = 10;
             this.BtnDescartar.ShadowDecoration.Enabled = true;
             this.BtnDescartar.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(0, 0, 4, 5);
@@ -357,7 +359,7 @@
             // BtnGuardar
             // 
             this.BtnGuardar.BackColor = System.Drawing.Color.Transparent;
-            this.BtnGuardar.BorderRadius = 8;
+            this.BtnGuardar.BorderRadius = 3;
             this.BtnGuardar.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.BtnGuardar.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.BtnGuardar.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
@@ -368,7 +370,7 @@
             this.BtnGuardar.ForeColor = System.Drawing.Color.White;
             this.BtnGuardar.Location = new System.Drawing.Point(295, 374);
             this.BtnGuardar.Name = "BtnGuardar";
-            this.BtnGuardar.ShadowDecoration.BorderRadius = 8;
+            this.BtnGuardar.ShadowDecoration.BorderRadius = 4;
             this.BtnGuardar.ShadowDecoration.Depth = 10;
             this.BtnGuardar.ShadowDecoration.Enabled = true;
             this.BtnGuardar.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(0, 0, 4, 5);

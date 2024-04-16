@@ -24,7 +24,7 @@ namespace Capa_Datos
         {
             unidadMedida.FechaCreacion = DateTime.Now;
             _unitOfWork.Repository<UnidadMedida>().Agregar(unidadMedida);
-            return 1;
+            return _unitOfWork.Guardar();
         }
 
         public int EditarUnidadMedida(UnidadMedida unidadMedida)
@@ -37,7 +37,7 @@ namespace Capa_Datos
                 unidadMedidaEnDB.Descripcion = unidadMedida.Descripcion;
                 unidadMedidaEnDB.Estado = unidadMedida.Estado;
                 _unitOfWork.Repository<UnidadMedida>().Editar(unidadMedidaEnDB);
-                return 1;
+                return _unitOfWork.Guardar();
             }
             return 0;
         }
@@ -48,7 +48,7 @@ namespace Capa_Datos
             if (unidadMedidaEnDB != null)
             {
                 _unitOfWork.Repository<UnidadMedida>().Eliminar(unidadMedidaEnDB);
-                return 1;
+                return _unitOfWork.Guardar();
             }
             return 0;
         }
