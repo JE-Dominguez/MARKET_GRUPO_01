@@ -21,6 +21,13 @@ namespace Capa_Negocio
         {
             return dFacturaDetalle.ObtenerTodosFacturasDetalle();
         }
+        public List<object> ObtenerFacturaDetalleGrid(int id)
+        {
+            var detallesFactura = dFacturaDetalle.ObtenerTodosFacturasDetalle();
+
+            var detallesFiltrados = detallesFactura.Where(u => u.FacturaId == id);
+            return detallesFiltrados.Select(u => new { u.FacturaDetalleId, u.FacturaId, u.Productos.Nombre, u.Precio, u.Descuento, u.Subtotal, u.Total, u.FechaFactura }).ToList<object>();
+        }
 
         public int GuardarFacturaDetalle(FacturaDetalle facturaDetalle)
         {

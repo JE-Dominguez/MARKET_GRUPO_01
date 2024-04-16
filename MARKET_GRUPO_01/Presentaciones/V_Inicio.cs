@@ -28,5 +28,16 @@ namespace MARKET_GRUPO_01.Presentaciones
         {
             AF.Abrir(new V_Productos(this), PnlContenedor, true);
         }
+
+        private void guna2GradientButton1_Click(object sender, EventArgs e)
+        {
+            AF.Abrir(new V_Pedidos(this), PnlContenedor, true);
+        }
+
+        private void V_Inicio_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            AF.CerrarFormActual();
+            Application.Exit(); 
+        }
     }
 }

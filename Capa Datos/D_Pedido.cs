@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Capa_Datos
 {
-    internal class D_Pedido
+    public class D_Pedido
     {
         private readonly UnitOfWork _unitOfWork;
         public D_Pedido()
@@ -16,7 +16,7 @@ namespace Capa_Datos
             _unitOfWork = new UnitOfWork();
         }
 
-        public List<Pedido> ObtenerTodalasFacturas()
+        public List<Pedido> ObtenerTodosLosPedido()
         {
             return _unitOfWork.Repository<Pedido>().Consulta().ToList();
         }
@@ -24,9 +24,8 @@ namespace Capa_Datos
         public int AgregarPedido(Pedido pedido)
         {
             pedido.FechaCreacion = DateTime.Now;
-            pedido.FechaPedido = DateTime.Now;
             _unitOfWork.Repository<Pedido>().Agregar(pedido);
-            return 1;
+            return _unitOfWork.Guardar();
         }
 
         public int EditarPedido(Pedido pedido)
@@ -40,8 +39,10 @@ namespace Capa_Datos
                 PedidoEnDB.Total = pedido.Total;
                 PedidoEnDB.Subtotal = pedido.Subtotal;
                 PedidoEnDB.Descuento = pedido.Descuento;
+                PedidoEnDB.Impuesto = pedido.Impuesto;
+                PedidoEnDB.FechaPedido = pedido.FechaPedido;
                 _unitOfWork.Repository<Pedido>().Editar(PedidoEnDB);
-                return 1;
+                return _unitOfWork.Guardar();
             }
             return 0;
         }
@@ -52,11 +53,15 @@ namespace Capa_Datos
             if (PedidoEnDB != null)
             {
                 _unitOfWork.Repository<Pedido>().Eliminar(PedidoEnDB);
-                return 1;
+                return _unitOfWork.Guardar();
             }
             return 0;
         }
-
-
+        public int CrearPedido(Pedido pedido, List<PedidoDetalle> detalle)
+        {
+            _unitOfWork.Repository<Pedido>().Agregar(pedido);
+            _unitOfWork.Repository<PedidoDetalle>().AgregarRango(detalle);
+            return _unitOfWork.Guardar();
+        }
     }
 }

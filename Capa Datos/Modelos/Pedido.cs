@@ -34,5 +34,8 @@ namespace Capa_Datos.Modelos
         public decimal Subtotal { get; set; }
         [Required]
         public decimal Descuento { get; set; }
+        [Required]
+        public decimal Impuesto { get; set; }
+
     }
 }

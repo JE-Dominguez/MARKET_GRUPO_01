@@ -8,15 +8,19 @@ namespace MARKET_GRUPO_01.Presentaciones
 {
     public partial class V_Cliente : Form
     {
+        int? ID;
         N_Clientes ncliente;
         N_CondicionPago nCondicionPago;
         N_GrupoDescuento nGrupoDescuento;
-        public V_Cliente()
+        public V_Cliente(int? iD = null)
         {
             InitializeComponent();
             ncliente = new N_Clientes();
             nCondicionPago = new N_CondicionPago();
             nGrupoDescuento = new N_GrupoDescuento();
+            ID = iD;
+
+            if (ID != null) { CargarPorID(); }
         }
 
         private void Limpiar()
@@ -29,6 +33,22 @@ namespace MARKET_GRUPO_01.Presentaciones
             CmbGrupoDescuento.SelectedValue = -1;
             ChkActivo.Checked = false;
             errorProvider1.Clear();
+        }
+
+        void CargarPorID()
+        {
+            var cliente = ncliente.ObtenerClientes().FirstOrDefault(g => g.ClienteId == ID);
+            if (cliente != null)
+            {
+                LblTitulo.Text = "Editar cliente";
+                TxtIdCliente.Text = cliente.ClienteId.ToString();
+                TxtNombre.Text = cliente.Nombres;
+                TxtApellido.Text = cliente.Apellidos;
+                TxtCodigo.Text = cliente.Codigo;
+                ChkActivo.Checked = cliente.Estado;
+                CmbGrupoDescuento.SelectedValue = cliente.GrupoDescuentoId;
+                CmbCondicoonPAGO.SelectedValue = cliente.CondicionPagoId;
+            }
         }
 
         void Combos()

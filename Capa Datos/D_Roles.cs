@@ -26,7 +26,7 @@ namespace Capa_Datos
             rol.UsuarioCreador = "JDOMINGUEZ";
             rol.UsuarioModifica = "JDOMINGUEZ";
             _unitOfWork.Repository<Roles>().Agregar(rol);
-            return 1;
+            return _unitOfWork.Guardar();
         }
 
         public int EditarRol(Roles rol)
@@ -38,10 +38,10 @@ namespace Capa_Datos
                 rolEnDB.NombreRol = rol.NombreRol;
                 rolEnDB.Descripcion = rol.Descripcion;
                 rolEnDB.FechaModificacion = DateTime.Now;
-                rolEnDB.UsuarioModifica = rol.UsuarioModifica;
+                rolEnDB.UsuarioModifica = "rol.UsuarioModifica";
                 rolEnDB.Estado = rol.Estado;
                 _unitOfWork.Repository<Roles>().Editar(rolEnDB);
-                return 1;
+                return _unitOfWork.Guardar();
             }
             return 0;
         }
@@ -52,7 +52,7 @@ namespace Capa_Datos
             if (rolEnDB != null)
             {
                 _unitOfWork.Repository<Roles>().Eliminar(rolEnDB);
-                return 1;
+                return _unitOfWork.Guardar();
             }
             return 0;
         }

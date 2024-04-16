@@ -22,6 +22,11 @@ namespace Capa_Negocio
             return dFactura.ObtenerTodalasFacturas();
         }
 
+        public List<object> ObtenerFacturaGrid()
+        {
+            return dFactura.ObtenerTodalasFacturas().Select(u => new { u.FacturaId, Cliente = u.Clientes.Nombres + " " + u.Clientes.Apellidos, u.PedidoId, u.Descuento, u.Subtotal, u.Total, u.FechaFactura, u.Estado }).ToList<object>();
+        }
+
         public int GuardarProducto(Factura factura)
         {
             if (factura.FacturaId == 0)
@@ -37,6 +42,10 @@ namespace Capa_Negocio
         public int EliminarFactura(int FacturaId)
         {
             return dFactura.EliminarFactura(FacturaId);
+        }
+        public int CrearFactura(Factura factura, List<FacturaDetalle> detalle)
+        {
+            return dFactura.CrearPedidoFactura(factura, detalle);
         }
     }
 }

@@ -2,6 +2,7 @@
 using Capa_Datos.Modelos;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 
 namespace Capa_Datos.Core
@@ -34,13 +35,11 @@ namespace Capa_Datos.Core
         public void Editar(T entidad)
         {
             dbcontext.Set<T>();
-            //dbcontext.SaveChanges();
         }
 
         public void Eliminar(T entidad)
         {
             dbcontext.Set<T>().Remove(entidad);
-            //dbcontext.SaveChanges();
         }
     }
 }

@@ -25,7 +25,7 @@ namespace Capa_Negocios
 
         public List<object> ObtenerRolesGrid()
         {
-            var roles = dRol.ObtenerTodosLosRoles().Select(r => new { r.RolID, r.NombreRol, r.Descripcion, r.FechaCreacion, r.UsuarioCreador }).ToList<object>();
+            var roles = dRol.ObtenerTodosLosRoles().Select(r => new { r.RolID, r.NombreRol, r.Descripcion, r.FechaCreacion, r.UsuarioCreador, r.Estado }).ToList<object>();
             return roles;
         }
 

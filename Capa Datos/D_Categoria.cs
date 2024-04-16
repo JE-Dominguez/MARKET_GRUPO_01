@@ -23,7 +23,7 @@ namespace Capa_Datos
         {
             categoria.FechaCreacion = DateTime.Now;
             _unitOfWork.Repository<Categoria>().Agregar(categoria);
-            return 1;
+            return _unitOfWork.Guardar();
         }
 
         public int EditarCategoria(Categoria categoria)
@@ -36,7 +36,7 @@ namespace Capa_Datos
                 categoriaEnDB.Descripcion = categoria.Descripcion;
                 categoriaEnDB.Estado = categoria.Estado;
                 _unitOfWork.Repository<Categoria>().Editar(categoriaEnDB);
-                return 1;
+                return _unitOfWork.Guardar();
             }
             return 0;
         }
@@ -47,7 +47,7 @@ namespace Capa_Datos
             if (categoriaEnDB != null)
             {
                 _unitOfWork.Repository<Categoria>().Eliminar(categoriaEnDB);
-                return 1;
+                return _unitOfWork.Guardar();
             }
             return 0;
         }
