@@ -24,7 +24,7 @@ namespace Capa_Datos
         {
             Factura.FechaCreacion = DateTime.Now;
             _unitOfWork.Repository<Factura>().Agregar(Factura);
-            return 1;
+            return _unitOfWork.Guardar();
         }
         public int EditarFactura(Factura factura)
         {
@@ -37,7 +37,7 @@ namespace Capa_Datos
                 FacturaEnDB.Estado = factura.Estado;
                 FacturaEnDB.Total = factura.Total;
                 _unitOfWork.Repository<Factura>().Editar(FacturaEnDB);
-                return 1;
+                return _unitOfWork.Guardar();
             }
             return 0;
         }
@@ -47,9 +47,15 @@ namespace Capa_Datos
             if (FacturaEnDB != null)
             {
                 _unitOfWork.Repository<Factura>().Eliminar(FacturaEnDB);
-                return 1;
+                return _unitOfWork.Guardar();
             }
             return 0;
+        }
+        public int CrearPedidoFactura(Factura factura, List<FacturaDetalle> detalle)
+        {
+            _unitOfWork.Repository<Factura>().Agregar(factura);
+            _unitOfWork.Repository<FacturaDetalle>().AgregarRango(detalle);
+            return _unitOfWork.Guardar();
         }
     }
 }

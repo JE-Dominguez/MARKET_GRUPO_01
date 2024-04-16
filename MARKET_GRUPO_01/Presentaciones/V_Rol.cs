@@ -1,17 +1,23 @@
-﻿using Capa_Datos.Modelos;
+﻿using Capa_Datos;
+using Capa_Datos.Modelos;
 using Capa_Negocios;
 using System;
+using System.Linq;
 using System.Windows.Forms;
 
 namespace MARKET_GRUPO_01.Presentaciones
 {
     public partial class V_Rol : Form
     {
+        int? ID;
         N_Roles n_roles;
-        public V_Rol()
+        public V_Rol(int? iD = null)
         {
             InitializeComponent();
             n_roles = new N_Roles();
+            ID = iD;
+
+            if (iD != null) { ConsultarPorId(); }
         }
         private void Limpiar()
         {
@@ -19,7 +25,18 @@ namespace MARKET_GRUPO_01.Presentaciones
             TxtDescripcion.Text = "";
             TxtNombre.Text = "";
         }
-
+        private void ConsultarPorId()
+        {
+            var roles = n_roles.ObtenerRoles().FirstOrDefault(g => g.RolID == ID);
+            if (roles != null)
+            {
+                LblTitulo.Text = "Editar Usuario";
+                TxtIdRol.Text = roles.RolID.ToString();
+                TxtNombre.Text = roles.NombreRol;
+                TxtDescripcion.Text = roles.Descripcion;
+                ChkActivo.Checked = roles.Estado;
+            }
+        }
         private void BtnGuardar_Click(object sender, EventArgs e)
         {
             string RolId = TxtIdRol.Text;

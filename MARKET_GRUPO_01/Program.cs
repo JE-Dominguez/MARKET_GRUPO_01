@@ -16,7 +16,7 @@ namespace MARKET_GRUPO_01
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Presentaciones.V_Inicio());
+            Application.Run(new Presentaciones.V_Login());
         }
     }
 }

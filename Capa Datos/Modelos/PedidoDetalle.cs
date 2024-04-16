@@ -28,6 +28,13 @@ namespace Capa_Datos.Modelos
         public virtual Productos Productos { get; set; }
 
         [Required]
+        [MaxLength(100)]
+        public string CodigoProducto { get; set; }
+        [Required]
+        [MaxLength(150)]
+        public string Descripcion { get; set; }
+
+        [Required]
         public DateTime FechaPedido { get; set; }
 
         [Required]
@@ -41,6 +48,11 @@ namespace Capa_Datos.Modelos
 
         [Required]
         public decimal Descuento { get; set; }
+        [Required]
+        public decimal Impuesto { get; set; }
+
+        [Required]
+        public decimal Cantidad { get; set; }
 
     }
 }

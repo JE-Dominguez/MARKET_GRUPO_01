@@ -23,7 +23,7 @@ namespace Capa_Datos
         {
             cliente.FechaCreacion = DateTime.Now;
             _unitOfWork.Repository<Clientes>().Agregar(cliente);
-            return 1;
+            return _unitOfWork.Guardar();
         }
 
         public int EditarCliente(Clientes cliente)
@@ -39,7 +39,7 @@ namespace Capa_Datos
                 clienteEnDB.CondicionPagoId = cliente.CondicionPagoId;
                 clienteEnDB.Estado = cliente.Estado;
                 _unitOfWork.Repository<Clientes>().Editar(clienteEnDB);
-                return 1;
+                return _unitOfWork.Guardar();
             }
             return 0;
         }
@@ -50,7 +50,7 @@ namespace Capa_Datos
             if (clienteEnDB != null)
             {
                 _unitOfWork.Repository<Clientes>().Eliminar(clienteEnDB);
-                return 1;
+                return _unitOfWork.Guardar();
             }
             return 0;
         }

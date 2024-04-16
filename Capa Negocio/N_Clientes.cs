@@ -21,6 +21,21 @@ namespace Capa_Negocio
         {
             return dCliente.ObtenerTodosLosClientes();
         }
+        public List<object> ObtenerClientesCmb()
+        {
+            var clientes = dCliente.ObtenerTodosLosClientes().ToList()
+                                     .Select(prd => new { Cliente = prd.Codigo + " - " + prd.Nombres + " " + prd.Apellidos, prd.ClienteId, prd.grupoDescuento.Porcentaje })
+                                     .ToList<object>();
+            return clientes;
+        }
+        public List<object> ObtenerClientesGrid()
+        {
+            var clientes = dCliente.ObtenerTodosLosClientes().ToList()
+                                     .Select(prd => new { prd.ClienteId, prd.Codigo, Cliente = prd.Nombres + " " + prd.Apellidos, GrupoDescuento = prd.grupoDescuento.Descripcion, CondicionPago = prd.condicionPago.Descripcion, prd.Estado })
+                                     .ToList<object>();
+            return clientes;
+        }
+
 
         public int GuardarCliente(Clientes cliente)
         {

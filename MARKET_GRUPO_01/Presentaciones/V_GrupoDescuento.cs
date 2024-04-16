@@ -1,17 +1,23 @@
-﻿using Capa_Datos.Modelos;
+﻿using Capa_Datos;
+using Capa_Datos.Modelos;
 using Capa_Negocio;
 using System;
+using System.Linq;
 using System.Windows.Forms;
 
 namespace MARKET_GRUPO_01.Presentaciones
 {
     public partial class V_GrupoDescuento : Form
     {
-        N_GrupoDescuento ngrupoDescuento;
-        public V_GrupoDescuento()
+        int? ID;
+        N_GrupoDescuento nGrupoDescuento;
+        public V_GrupoDescuento(int? iD=null)
         {
             InitializeComponent();
-            ngrupoDescuento = new N_GrupoDescuento();
+            nGrupoDescuento = new N_GrupoDescuento();
+            ID = iD;
+
+            if(ID != null) { CargarPorID(); }
         }
         private void Limpiar()
         {
@@ -21,6 +27,19 @@ namespace MARKET_GRUPO_01.Presentaciones
             TxtIdGrupoDescuento.Text = "";
             ChkACTIVO.Checked = false;
             errorProvider1.Clear();
+        }
+        void CargarPorID()
+        {
+            var grupoDescuento = nGrupoDescuento.ObtenerGruposDescuento().FirstOrDefault(g => g.GrupoDescuentoId == ID);
+            if (grupoDescuento != null)
+            {
+                LblTitulo.Text = "Editar Grupo Descuento";
+                TxtIdGrupoDescuento.Text = grupoDescuento.GrupoDescuentoId.ToString();
+                TxtDescipcion.Text = grupoDescuento.Descripcion;
+                TxtCodigo.Text = grupoDescuento.Codigo;
+                TxtPorcentaje.Text = grupoDescuento.Porcentaje.ToString();
+                ChkACTIVO.Checked = grupoDescuento.Estado;
+            }
         }
         void guardar()
         {
@@ -48,7 +67,7 @@ namespace MARKET_GRUPO_01.Presentaciones
             grupoDescuento.Porcentaje = Dias;
             grupoDescuento.Descripcion = Descripcion;
             grupoDescuento.Estado = ChkACTIVO.Checked;
-            ngrupoDescuento.GuardarGrupoDescuento(grupoDescuento);
+            nGrupoDescuento.GuardarGrupoDescuento(grupoDescuento);
 
             Limpiar();
         }

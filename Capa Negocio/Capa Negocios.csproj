@@ -57,6 +57,7 @@
     <Compile Include="N_Factura.cs" />
     <Compile Include="N_FacturaDetalle.cs" />
     <Compile Include="N_GrupoDescuento.cs" />
+    <Compile Include="N_Impuestos.cs" />
     <Compile Include="N_PEDIDO.cs" />
     <Compile Include="N_PedidoDetalle.cs" />
     <Compile Include="N_Productos.cs" />
