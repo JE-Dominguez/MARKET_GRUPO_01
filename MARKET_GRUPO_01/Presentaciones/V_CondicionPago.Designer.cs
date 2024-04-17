@@ -73,6 +73,7 @@
             this.BtnDescartar.Size = new System.Drawing.Size(149, 45);
             this.BtnDescartar.TabIndex = 99;
             this.BtnDescartar.Text = "Descartar";
+            this.BtnDescartar.Click += new System.EventHandler(this.BtnDescartar_Click);
             // 
             // BtnGuardar
             // 
@@ -270,6 +271,7 @@
             this.TxtIdCondicionPAGO.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
             this.TxtIdCondicionPAGO.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.TxtIdCondicionPAGO.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.TxtIdCondicionPAGO.Enabled = false;
             this.TxtIdCondicionPAGO.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.TxtIdCondicionPAGO.Font = new System.Drawing.Font("Franklin Gothic Medium", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TxtIdCondicionPAGO.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));

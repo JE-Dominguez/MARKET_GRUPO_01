@@ -56,6 +56,7 @@ namespace MARKET_GRUPO_01.Presentaciones
             nCategoria.GuardarCategoria(categoria);
 
             Limpiar();
+            this.Close();
         }
         void CargarPorID()
         {
@@ -73,6 +74,12 @@ namespace MARKET_GRUPO_01.Presentaciones
         private void BtnGuardar_Click(object sender, EventArgs e)
         {
             guardar();
+
+        }
+
+        private void BtnDescartar_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

@@ -427,5 +427,10 @@ namespace MARKET_GRUPO_01.Presentaciones
             LblTotalPago.Text = "0";
             LblUnidades.Text = "0";
         }
+
+        private void BtnDescartar_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

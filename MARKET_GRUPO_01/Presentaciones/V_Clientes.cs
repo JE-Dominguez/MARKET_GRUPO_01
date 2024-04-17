@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Diagnostics;
 using System.Linq;
 using System.Web.UI.WebControls;
 using System.Windows.Forms;
@@ -278,6 +279,12 @@ namespace MARKET_GRUPO_01.Presentaciones
         {
             AF.VentanaEmergente(new V_Usuario(D_ParametrosActivos.UsuarioID, true), inicio, true);
             BtnMenu.Checked = false;
+        }
+
+        private void BTNMANUEAL_Click(object sender, EventArgs e)
+        {
+            string Ruta = "Manual de uso Grupo 1.pdf";
+            Process.Start(Ruta);
         }
     }
 }

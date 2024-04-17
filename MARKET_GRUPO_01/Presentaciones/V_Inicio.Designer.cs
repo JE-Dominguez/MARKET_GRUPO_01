@@ -40,23 +40,23 @@
             this.guna2ControlBox3 = new Guna.UI2.WinForms.Guna2ControlBox();
             this.guna2ControlBox2 = new Guna.UI2.WinForms.Guna2ControlBox();
             this.PnlMenu = new Guna.UI2.WinForms.Guna2Panel();
-            this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
-            this.PnlSeparador = new Guna.UI2.WinForms.Guna2Panel();
-            this.label1 = new System.Windows.Forms.Label();
             this.BtnUsuario = new Guna.UI2.WinForms.Guna2GradientButton();
             this.BtnCerrar = new Guna.UI2.WinForms.Guna2GradientButton();
             this.BtnSeguridad = new Guna.UI2.WinForms.Guna2GradientButton();
             this.BtnClientes = new Guna.UI2.WinForms.Guna2GradientButton();
             this.BtnProductos = new Guna.UI2.WinForms.Guna2GradientButton();
             this.guna2GradientButton1 = new Guna.UI2.WinForms.Guna2GradientButton();
-            this.btninicio = new Guna.UI2.WinForms.Guna2GradientButton();
-            this.guna2CirclePictureBox1 = new Guna.UI2.WinForms.Guna2CirclePictureBox();
+            this.btnDashboard = new Guna.UI2.WinForms.Guna2GradientButton();
+            this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
+            this.PnlSeparador = new Guna.UI2.WinForms.Guna2Panel();
+            this.LogoInicio = new Guna.UI2.WinForms.Guna2CirclePictureBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.pnlPrincipal.SuspendLayout();
             this.PnlAtras.SuspendLayout();
             this.PnlSuperior.SuspendLayout();
             this.PnlMenu.SuspendLayout();
             this.PnlSeparador.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.LogoInicio)).BeginInit();
             this.SuspendLayout();
             // 
             // Form
@@ -168,7 +168,7 @@
             this.PnlMenu.Controls.Add(this.BtnClientes);
             this.PnlMenu.Controls.Add(this.BtnProductos);
             this.PnlMenu.Controls.Add(this.guna2GradientButton1);
-            this.PnlMenu.Controls.Add(this.btninicio);
+            this.PnlMenu.Controls.Add(this.btnDashboard);
             this.PnlMenu.Controls.Add(this.guna2Panel1);
             this.PnlMenu.Controls.Add(this.PnlSeparador);
             this.PnlMenu.Dock = System.Windows.Forms.DockStyle.Left;
@@ -178,36 +178,6 @@
             this.PnlMenu.Padding = new System.Windows.Forms.Padding(5);
             this.PnlMenu.Size = new System.Drawing.Size(199, 686);
             this.PnlMenu.TabIndex = 14;
-            // 
-            // guna2Panel1
-            // 
-            this.guna2Panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.guna2Panel1.Location = new System.Drawing.Point(5, 671);
-            this.guna2Panel1.Name = "guna2Panel1";
-            this.guna2Panel1.Size = new System.Drawing.Size(189, 10);
-            this.guna2Panel1.TabIndex = 8;
-            // 
-            // PnlSeparador
-            // 
-            this.PnlSeparador.Controls.Add(this.guna2CirclePictureBox1);
-            this.PnlSeparador.Controls.Add(this.label1);
-            this.PnlSeparador.Dock = System.Windows.Forms.DockStyle.Top;
-            this.PnlSeparador.Location = new System.Drawing.Point(5, 5);
-            this.PnlSeparador.Name = "PnlSeparador";
-            this.PnlSeparador.Size = new System.Drawing.Size(189, 154);
-            this.PnlSeparador.TabIndex = 1;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Arial Black", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label1.Location = new System.Drawing.Point(38, 98);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(113, 30);
-            this.label1.TabIndex = 20;
-            this.label1.Text = "MARKET";
             // 
             // BtnUsuario
             // 
@@ -431,55 +401,85 @@
             this.guna2GradientButton1.TextOffset = new System.Drawing.Point(15, 0);
             this.guna2GradientButton1.Click += new System.EventHandler(this.guna2GradientButton1_Click);
             // 
-            // btninicio
+            // btnDashboard
             // 
-            this.btninicio.BorderRadius = 4;
-            this.btninicio.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
-            this.btninicio.Checked = true;
-            this.btninicio.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(106)))), ((int)(((byte)(127)))), ((int)(((byte)(193)))));
-            this.btninicio.CheckedState.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(106)))), ((int)(((byte)(127)))), ((int)(((byte)(193)))));
-            this.btninicio.CheckedState.FillColor = System.Drawing.Color.Gainsboro;
-            this.btninicio.CheckedState.FillColor2 = System.Drawing.Color.Gainsboro;
-            this.btninicio.CheckedState.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btninicio.CheckedState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(106)))), ((int)(((byte)(127)))), ((int)(((byte)(193)))));
-            this.btninicio.CheckedState.Image = global::MARKET_GRUPO_01.Properties.Resources.icons8_casa_30;
-            this.btninicio.CustomBorderThickness = new System.Windows.Forms.Padding(6, 0, 0, 0);
-            this.btninicio.CustomizableEdges.BottomLeft = false;
-            this.btninicio.CustomizableEdges.TopLeft = false;
-            this.btninicio.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btninicio.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btninicio.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btninicio.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btninicio.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btninicio.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btninicio.FillColor = System.Drawing.Color.White;
-            this.btninicio.FillColor2 = System.Drawing.Color.White;
-            this.btninicio.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.btninicio.ForeColor = System.Drawing.Color.Black;
-            this.btninicio.Image = global::MARKET_GRUPO_01.Properties.Resources.icons8_casa_30__1_;
-            this.btninicio.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btninicio.ImageOffset = new System.Drawing.Point(12, 0);
-            this.btninicio.ImageSize = new System.Drawing.Size(27, 27);
-            this.btninicio.Location = new System.Drawing.Point(5, 159);
-            this.btninicio.Name = "btninicio";
-            this.btninicio.Size = new System.Drawing.Size(189, 45);
-            this.btninicio.TabIndex = 26;
-            this.btninicio.Text = "Inicio";
-            this.btninicio.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btninicio.TextOffset = new System.Drawing.Point(15, 0);
-            this.btninicio.Click += new System.EventHandler(this.btninicio_Click);
+            this.btnDashboard.BorderRadius = 4;
+            this.btnDashboard.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
+            this.btnDashboard.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(106)))), ((int)(((byte)(127)))), ((int)(((byte)(193)))));
+            this.btnDashboard.CheckedState.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(106)))), ((int)(((byte)(127)))), ((int)(((byte)(193)))));
+            this.btnDashboard.CheckedState.FillColor = System.Drawing.Color.Gainsboro;
+            this.btnDashboard.CheckedState.FillColor2 = System.Drawing.Color.Gainsboro;
+            this.btnDashboard.CheckedState.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDashboard.CheckedState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(106)))), ((int)(((byte)(127)))), ((int)(((byte)(193)))));
+            this.btnDashboard.CheckedState.Image = global::MARKET_GRUPO_01.Properties.Resources.icons8_casa_30;
+            this.btnDashboard.CustomBorderThickness = new System.Windows.Forms.Padding(6, 0, 0, 0);
+            this.btnDashboard.CustomizableEdges.BottomLeft = false;
+            this.btnDashboard.CustomizableEdges.TopLeft = false;
+            this.btnDashboard.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnDashboard.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnDashboard.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnDashboard.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnDashboard.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnDashboard.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnDashboard.FillColor = System.Drawing.Color.White;
+            this.btnDashboard.FillColor2 = System.Drawing.Color.White;
+            this.btnDashboard.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.btnDashboard.ForeColor = System.Drawing.Color.Black;
+            this.btnDashboard.Image = global::MARKET_GRUPO_01.Properties.Resources.icons8_casa_30__1_;
+            this.btnDashboard.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnDashboard.ImageOffset = new System.Drawing.Point(12, 0);
+            this.btnDashboard.ImageSize = new System.Drawing.Size(27, 27);
+            this.btnDashboard.Location = new System.Drawing.Point(5, 159);
+            this.btnDashboard.Name = "btnDashboard";
+            this.btnDashboard.Size = new System.Drawing.Size(189, 45);
+            this.btnDashboard.TabIndex = 26;
+            this.btnDashboard.Text = "Dashboard";
+            this.btnDashboard.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnDashboard.TextOffset = new System.Drawing.Point(15, 0);
+            this.btnDashboard.Click += new System.EventHandler(this.btninicio_Click);
             // 
-            // guna2CirclePictureBox1
+            // guna2Panel1
             // 
-            this.guna2CirclePictureBox1.Image = global::MARKET_GRUPO_01.Properties.Resources.ok__3_;
-            this.guna2CirclePictureBox1.ImageRotate = 0F;
-            this.guna2CirclePictureBox1.Location = new System.Drawing.Point(56, 25);
-            this.guna2CirclePictureBox1.Name = "guna2CirclePictureBox1";
-            this.guna2CirclePictureBox1.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            this.guna2CirclePictureBox1.Size = new System.Drawing.Size(70, 70);
-            this.guna2CirclePictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.guna2CirclePictureBox1.TabIndex = 22;
-            this.guna2CirclePictureBox1.TabStop = false;
+            this.guna2Panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.guna2Panel1.Location = new System.Drawing.Point(5, 671);
+            this.guna2Panel1.Name = "guna2Panel1";
+            this.guna2Panel1.Size = new System.Drawing.Size(189, 10);
+            this.guna2Panel1.TabIndex = 8;
+            // 
+            // PnlSeparador
+            // 
+            this.PnlSeparador.Controls.Add(this.LogoInicio);
+            this.PnlSeparador.Controls.Add(this.label1);
+            this.PnlSeparador.Dock = System.Windows.Forms.DockStyle.Top;
+            this.PnlSeparador.Location = new System.Drawing.Point(5, 5);
+            this.PnlSeparador.Name = "PnlSeparador";
+            this.PnlSeparador.Size = new System.Drawing.Size(189, 154);
+            this.PnlSeparador.TabIndex = 1;
+            // 
+            // LogoInicio
+            // 
+            this.LogoInicio.Image = global::MARKET_GRUPO_01.Properties.Resources.ok__3_;
+            this.LogoInicio.ImageRotate = 0F;
+            this.LogoInicio.Location = new System.Drawing.Point(56, 25);
+            this.LogoInicio.Name = "LogoInicio";
+            this.LogoInicio.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            this.LogoInicio.Size = new System.Drawing.Size(70, 70);
+            this.LogoInicio.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.LogoInicio.TabIndex = 22;
+            this.LogoInicio.TabStop = false;
+            this.LogoInicio.Click += new System.EventHandler(this.LogoInicio_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Font = new System.Drawing.Font("Arial Black", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.label1.Location = new System.Drawing.Point(38, 98);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(113, 30);
+            this.label1.TabIndex = 20;
+            this.label1.Text = "MARKET";
             // 
             // V_Inicio
             // 
@@ -501,7 +501,7 @@
             this.PnlMenu.ResumeLayout(false);
             this.PnlSeparador.ResumeLayout(false);
             this.PnlSeparador.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.LogoInicio)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -517,16 +517,16 @@
         private Guna.UI2.WinForms.Guna2Panel PnlMenu;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel1;
         private Guna.UI2.WinForms.Guna2Panel PnlSeparador;
-        private Guna.UI2.WinForms.Guna2CirclePictureBox guna2CirclePictureBox1;
+        private Guna.UI2.WinForms.Guna2CirclePictureBox LogoInicio;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel PnlContenedor;
+        private Guna.UI2.WinForms.Guna2GradientButton btnDashboard;
+        private Guna.UI2.WinForms.Guna2GradientButton BtnCerrar;
+        private Guna.UI2.WinForms.Guna2HtmlLabel LblPARAMETROS;
+        private Guna.UI2.WinForms.Guna2GradientButton BtnUsuario;
         private Guna.UI2.WinForms.Guna2GradientButton BtnSeguridad;
         private Guna.UI2.WinForms.Guna2GradientButton BtnClientes;
         private Guna.UI2.WinForms.Guna2GradientButton BtnProductos;
         private Guna.UI2.WinForms.Guna2GradientButton guna2GradientButton1;
-        private Guna.UI2.WinForms.Guna2GradientButton btninicio;
-        private Guna.UI2.WinForms.Guna2GradientButton BtnCerrar;
-        private Guna.UI2.WinForms.Guna2HtmlLabel LblPARAMETROS;
-        private Guna.UI2.WinForms.Guna2GradientButton BtnUsuario;
     }
 }

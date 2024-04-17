@@ -30,5 +30,9 @@ namespace Capa_Negocio
         public static string Apellido { get; set; }
         public static string Rol { get; set; }
         public static string FechaInicio { get; set; }
+        public static string UsuarioInicio { get; set;}
+        public static string Correo { get; set; }
+        public static string fechamodifica { get; set; }
+
     }
 }

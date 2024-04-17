@@ -42,7 +42,7 @@ namespace MARKET_GRUPO_01.Presentaciones
         }
         private void btninicio_Click(object sender, EventArgs e)
         {
-            AF.Abrir(new V_Principio(), PnlContenedor, true);
+            AF.Abrir(new V_Dashboard(this), PnlContenedor, true);
         }
 
         private void CerrarSesion()
@@ -70,6 +70,11 @@ namespace MARKET_GRUPO_01.Presentaciones
         private void BtnUsuario_Click(object sender, EventArgs e)
         {
             AF.VentanaEmergente(new V_Usuario(D_ParametrosActivos.UsuarioID, true), this, true);
+        }
+
+        private void LogoInicio_Click(object sender, EventArgs e)
+        {
+            AF.Abrir(new V_Principio(), PnlContenedor, true);
         }
     }
 }
