@@ -24,7 +24,7 @@ namespace Capa_Negocios
 
         public List<object> ObtenerUsuariosGrid()
         {
-            var usuarios = dUsuario.ObtenerTodosLosUsuarios().Select(u => new { u.ID, Nombre = u.Nombre + " " + u.Apellido, u.Correo, u.Rol.NombreRol, u.UsuarioCreador, u.FechaCreacion, u.Estado }).ToList<object>();
+            var usuarios = dUsuario.ObtenerTodosLosUsuarios().Select(u => new { UsuarioID = u.ID, Nombre = u.Nombre + " " + u.Apellido, u.Correo, u.Rol.NombreRol, u.UsuarioCreador, u.FechaCreacion, u.Estado }).ToList<object>();
             return usuarios;
         }
 

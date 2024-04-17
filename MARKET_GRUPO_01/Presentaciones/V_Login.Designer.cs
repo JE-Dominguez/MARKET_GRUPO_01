@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.ChkMostrarContraseña = new Guna.UI2.WinForms.Guna2CheckBox();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2ControlBox2 = new Guna.UI2.WinForms.Guna2ControlBox();
             this.guna2ControlBox1 = new Guna.UI2.WinForms.Guna2ControlBox();
@@ -43,25 +42,6 @@
             this.guna2Panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // ChkMostrarContraseña
-            // 
-            this.ChkMostrarContraseña.AutoSize = true;
-            this.ChkMostrarContraseña.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(106)))), ((int)(((byte)(127)))), ((int)(((byte)(193)))));
-            this.ChkMostrarContraseña.CheckedState.BorderRadius = 0;
-            this.ChkMostrarContraseña.CheckedState.BorderThickness = 0;
-            this.ChkMostrarContraseña.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(106)))), ((int)(((byte)(127)))), ((int)(((byte)(193)))));
-            this.ChkMostrarContraseña.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ChkMostrarContraseña.ForeColor = System.Drawing.Color.Gray;
-            this.ChkMostrarContraseña.Location = new System.Drawing.Point(59, 443);
-            this.ChkMostrarContraseña.Name = "ChkMostrarContraseña";
-            this.ChkMostrarContraseña.Size = new System.Drawing.Size(143, 20);
-            this.ChkMostrarContraseña.TabIndex = 13;
-            this.ChkMostrarContraseña.Text = "Mostrar Contraseña";
-            this.ChkMostrarContraseña.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.ChkMostrarContraseña.UncheckedState.BorderRadius = 5;
-            this.ChkMostrarContraseña.UncheckedState.BorderThickness = 0;
-            this.ChkMostrarContraseña.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             // 
             // guna2Panel1
             // 
@@ -139,7 +119,7 @@
             this.TxtContraseña.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.TxtContraseña.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(106)))), ((int)(((byte)(127)))), ((int)(((byte)(193)))));
             this.TxtContraseña.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtContraseña.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(193)))), ((int)(((byte)(200)))), ((int)(((byte)(207)))));
+            this.TxtContraseña.ForeColor = System.Drawing.Color.DimGray;
             this.TxtContraseña.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(106)))), ((int)(((byte)(127)))), ((int)(((byte)(193)))));
             this.TxtContraseña.Location = new System.Drawing.Point(50, 387);
             this.TxtContraseña.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
@@ -166,7 +146,7 @@
             this.TxtUsuario.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.TxtUsuario.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(106)))), ((int)(((byte)(127)))), ((int)(((byte)(193)))));
             this.TxtUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.TxtUsuario.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(193)))), ((int)(((byte)(200)))), ((int)(((byte)(207)))));
+            this.TxtUsuario.ForeColor = System.Drawing.Color.DimGray;
             this.TxtUsuario.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(106)))), ((int)(((byte)(127)))), ((int)(((byte)(193)))));
             this.TxtUsuario.Location = new System.Drawing.Point(50, 328);
             this.TxtUsuario.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
@@ -183,10 +163,10 @@
             // 
             this.guna2CirclePictureBox1.Image = global::MARKET_GRUPO_01.Properties.Resources.ok__3_;
             this.guna2CirclePictureBox1.ImageRotate = 0F;
-            this.guna2CirclePictureBox1.Location = new System.Drawing.Point(111, 53);
+            this.guna2CirclePictureBox1.Location = new System.Drawing.Point(121, 75);
             this.guna2CirclePictureBox1.Name = "guna2CirclePictureBox1";
             this.guna2CirclePictureBox1.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            this.guna2CirclePictureBox1.Size = new System.Drawing.Size(180, 180);
+            this.guna2CirclePictureBox1.Size = new System.Drawing.Size(158, 158);
             this.guna2CirclePictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.guna2CirclePictureBox1.TabIndex = 14;
             this.guna2CirclePictureBox1.TabStop = false;
@@ -219,7 +199,6 @@
             this.ClientSize = new System.Drawing.Size(413, 575);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.guna2CirclePictureBox1);
-            this.Controls.Add(this.ChkMostrarContraseña);
             this.Controls.Add(this.guna2Panel1);
             this.Controls.Add(this.BtnLogin);
             this.Controls.Add(this.TxtContraseña);
@@ -228,6 +207,8 @@
             this.Name = "V_Login";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "V_Login";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.V_Login_FormClosing);
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.V_Login_FormClosed);
             this.guna2Panel1.ResumeLayout(false);
             this.guna2Panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox1)).EndInit();
@@ -237,8 +218,6 @@
         }
 
         #endregion
-
-        private Guna.UI2.WinForms.Guna2CheckBox ChkMostrarContraseña;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel1;
         private Guna.UI2.WinForms.Guna2ControlBox guna2ControlBox2;
         private Guna.UI2.WinForms.Guna2ControlBox guna2ControlBox1;

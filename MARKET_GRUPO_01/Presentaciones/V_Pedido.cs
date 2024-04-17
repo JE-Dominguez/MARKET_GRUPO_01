@@ -306,6 +306,7 @@ namespace MARKET_GRUPO_01.Presentaciones
                 {
                     DataGridViewRow filaEliminar = DgvDatos.Rows[e.RowIndex];
                     DgvDatos.Rows.Remove(filaEliminar);
+                    ActualizarTotales();
                 }
             }
         }

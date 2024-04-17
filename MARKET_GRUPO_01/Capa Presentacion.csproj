@@ -75,6 +75,12 @@
     <Compile Include="Presentaciones\V_Factura.Designer.cs">
       <DependentUpon>V_Factura.cs</DependentUpon>
     </Compile>
+    <Compile Include="Presentaciones\V_Impuesto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentaciones\V_Impuesto.Designer.cs">
+      <DependentUpon>V_Impuesto.cs</DependentUpon>
+    </Compile>
     <Compile Include="Presentaciones\V_Login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -135,6 +141,12 @@
     <Compile Include="Presentaciones\V_Pedido.Designer.cs">
       <DependentUpon>V_Pedido.cs</DependentUpon>
     </Compile>
+    <Compile Include="Presentaciones\V_Principio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentaciones\V_Principio.Designer.cs">
+      <DependentUpon>V_Principio.cs</DependentUpon>
+    </Compile>
     <Compile Include="Presentaciones\V_Producto.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -179,6 +191,9 @@
     <EmbeddedResource Include="Presentaciones\V_Factura.resx">
       <DependentUpon>V_Factura.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Presentaciones\V_Impuesto.resx">
+      <DependentUpon>V_Impuesto.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Presentaciones\V_Login.resx">
       <DependentUpon>V_Login.cs</DependentUpon>
     </EmbeddedResource>
@@ -208,6 +223,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Presentaciones\V_Pedido.resx">
       <DependentUpon>V_Pedido.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentaciones\V_Principio.resx">
+      <DependentUpon>V_Principio.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Presentaciones\V_Producto.resx">
       <DependentUpon>V_Producto.cs</DependentUpon>
@@ -347,6 +365,18 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\icons8-caja-de-mano-30.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-enter-30 %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-enter-30.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-usuario-30.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-usuario-30 %281%29.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
