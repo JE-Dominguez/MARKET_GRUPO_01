@@ -71,6 +71,7 @@ namespace MARKET_GRUPO_01.Presentaciones
             nProductos.GuardarProducto(producto);
 
             Limpiar();
+            this.Close();
         }
         void Combos()
         {
@@ -141,6 +142,11 @@ namespace MARKET_GRUPO_01.Presentaciones
         private void V_Producto_Load(object sender, EventArgs e)
         {
             Combos();
+        }
+
+        private void BtnDescartar_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

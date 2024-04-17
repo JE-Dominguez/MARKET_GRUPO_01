@@ -75,6 +75,7 @@ namespace MARKET_GRUPO_01.Presentaciones
 
             nPedido.GuardarPedido(pedido);
             LimpiarCampos();
+            this.Close();
         }
 
         private void LimpiarCampos()
@@ -97,6 +98,11 @@ namespace MARKET_GRUPO_01.Presentaciones
         private void V_Detalles_Load(object sender, EventArgs e)
         {
             CargarComboClientes();
+        }
+
+        private void BtnDescartar_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

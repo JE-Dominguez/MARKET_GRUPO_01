@@ -373,6 +373,7 @@
             this.BtnDescartar.Size = new System.Drawing.Size(149, 45);
             this.BtnDescartar.TabIndex = 94;
             this.BtnDescartar.Text = "Descartar";
+            this.BtnDescartar.Click += new System.EventHandler(this.BtnDescartar_Click);
             // 
             // BtnGuardar
             // 

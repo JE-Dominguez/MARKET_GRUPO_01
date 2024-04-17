@@ -22,8 +22,26 @@ namespace MARKET_GRUPO_01.Presentaciones
         private void Limpiar()
         {
             TxtIdRol.Text = "";
-            TxtDescripcion.Text = "";
             TxtNombre.Text = "";
+            TxtDescripcion.Text = "";
+            ChkActivo.Checked = false;
+
+            ChkPedidos.Checked = false;
+            ChkDetalles.Checked = false;
+            ChkFacturas.Checked = false;
+            ChkDetallesFac.Checked = false;
+
+            ChkProductos.Checked = false;
+            ChkCategorias.Checked = false;
+            ChkUnidadMedida.Checked = false;
+            ChkImpuesto.Checked = false;
+
+            ChkClientes.Checked = false;
+            ChkGrupoDescuentos.Checked = false;
+            ChkCondicionPago.Checked = false;
+
+            ChkUsuarios.Checked = false;
+            ChkRoles.Checked = false;
         }
         private void ConsultarPorId()
         {
@@ -35,8 +53,27 @@ namespace MARKET_GRUPO_01.Presentaciones
                 TxtNombre.Text = roles.NombreRol;
                 TxtDescripcion.Text = roles.Descripcion;
                 ChkActivo.Checked = roles.Estado;
+
+                // Configuración de las casillas de verificación
+                ChkPedidos.Checked = roles.p_pedidos;
+                ChkDetalles.Checked = roles.p_detalles;
+                ChkFacturas.Checked = roles.p_facturas;
+                ChkDetallesFac.Checked = roles.p_detallesFac;
+
+                ChkProductos.Checked = roles.pr_productos;
+                ChkCategorias.Checked = roles.pr_categorias;
+                ChkUnidadMedida.Checked = roles.pr_unidadMedida;
+                ChkImpuesto.Checked = roles.pr_impuesto;
+
+                ChkClientes.Checked = roles.cl_clientes;
+                ChkGrupoDescuentos.Checked = roles.cl_grupodescuentos;
+                ChkCondicionPago.Checked = roles.cl_condicionpago;
+
+                ChkUsuarios.Checked = roles.seg_usuarios;
+                ChkRoles.Checked = roles.seg_roles;
             }
         }
+
         private void BtnGuardar_Click(object sender, EventArgs e)
         {
             string RolId = TxtIdRol.Text;
@@ -54,16 +91,41 @@ namespace MARKET_GRUPO_01.Presentaciones
             }
 
             var roles = new Roles();
-            if (int.Parse(RolId) != 0)
+            if (int.TryParse(RolId, out int id) && id != 0)
             {
-                roles.RolID = int.Parse(RolId);
+                roles.RolID = id;
             }
             roles.NombreRol = Nombre;
             roles.Descripcion = Descripcion;
             roles.Estado = ChkActivo.Checked;
+
+            // Configuración de las propiedades booleanas
+            roles.p_pedidos = ChkPedidos.Checked;
+            roles.p_detalles = ChkDetalles.Checked;
+            roles.p_facturas = ChkFacturas.Checked;
+            roles.p_detallesFac = ChkDetallesFac.Checked;
+
+            roles.pr_productos = ChkProductos.Checked;
+            roles.pr_categorias = ChkCategorias.Checked;
+            roles.pr_unidadMedida = ChkUnidadMedida.Checked;
+            roles.pr_impuesto = ChkImpuesto.Checked;
+
+            roles.cl_clientes = ChkClientes.Checked;
+            roles.cl_grupodescuentos = ChkGrupoDescuentos.Checked;
+            roles.cl_condicionpago = ChkCondicionPago.Checked;
+
+            roles.seg_usuarios = ChkUsuarios.Checked;
+            roles.seg_roles = ChkRoles.Checked;
+
             n_roles.GuardarRol(roles);
 
             Limpiar();
+            this.Close();
+        }
+
+        private void BtnDescartar_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
