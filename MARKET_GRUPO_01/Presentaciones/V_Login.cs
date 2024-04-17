@@ -30,7 +30,10 @@ namespace MARKET_GRUPO_01.Presentaciones
                 D_ParametrosActivos.Usuario = usuario.Usuario;
                 D_ParametrosActivos.Nombre = usuario.Nombre;
                 D_ParametrosActivos.Apellido = usuario.Apellido;
+                D_ParametrosActivos.Correo = usuario.Correo;
+                D_ParametrosActivos.UsuarioInicio = usuario.FechaCreacion.ToString("dd MMMM, yyyy");
                 D_ParametrosActivos.Rol = usuario.Rol.NombreRol;
+                D_ParametrosActivos.fechamodifica = usuario.FechaModificacion.ToString("dd MMMM, yyyy");
                 D_ParametrosActivos.FechaInicio = DateTime.Now.ToString("dd MMMM, yyyy");
 
                 // Asignar valores de los permisos de roles del usuario

@@ -64,6 +64,7 @@ namespace MARKET_GRUPO_01.Presentaciones
 
             nImpuestos.GuardarImpuestos(impuesto);
             Limpiar();
+            this.Close();
         }
         private void ConsultarPorId()
         {

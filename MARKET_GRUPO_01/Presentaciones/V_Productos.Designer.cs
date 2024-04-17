@@ -45,7 +45,7 @@
             this.guna2Panel3 = new Guna.UI2.WinForms.Guna2Panel();
             this.PnlSubMenu = new System.Windows.Forms.Panel();
             this.btncerrar = new Guna.UI2.WinForms.Guna2Button();
-            this.guna2Button2 = new Guna.UI2.WinForms.Guna2Button();
+            this.BTNMANUEAL = new Guna.UI2.WinForms.Guna2Button();
             this.BtnMyUsuario = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Panel4 = new Guna.UI2.WinForms.Guna2Panel();
             this.DgvDatos = new Guna.UI2.WinForms.Guna2DataGridView();
@@ -316,7 +316,7 @@
             this.PnlSubMenu.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.PnlSubMenu.BackColor = System.Drawing.Color.WhiteSmoke;
             this.PnlSubMenu.Controls.Add(this.btncerrar);
-            this.PnlSubMenu.Controls.Add(this.guna2Button2);
+            this.PnlSubMenu.Controls.Add(this.BTNMANUEAL);
             this.PnlSubMenu.Controls.Add(this.BtnMyUsuario);
             this.PnlSubMenu.Location = new System.Drawing.Point(726, 0);
             this.PnlSubMenu.Name = "PnlSubMenu";
@@ -348,29 +348,30 @@
             this.btncerrar.TextTransform = Guna.UI2.WinForms.Enums.TextTransform.UpperCase;
             this.btncerrar.Click += new System.EventHandler(this.btncerrar_Click);
             // 
-            // guna2Button2
+            // BTNMANUEAL
             // 
-            this.guna2Button2.CheckedState.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(106)))), ((int)(((byte)(127)))), ((int)(((byte)(193)))));
-            this.guna2Button2.CheckedState.FillColor = System.Drawing.Color.Transparent;
-            this.guna2Button2.CheckedState.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2Button2.CheckedState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(106)))), ((int)(((byte)(127)))), ((int)(((byte)(193)))));
-            this.guna2Button2.CustomBorderThickness = new System.Windows.Forms.Padding(0, 0, 0, 4);
-            this.guna2Button2.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button2.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button2.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2Button2.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.guna2Button2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.guna2Button2.FillColor = System.Drawing.Color.Transparent;
-            this.guna2Button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2Button2.ForeColor = System.Drawing.Color.Black;
-            this.guna2Button2.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.guna2Button2.ImageOffset = new System.Drawing.Point(10, 0);
-            this.guna2Button2.Location = new System.Drawing.Point(0, 34);
-            this.guna2Button2.Name = "guna2Button2";
-            this.guna2Button2.Size = new System.Drawing.Size(257, 34);
-            this.guna2Button2.TabIndex = 9;
-            this.guna2Button2.Text = "Manual";
-            this.guna2Button2.TextTransform = Guna.UI2.WinForms.Enums.TextTransform.UpperCase;
+            this.BTNMANUEAL.CheckedState.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(106)))), ((int)(((byte)(127)))), ((int)(((byte)(193)))));
+            this.BTNMANUEAL.CheckedState.FillColor = System.Drawing.Color.Transparent;
+            this.BTNMANUEAL.CheckedState.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BTNMANUEAL.CheckedState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(106)))), ((int)(((byte)(127)))), ((int)(((byte)(193)))));
+            this.BTNMANUEAL.CustomBorderThickness = new System.Windows.Forms.Padding(0, 0, 0, 4);
+            this.BTNMANUEAL.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.BTNMANUEAL.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.BTNMANUEAL.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.BTNMANUEAL.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.BTNMANUEAL.Dock = System.Windows.Forms.DockStyle.Top;
+            this.BTNMANUEAL.FillColor = System.Drawing.Color.Transparent;
+            this.BTNMANUEAL.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BTNMANUEAL.ForeColor = System.Drawing.Color.Black;
+            this.BTNMANUEAL.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.BTNMANUEAL.ImageOffset = new System.Drawing.Point(10, 0);
+            this.BTNMANUEAL.Location = new System.Drawing.Point(0, 34);
+            this.BTNMANUEAL.Name = "BTNMANUEAL";
+            this.BTNMANUEAL.Size = new System.Drawing.Size(257, 34);
+            this.BTNMANUEAL.TabIndex = 9;
+            this.BTNMANUEAL.Text = "Manual";
+            this.BTNMANUEAL.TextTransform = Guna.UI2.WinForms.Enums.TextTransform.UpperCase;
+            this.BTNMANUEAL.Click += new System.EventHandler(this.BTNMANUEAL_Click);
             // 
             // BtnMyUsuario
             // 
@@ -686,7 +687,7 @@
         private Guna.UI2.WinForms.Guna2Button TxtImpuestos;
         private System.Windows.Forms.Panel PnlSubMenu;
         private Guna.UI2.WinForms.Guna2Button btncerrar;
-        private Guna.UI2.WinForms.Guna2Button guna2Button2;
+        private Guna.UI2.WinForms.Guna2Button BTNMANUEAL;
         private Guna.UI2.WinForms.Guna2Button BtnMyUsuario;
     }
 }

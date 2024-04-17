@@ -120,7 +120,12 @@ namespace MARKET_GRUPO_01.Presentaciones
             n_roles.GuardarRol(roles);
 
             Limpiar();
+            this.Close();
+        }
 
+        private void BtnDescartar_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

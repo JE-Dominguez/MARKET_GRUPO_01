@@ -271,6 +271,7 @@ namespace MARKET_GRUPO_01.Presentaciones
         private void BtnDescartar_Click(object sender, EventArgs e)
         {
             TxtCantidad_TextChanged(sender, e);
+            this.Close();
         }
     }
 }

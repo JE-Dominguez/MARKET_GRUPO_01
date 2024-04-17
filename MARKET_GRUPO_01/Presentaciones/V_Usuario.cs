@@ -12,7 +12,7 @@ namespace MARKET_GRUPO_01.Presentaciones
         public bool? activo;
         N_Usuarios n_usuario;
         N_Roles n_roles;
-        public V_Usuario(int? id = null, bool? activo = null)
+        public V_Usuario(int? id = null, bool? activo = false)
         {
             InitializeComponent();
             n_usuario = new N_Usuarios();
@@ -81,6 +81,7 @@ namespace MARKET_GRUPO_01.Presentaciones
             n_usuario.GuardarUsuario(usuarios);
 
             Limpiar();
+            this.Close();
         }
         void CmbRoles()
         {
@@ -124,6 +125,11 @@ namespace MARKET_GRUPO_01.Presentaciones
         private void V_Usuario_Load(object sender, EventArgs e)
         {
             CmbRoles();
+        }
+
+        private void BtnDescartar_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

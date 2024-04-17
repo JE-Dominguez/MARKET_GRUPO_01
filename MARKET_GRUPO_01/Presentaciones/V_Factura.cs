@@ -140,5 +140,10 @@ namespace MARKET_GRUPO_01.Presentaciones
         {
             Guardar();
         }
+
+        private void BtnDescartar_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }
