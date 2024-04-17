@@ -7,12 +7,14 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Deployment.Internal;
+using System.Diagnostics;
 using System.Diagnostics.Eventing.Reader;
 using System.Drawing;
 using System.Linq;
 using System.Runtime.Remoting.Contexts;
 using System.Text;
 using System.Threading.Tasks;
+using System.Web.UI.WebControls;
 using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 
@@ -20,6 +22,7 @@ namespace MARKET_GRUPO_01.Presentaciones
 {
     public partial class V_Pedidos : Form
     {
+        private V_Login login = null;
         private readonly AbrirForm AF;
         private readonly V_Inicio inicio;
         private readonly N_PEDIDO nPedido;
@@ -50,6 +53,8 @@ namespace MARKET_GRUPO_01.Presentaciones
 
         private void V_Pedidos_Load(object sender, EventArgs e)
         {
+            LblFecha.Text = DateTime.Now.ToString("dd MMMM, yyyy");
+            PnlSubMenu.Visible = false;
             Recargar();
             cargarComboClinetes();
             CargarFacturas();
@@ -211,18 +216,17 @@ namespace MARKET_GRUPO_01.Presentaciones
             int idnulo = 0;
             int id = Convert.ToInt32(CmbPedido.SelectedValue);
             if (BtnPedidos.Checked)
-                AF.VentanaEmergente(new V_Pedido(), inicio, true);
+                AF.VentanaEmergente(new V_Pedido(), inicio, D_ParametrosActivos.p_pedidos);
             else if (BtnPedidosDet.Checked)
-                AF.VentanaEmergente(new V_Detalle(idnulo, id), inicio, true);
+                AF.VentanaEmergente(new V_Detalle(idnulo, id), inicio, D_ParametrosActivos.p_detalles);
             else if (BtnFactura.Checked)
-                AF.VentanaEmergente(new V_Factura(), inicio, true);
+                AF.VentanaEmergente(new V_Factura(), inicio, D_ParametrosActivos.p_facturas);
         }
         private void cargarComboClinetes()
         {
             try
             {
                 N_PEDIDO nPedido = new N_PEDIDO();
-                CmbPedido.SelectedValue = -1;
                 CmbPedido.DataSource = nPedido.ObtenerPedidosGrid();
                 CmbPedido.DisplayMember = "PedidoId";
                 CmbPedido.ValueMember = "PedidoId";
@@ -234,7 +238,6 @@ namespace MARKET_GRUPO_01.Presentaciones
             try
             {
                 N_Factura nFactura = new N_Factura();
-                CmbFcturas.SelectedValue = -1;
                 CmbFcturas.DataSource = nFactura.ObtenerFactura();
                 CmbFcturas.DisplayMember = "FacturaId";
                 CmbFcturas.ValueMember = "FacturaId";
@@ -259,12 +262,16 @@ namespace MARKET_GRUPO_01.Presentaciones
                     {
                         try
                         {
-                            if (BtnPedidos.Checked)
+                            if (BtnPedidos.Checked && D_ParametrosActivos.p_pedidos == true)
                                 EliminarPedido(id);
-                            else if (BtnPedidosDet.Checked)
+                            else if (BtnPedidosDet.Checked && D_ParametrosActivos.p_detalles == true)
                                 Actualizar(id);
-                            else if (BtnFactura.Checked)
+                            else if (BtnFactura.Checked = D_ParametrosActivos.p_facturas == true)
                                 EliminarFactura(id);
+                            else
+                            {
+                                MessageBox.Show("Permisos Insuficientes", "Acceso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            }
 
                         }
                         catch (Exception ex) { MessageBox.Show("Debe eliminar cualquier registros relacionado con este antes de eliminarlo." + ex.Message, "Eliminando Pedido", MessageBoxButtons.OK, MessageBoxIcon.Information); }
@@ -374,6 +381,81 @@ namespace MARKET_GRUPO_01.Presentaciones
         private void CmbFcturas_SelectedIndexChanged(object sender, EventArgs e)
         {
             Recargar();
+        }
+
+        private void TxtFiltro_TextChanged(object sender, EventArgs e)
+        {
+            filtro();
+        }
+        void filtro()
+        {
+            string filtro = TxtFiltro.Text.ToLower();
+
+            if (DgvDatos.DataSource is List<object> dataSource)
+            {
+                if (string.IsNullOrWhiteSpace(filtro))
+                {
+                    Recargar();
+                }
+                else
+                {
+                    // Filtrar la lista de objetos según el filtro ingresado
+                    var resultadoFiltro = dataSource.Where(item =>
+                    {
+                        var properties = item.GetType().GetProperties();
+                        foreach (var property in properties)
+                        {
+                            var value = property.GetValue(item);
+                            if (value != null && value.ToString().ToLower().Contains(filtro))
+                            {
+                                return true;
+                            }
+                        }
+                        return false;
+                    }).ToList();
+                    DgvDatos.DataSource = resultadoFiltro;
+                }
+            }
+        }
+
+        private void BtnMenu_Click(object sender, EventArgs e)
+        {
+            if (BtnMenu.Checked == false)
+            {
+                PnlSubMenu.Visible = false;
+            }
+            else
+            {
+                PnlSubMenu.Visible = true;
+            }
+        }
+
+        private void btncerrAR_Click(object sender, EventArgs e)
+        {
+            DialogResult resultado = MessageBox.Show("¿Estás seguro de que deseas cerrar sesión?", "Cerrar sesión", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            if (resultado == DialogResult.Yes)
+            {
+                if (login == null || login.IsDisposed)
+                {
+                    login = new V_Login();
+                }
+
+                login.Show();
+                inicio.Close();
+            }
+        }
+
+        private void BtnMyUsuario_Click(object sender, EventArgs e)
+        {
+            AF.VentanaEmergente(new V_Usuario(D_ParametrosActivos.UsuarioID, true), inicio, true);
+            BtnMenu.Checked = false;
+        }
+
+        private void BtnManueal_Click(object sender, EventArgs e)
+        {
+            string Ruta = "Manual de uso Grupo 1.pdf";
+            Process.Start(Ruta);
         }
     }
 }

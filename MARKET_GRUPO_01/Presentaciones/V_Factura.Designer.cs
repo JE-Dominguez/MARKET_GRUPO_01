@@ -103,6 +103,7 @@
             this.BtnDescartar.Size = new System.Drawing.Size(159, 45);
             this.BtnDescartar.TabIndex = 148;
             this.BtnDescartar.Text = "Descartar";
+            this.BtnDescartar.Click += new System.EventHandler(this.BtnDescartar_Click);
             // 
             // LblTotalPago
             // 
@@ -249,7 +250,7 @@
             this.DgvDatos.ThemeStyle.RowsStyle.Height = 30;
             this.DgvDatos.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.DgvDatos.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-             // 
+            // 
             // txtIDcliente
             // 
             this.txtIDcliente.BackColor = System.Drawing.Color.Transparent;

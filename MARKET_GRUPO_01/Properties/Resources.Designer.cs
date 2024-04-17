@@ -213,6 +213,36 @@ namespace MARKET_GRUPO_01.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_enter_30 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-enter-30", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_enter_30__1_ {
+            get {
+                object obj = ResourceManager.GetObject("icons8-enter-30 (1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_hand_box_100 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-hand-box-100", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_menu_vertical_30 {
             get {
                 object obj = ResourceManager.GetObject("icons8-menu-vertical-30", resourceCulture);
@@ -223,9 +253,69 @@ namespace MARKET_GRUPO_01.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_people_100 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-people-100", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_recargar_30 {
             get {
                 object obj = ResourceManager.GetObject("icons8-recargar-30", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_usuario_100 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-usuario-100", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_usuario_100__1_ {
+            get {
+                object obj = ResourceManager.GetObject("icons8-usuario-100 (1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_usuario_100__1_1 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-usuario-100 (1)1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_usuario_30 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-usuario-30", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_usuario_30__1_ {
+            get {
+                object obj = ResourceManager.GetObject("icons8-usuario-30 (1)", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

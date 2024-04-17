@@ -32,32 +32,33 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.guna2Panel3 = new Guna.UI2.WinForms.Guna2Panel();
+            this.PnlSubMenu = new System.Windows.Forms.Panel();
+            this.BTNCERRAR = new Guna.UI2.WinForms.Guna2Button();
+            this.BTNMANUEAL = new Guna.UI2.WinForms.Guna2Button();
+            this.BtnMyUsuario = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Panel4 = new Guna.UI2.WinForms.Guna2Panel();
             this.DgvDatos = new Guna.UI2.WinForms.Guna2DataGridView();
             this.Selecion = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.PnlMidTop = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2TileButton1 = new Guna.UI2.WinForms.Guna2TileButton();
-            this.guna2CircleButton5 = new Guna.UI2.WinForms.Guna2CircleButton();
-            this.guna2HtmlLabel4 = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.guna2HtmlLabel5 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2CircleButton6 = new Guna.UI2.WinForms.Guna2CircleButton();
-            this.guna2HtmlLabel2 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.LblFecha = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2HtmlLabel3 = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.BtnNuevo = new Guna.UI2.WinForms.Guna2GradientButton();
             this.TxtFiltro = new Guna.UI2.WinForms.Guna2TextBox();
             this.LblTituloTab = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.BtnNuevo = new Guna.UI2.WinForms.Guna2GradientButton();
             this.panel1 = new System.Windows.Forms.Panel();
             this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
             this.BtnCondicionPago = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
             this.BtnEditar = new Guna.UI2.WinForms.Guna2CircleButton();
             this.BtnEiminar = new Guna.UI2.WinForms.Guna2CircleButton();
-            this.BtnDescargar = new Guna.UI2.WinForms.Guna2CircleButton();
             this.BtnRecargar = new Guna.UI2.WinForms.Guna2CircleButton();
             this.BtnMenu = new Guna.UI2.WinForms.Guna2CircleButton();
             this.BtnGrupoDescuento = new Guna.UI2.WinForms.Guna2Button();
             this.BtnClientes = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Panel3.SuspendLayout();
+            this.PnlSubMenu.SuspendLayout();
             this.guna2Panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DgvDatos)).BeginInit();
             this.PnlMidTop.SuspendLayout();
@@ -67,6 +68,7 @@
             // 
             // guna2Panel3
             // 
+            this.guna2Panel3.Controls.Add(this.PnlSubMenu);
             this.guna2Panel3.Controls.Add(this.guna2Panel4);
             this.guna2Panel3.Controls.Add(this.PnlMidTop);
             this.guna2Panel3.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -75,6 +77,93 @@
             this.guna2Panel3.Padding = new System.Windows.Forms.Padding(15);
             this.guna2Panel3.Size = new System.Drawing.Size(983, 561);
             this.guna2Panel3.TabIndex = 15;
+            // 
+            // PnlSubMenu
+            // 
+            this.PnlSubMenu.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.PnlSubMenu.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.PnlSubMenu.Controls.Add(this.BTNCERRAR);
+            this.PnlSubMenu.Controls.Add(this.BTNMANUEAL);
+            this.PnlSubMenu.Controls.Add(this.BtnMyUsuario);
+            this.PnlSubMenu.Location = new System.Drawing.Point(726, 2);
+            this.PnlSubMenu.Name = "PnlSubMenu";
+            this.PnlSubMenu.Size = new System.Drawing.Size(257, 106);
+            this.PnlSubMenu.TabIndex = 50;
+            // 
+            // BTNCERRAR
+            // 
+            this.BTNCERRAR.CheckedState.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(106)))), ((int)(((byte)(127)))), ((int)(((byte)(193)))));
+            this.BTNCERRAR.CheckedState.FillColor = System.Drawing.Color.Transparent;
+            this.BTNCERRAR.CheckedState.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BTNCERRAR.CheckedState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(106)))), ((int)(((byte)(127)))), ((int)(((byte)(193)))));
+            this.BTNCERRAR.CustomBorderThickness = new System.Windows.Forms.Padding(0, 0, 0, 4);
+            this.BTNCERRAR.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.BTNCERRAR.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.BTNCERRAR.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.BTNCERRAR.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.BTNCERRAR.Dock = System.Windows.Forms.DockStyle.Top;
+            this.BTNCERRAR.FillColor = System.Drawing.Color.Transparent;
+            this.BTNCERRAR.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BTNCERRAR.ForeColor = System.Drawing.Color.Black;
+            this.BTNCERRAR.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.BTNCERRAR.ImageOffset = new System.Drawing.Point(10, 0);
+            this.BTNCERRAR.Location = new System.Drawing.Point(0, 68);
+            this.BTNCERRAR.Name = "BTNCERRAR";
+            this.BTNCERRAR.Size = new System.Drawing.Size(257, 34);
+            this.BTNCERRAR.TabIndex = 10;
+            this.BTNCERRAR.Text = "Cerrar Sesion";
+            this.BTNCERRAR.TextTransform = Guna.UI2.WinForms.Enums.TextTransform.UpperCase;
+            this.BTNCERRAR.Click += new System.EventHandler(this.BTNCERRAR_Click);
+            // 
+            // BTNMANUEAL
+            // 
+            this.BTNMANUEAL.CheckedState.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(106)))), ((int)(((byte)(127)))), ((int)(((byte)(193)))));
+            this.BTNMANUEAL.CheckedState.FillColor = System.Drawing.Color.Transparent;
+            this.BTNMANUEAL.CheckedState.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BTNMANUEAL.CheckedState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(106)))), ((int)(((byte)(127)))), ((int)(((byte)(193)))));
+            this.BTNMANUEAL.CustomBorderThickness = new System.Windows.Forms.Padding(0, 0, 0, 4);
+            this.BTNMANUEAL.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.BTNMANUEAL.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.BTNMANUEAL.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.BTNMANUEAL.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.BTNMANUEAL.Dock = System.Windows.Forms.DockStyle.Top;
+            this.BTNMANUEAL.FillColor = System.Drawing.Color.Transparent;
+            this.BTNMANUEAL.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BTNMANUEAL.ForeColor = System.Drawing.Color.Black;
+            this.BTNMANUEAL.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.BTNMANUEAL.ImageOffset = new System.Drawing.Point(10, 0);
+            this.BTNMANUEAL.Location = new System.Drawing.Point(0, 34);
+            this.BTNMANUEAL.Name = "BTNMANUEAL";
+            this.BTNMANUEAL.Size = new System.Drawing.Size(257, 34);
+            this.BTNMANUEAL.TabIndex = 9;
+            this.BTNMANUEAL.Text = "Manual";
+            this.BTNMANUEAL.TextTransform = Guna.UI2.WinForms.Enums.TextTransform.UpperCase;
+            this.BTNMANUEAL.Click += new System.EventHandler(this.BTNMANUEAL_Click);
+            // 
+            // BtnMyUsuario
+            // 
+            this.BtnMyUsuario.CheckedState.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(106)))), ((int)(((byte)(127)))), ((int)(((byte)(193)))));
+            this.BtnMyUsuario.CheckedState.FillColor = System.Drawing.Color.Transparent;
+            this.BtnMyUsuario.CheckedState.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnMyUsuario.CheckedState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(106)))), ((int)(((byte)(127)))), ((int)(((byte)(193)))));
+            this.BtnMyUsuario.CustomBorderThickness = new System.Windows.Forms.Padding(0, 0, 0, 4);
+            this.BtnMyUsuario.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.BtnMyUsuario.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.BtnMyUsuario.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.BtnMyUsuario.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.BtnMyUsuario.Dock = System.Windows.Forms.DockStyle.Top;
+            this.BtnMyUsuario.FillColor = System.Drawing.Color.Transparent;
+            this.BtnMyUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnMyUsuario.ForeColor = System.Drawing.Color.Black;
+            this.BtnMyUsuario.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.BtnMyUsuario.ImageOffset = new System.Drawing.Point(10, 0);
+            this.BtnMyUsuario.Location = new System.Drawing.Point(0, 0);
+            this.BtnMyUsuario.Name = "BtnMyUsuario";
+            this.BtnMyUsuario.Size = new System.Drawing.Size(257, 34);
+            this.BtnMyUsuario.TabIndex = 8;
+            this.BtnMyUsuario.Text = "Usuario";
+            this.BtnMyUsuario.TextTransform = Guna.UI2.WinForms.Enums.TextTransform.UpperCase;
+            this.BtnMyUsuario.Click += new System.EventHandler(this.BtnMyUsuario_Click);
             // 
             // guna2Panel4
             // 
@@ -169,15 +258,12 @@
             // 
             this.PnlMidTop.BackColor = System.Drawing.Color.Transparent;
             this.PnlMidTop.Controls.Add(this.guna2TileButton1);
-            this.PnlMidTop.Controls.Add(this.guna2CircleButton5);
-            this.PnlMidTop.Controls.Add(this.guna2HtmlLabel4);
-            this.PnlMidTop.Controls.Add(this.guna2HtmlLabel5);
             this.PnlMidTop.Controls.Add(this.guna2CircleButton6);
-            this.PnlMidTop.Controls.Add(this.guna2HtmlLabel2);
+            this.PnlMidTop.Controls.Add(this.LblFecha);
             this.PnlMidTop.Controls.Add(this.guna2HtmlLabel3);
-            this.PnlMidTop.Controls.Add(this.BtnNuevo);
             this.PnlMidTop.Controls.Add(this.TxtFiltro);
             this.PnlMidTop.Controls.Add(this.LblTituloTab);
+            this.PnlMidTop.Controls.Add(this.BtnNuevo);
             this.PnlMidTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.PnlMidTop.Location = new System.Drawing.Point(15, 15);
             this.PnlMidTop.Name = "PnlMidTop";
@@ -196,58 +282,14 @@
             this.guna2TileButton1.Font = new System.Drawing.Font("Arial Black", 11.25F, System.Drawing.FontStyle.Bold);
             this.guna2TileButton1.ForeColor = System.Drawing.Color.DimGray;
             this.guna2TileButton1.Image = global::MARKET_GRUPO_01.Properties.Resources.Advanced_Search;
-            this.guna2TileButton1.Location = new System.Drawing.Point(209, 39);
+            this.guna2TileButton1.Location = new System.Drawing.Point(316, 36);
             this.guna2TileButton1.Name = "guna2TileButton1";
             this.guna2TileButton1.ShadowDecoration.BorderRadius = 4;
             this.guna2TileButton1.ShadowDecoration.Color = System.Drawing.Color.Gray;
             this.guna2TileButton1.ShadowDecoration.Enabled = true;
             this.guna2TileButton1.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(0, 0, 4, 4);
             this.guna2TileButton1.Size = new System.Drawing.Size(38, 36);
-            this.guna2TileButton1.TabIndex = 43;
-            // 
-            // guna2CircleButton5
-            // 
-            this.guna2CircleButton5.BackColor = System.Drawing.Color.Transparent;
-            this.guna2CircleButton5.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.guna2CircleButton5.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.guna2CircleButton5.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2CircleButton5.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.guna2CircleButton5.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(246)))), ((int)(((byte)(240)))));
-            this.guna2CircleButton5.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.guna2CircleButton5.ForeColor = System.Drawing.Color.White;
-            this.guna2CircleButton5.Image = global::MARKET_GRUPO_01.Properties.Resources.Calendario;
-            this.guna2CircleButton5.ImageSize = new System.Drawing.Size(23, 23);
-            this.guna2CircleButton5.Location = new System.Drawing.Point(463, 37);
-            this.guna2CircleButton5.Name = "guna2CircleButton5";
-            this.guna2CircleButton5.Padding = new System.Windows.Forms.Padding(10);
-            this.guna2CircleButton5.ShadowDecoration.Depth = 10;
-            this.guna2CircleButton5.ShadowDecoration.Enabled = true;
-            this.guna2CircleButton5.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            this.guna2CircleButton5.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(1, 0, 6, 3);
-            this.guna2CircleButton5.Size = new System.Drawing.Size(35, 35);
-            this.guna2CircleButton5.TabIndex = 42;
-            // 
-            // guna2HtmlLabel4
-            // 
-            this.guna2HtmlLabel4.BackColor = System.Drawing.Color.Transparent;
-            this.guna2HtmlLabel4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2HtmlLabel4.ForeColor = System.Drawing.Color.Black;
-            this.guna2HtmlLabel4.Location = new System.Drawing.Point(508, 54);
-            this.guna2HtmlLabel4.Name = "guna2HtmlLabel4";
-            this.guna2HtmlLabel4.Size = new System.Drawing.Size(91, 18);
-            this.guna2HtmlLabel4.TabIndex = 41;
-            this.guna2HtmlLabel4.Text = "10 Marzo, 2024";
-            // 
-            // guna2HtmlLabel5
-            // 
-            this.guna2HtmlLabel5.BackColor = System.Drawing.Color.Transparent;
-            this.guna2HtmlLabel5.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2HtmlLabel5.ForeColor = System.Drawing.Color.Gray;
-            this.guna2HtmlLabel5.Location = new System.Drawing.Point(508, 35);
-            this.guna2HtmlLabel5.Name = "guna2HtmlLabel5";
-            this.guna2HtmlLabel5.Size = new System.Drawing.Size(97, 20);
-            this.guna2HtmlLabel5.TabIndex = 40;
-            this.guna2HtmlLabel5.Text = "FECHA FINAL";
+            this.guna2TileButton1.TabIndex = 49;
             // 
             // guna2CircleButton6
             // 
@@ -261,37 +303,77 @@
             this.guna2CircleButton6.ForeColor = System.Drawing.Color.White;
             this.guna2CircleButton6.Image = global::MARKET_GRUPO_01.Properties.Resources.Calendario;
             this.guna2CircleButton6.ImageSize = new System.Drawing.Size(23, 23);
-            this.guna2CircleButton6.Location = new System.Drawing.Point(282, 39);
+            this.guna2CircleButton6.Location = new System.Drawing.Point(372, 36);
             this.guna2CircleButton6.Name = "guna2CircleButton6";
             this.guna2CircleButton6.Padding = new System.Windows.Forms.Padding(10);
             this.guna2CircleButton6.ShadowDecoration.Depth = 10;
             this.guna2CircleButton6.ShadowDecoration.Enabled = true;
             this.guna2CircleButton6.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
             this.guna2CircleButton6.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(1, 0, 6, 3);
-            this.guna2CircleButton6.Size = new System.Drawing.Size(35, 35);
-            this.guna2CircleButton6.TabIndex = 39;
+            this.guna2CircleButton6.Size = new System.Drawing.Size(39, 37);
+            this.guna2CircleButton6.TabIndex = 48;
             // 
-            // guna2HtmlLabel2
+            // LblFecha
             // 
-            this.guna2HtmlLabel2.BackColor = System.Drawing.Color.Transparent;
-            this.guna2HtmlLabel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2HtmlLabel2.ForeColor = System.Drawing.Color.Black;
-            this.guna2HtmlLabel2.Location = new System.Drawing.Point(327, 54);
-            this.guna2HtmlLabel2.Name = "guna2HtmlLabel2";
-            this.guna2HtmlLabel2.Size = new System.Drawing.Size(91, 18);
-            this.guna2HtmlLabel2.TabIndex = 38;
-            this.guna2HtmlLabel2.Text = "10 Marzo, 2024";
+            this.LblFecha.BackColor = System.Drawing.Color.Transparent;
+            this.LblFecha.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblFecha.ForeColor = System.Drawing.Color.Black;
+            this.LblFecha.Location = new System.Drawing.Point(417, 55);
+            this.LblFecha.Name = "LblFecha";
+            this.LblFecha.Size = new System.Drawing.Size(91, 18);
+            this.LblFecha.TabIndex = 47;
+            this.LblFecha.Text = "10 Marzo, 2024";
             // 
             // guna2HtmlLabel3
             // 
             this.guna2HtmlLabel3.BackColor = System.Drawing.Color.Transparent;
             this.guna2HtmlLabel3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2HtmlLabel3.ForeColor = System.Drawing.Color.Gray;
-            this.guna2HtmlLabel3.Location = new System.Drawing.Point(327, 35);
+            this.guna2HtmlLabel3.Location = new System.Drawing.Point(417, 36);
             this.guna2HtmlLabel3.Name = "guna2HtmlLabel3";
-            this.guna2HtmlLabel3.Size = new System.Drawing.Size(100, 20);
-            this.guna2HtmlLabel3.TabIndex = 37;
-            this.guna2HtmlLabel3.Text = "FECHA INICIO";
+            this.guna2HtmlLabel3.Size = new System.Drawing.Size(89, 20);
+            this.guna2HtmlLabel3.TabIndex = 46;
+            this.guna2HtmlLabel3.Text = "FECHA HOY";
+            // 
+            // TxtFiltro
+            // 
+            this.TxtFiltro.BackColor = System.Drawing.Color.Transparent;
+            this.TxtFiltro.BorderRadius = 5;
+            this.TxtFiltro.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.TxtFiltro.DefaultText = "";
+            this.TxtFiltro.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.TxtFiltro.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.TxtFiltro.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.TxtFiltro.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.TxtFiltro.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.TxtFiltro.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TxtFiltro.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.TxtFiltro.IconLeft = global::MARKET_GRUPO_01.Properties.Resources.Filtro;
+            this.TxtFiltro.IconLeftOffset = new System.Drawing.Point(10, 0);
+            this.TxtFiltro.Location = new System.Drawing.Point(3, 36);
+            this.TxtFiltro.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.TxtFiltro.Name = "TxtFiltro";
+            this.TxtFiltro.PasswordChar = '\0';
+            this.TxtFiltro.PlaceholderText = "Buscar";
+            this.TxtFiltro.SelectedText = "";
+            this.TxtFiltro.ShadowDecoration.BorderRadius = 10;
+            this.TxtFiltro.ShadowDecoration.Depth = 10;
+            this.TxtFiltro.ShadowDecoration.Enabled = true;
+            this.TxtFiltro.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(0, 0, 5, 5);
+            this.TxtFiltro.Size = new System.Drawing.Size(306, 36);
+            this.TxtFiltro.TabIndex = 45;
+            this.TxtFiltro.TextChanged += new System.EventHandler(this.TxtFiltro_TextChanged);
+            // 
+            // LblTituloTab
+            // 
+            this.LblTituloTab.BackColor = System.Drawing.Color.Transparent;
+            this.LblTituloTab.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblTituloTab.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(106)))), ((int)(((byte)(127)))), ((int)(((byte)(193)))));
+            this.LblTituloTab.Location = new System.Drawing.Point(3, 3);
+            this.LblTituloTab.Name = "LblTituloTab";
+            this.LblTituloTab.Size = new System.Drawing.Size(194, 22);
+            this.LblTituloTab.TabIndex = 44;
+            this.LblTituloTab.Text = "LISTADO PRODUCTOS";
             // 
             // BtnNuevo
             // 
@@ -320,45 +402,6 @@
             this.BtnNuevo.Text = "Agregar Producto";
             this.BtnNuevo.TextTransform = Guna.UI2.WinForms.Enums.TextTransform.UpperCase;
             this.BtnNuevo.Click += new System.EventHandler(this.BtnNuevo_Click);
-            // 
-            // TxtFiltro
-            // 
-            this.TxtFiltro.BackColor = System.Drawing.Color.Transparent;
-            this.TxtFiltro.BorderRadius = 3;
-            this.TxtFiltro.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.TxtFiltro.DefaultText = "";
-            this.TxtFiltro.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.TxtFiltro.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.TxtFiltro.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.TxtFiltro.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.TxtFiltro.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.TxtFiltro.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtFiltro.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.TxtFiltro.IconLeft = global::MARKET_GRUPO_01.Properties.Resources.Filtro;
-            this.TxtFiltro.IconLeftOffset = new System.Drawing.Point(10, 0);
-            this.TxtFiltro.Location = new System.Drawing.Point(8, 39);
-            this.TxtFiltro.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.TxtFiltro.Name = "TxtFiltro";
-            this.TxtFiltro.PasswordChar = '\0';
-            this.TxtFiltro.PlaceholderText = "Buscar";
-            this.TxtFiltro.SelectedText = "";
-            this.TxtFiltro.ShadowDecoration.BorderRadius = 10;
-            this.TxtFiltro.ShadowDecoration.Depth = 10;
-            this.TxtFiltro.ShadowDecoration.Enabled = true;
-            this.TxtFiltro.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(0, 0, 5, 5);
-            this.TxtFiltro.Size = new System.Drawing.Size(195, 36);
-            this.TxtFiltro.TabIndex = 35;
-            // 
-            // LblTituloTab
-            // 
-            this.LblTituloTab.BackColor = System.Drawing.Color.Transparent;
-            this.LblTituloTab.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblTituloTab.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(106)))), ((int)(((byte)(127)))), ((int)(((byte)(193)))));
-            this.LblTituloTab.Location = new System.Drawing.Point(8, 6);
-            this.LblTituloTab.Name = "LblTituloTab";
-            this.LblTituloTab.Size = new System.Drawing.Size(194, 22);
-            this.LblTituloTab.TabIndex = 34;
-            this.LblTituloTab.Text = "LISTADO PRODUCTOS";
             // 
             // panel1
             // 
@@ -416,7 +459,6 @@
             // 
             this.guna2Panel1.Controls.Add(this.BtnEditar);
             this.guna2Panel1.Controls.Add(this.BtnEiminar);
-            this.guna2Panel1.Controls.Add(this.BtnDescargar);
             this.guna2Panel1.Controls.Add(this.BtnRecargar);
             this.guna2Panel1.Controls.Add(this.BtnMenu);
             this.guna2Panel1.Dock = System.Windows.Forms.DockStyle.Right;
@@ -437,7 +479,7 @@
             this.BtnEditar.ForeColor = System.Drawing.Color.White;
             this.BtnEditar.Image = global::MARKET_GRUPO_01.Properties.Resources.Editar;
             this.BtnEditar.ImageSize = new System.Drawing.Size(19, 19);
-            this.BtnEditar.Location = new System.Drawing.Point(67, 8);
+            this.BtnEditar.Location = new System.Drawing.Point(113, 8);
             this.BtnEditar.MaximumSize = new System.Drawing.Size(40, 40);
             this.BtnEditar.Name = "BtnEditar";
             this.BtnEditar.Padding = new System.Windows.Forms.Padding(10);
@@ -459,7 +501,7 @@
             this.BtnEiminar.ForeColor = System.Drawing.Color.White;
             this.BtnEiminar.Image = global::MARKET_GRUPO_01.Properties.Resources.icons8_basura_30;
             this.BtnEiminar.ImageSize = new System.Drawing.Size(19, 19);
-            this.BtnEiminar.Location = new System.Drawing.Point(113, 8);
+            this.BtnEiminar.Location = new System.Drawing.Point(159, 8);
             this.BtnEiminar.MaximumSize = new System.Drawing.Size(40, 40);
             this.BtnEiminar.Name = "BtnEiminar";
             this.BtnEiminar.Padding = new System.Windows.Forms.Padding(10);
@@ -469,27 +511,6 @@
             this.BtnEiminar.Size = new System.Drawing.Size(40, 40);
             this.BtnEiminar.TabIndex = 16;
             this.BtnEiminar.Click += new System.EventHandler(this.BtnEiminar_Click);
-            // 
-            // BtnDescargar
-            // 
-            this.BtnDescargar.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.BtnDescargar.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.BtnDescargar.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.BtnDescargar.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.BtnDescargar.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(246)))), ((int)(((byte)(240)))));
-            this.BtnDescargar.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.BtnDescargar.ForeColor = System.Drawing.Color.White;
-            this.BtnDescargar.Image = global::MARKET_GRUPO_01.Properties.Resources.icons8_descargar_desde_la_nube_30;
-            this.BtnDescargar.ImageSize = new System.Drawing.Size(19, 19);
-            this.BtnDescargar.Location = new System.Drawing.Point(159, 8);
-            this.BtnDescargar.MaximumSize = new System.Drawing.Size(40, 40);
-            this.BtnDescargar.Name = "BtnDescargar";
-            this.BtnDescargar.Padding = new System.Windows.Forms.Padding(10);
-            this.BtnDescargar.ShadowDecoration.Enabled = true;
-            this.BtnDescargar.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            this.BtnDescargar.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(1, 0, 2, 1);
-            this.BtnDescargar.Size = new System.Drawing.Size(40, 40);
-            this.BtnDescargar.TabIndex = 15;
             // 
             // BtnRecargar
             // 
@@ -501,7 +522,7 @@
             this.BtnRecargar.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.BtnRecargar.ForeColor = System.Drawing.Color.White;
             this.BtnRecargar.Image = global::MARKET_GRUPO_01.Properties.Resources.icons8_recargar_30;
-            this.BtnRecargar.Location = new System.Drawing.Point(21, 8);
+            this.BtnRecargar.Location = new System.Drawing.Point(67, 8);
             this.BtnRecargar.MaximumSize = new System.Drawing.Size(40, 40);
             this.BtnRecargar.Name = "BtnRecargar";
             this.BtnRecargar.Padding = new System.Windows.Forms.Padding(10);
@@ -514,6 +535,7 @@
             // 
             // BtnMenu
             // 
+            this.BtnMenu.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.ToogleButton;
             this.BtnMenu.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.BtnMenu.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.BtnMenu.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
@@ -531,6 +553,7 @@
             this.BtnMenu.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(1, 0, 2, 1);
             this.BtnMenu.Size = new System.Drawing.Size(40, 40);
             this.BtnMenu.TabIndex = 13;
+            this.BtnMenu.Click += new System.EventHandler(this.BtnMenu_Click);
             // 
             // BtnGrupoDescuento
             // 
@@ -600,6 +623,7 @@
             this.Text = "V_Clientes";
             this.Load += new System.EventHandler(this.V_Clientes_Load);
             this.guna2Panel3.ResumeLayout(false);
+            this.PnlSubMenu.ResumeLayout(false);
             this.guna2Panel4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.DgvDatos)).EndInit();
             this.PnlMidTop.ResumeLayout(false);
@@ -617,26 +641,26 @@
         private Guna.UI2.WinForms.Guna2DataGridView DgvDatos;
         private System.Windows.Forms.DataGridViewCheckBoxColumn Selecion;
         private Guna.UI2.WinForms.Guna2Panel PnlMidTop;
-        private Guna.UI2.WinForms.Guna2TileButton guna2TileButton1;
-        private Guna.UI2.WinForms.Guna2CircleButton guna2CircleButton5;
-        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel4;
-        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel5;
-        private Guna.UI2.WinForms.Guna2CircleButton guna2CircleButton6;
-        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel2;
-        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel3;
         private Guna.UI2.WinForms.Guna2GradientButton BtnNuevo;
-        private Guna.UI2.WinForms.Guna2TextBox TxtFiltro;
-        private Guna.UI2.WinForms.Guna2HtmlLabel LblTituloTab;
         private System.Windows.Forms.Panel panel1;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel2;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel1;
         private Guna.UI2.WinForms.Guna2CircleButton BtnEditar;
         private Guna.UI2.WinForms.Guna2CircleButton BtnEiminar;
-        private Guna.UI2.WinForms.Guna2CircleButton BtnDescargar;
         private Guna.UI2.WinForms.Guna2CircleButton BtnRecargar;
         private Guna.UI2.WinForms.Guna2CircleButton BtnMenu;
         private Guna.UI2.WinForms.Guna2Button BtnGrupoDescuento;
         private Guna.UI2.WinForms.Guna2Button BtnClientes;
         private Guna.UI2.WinForms.Guna2Button BtnCondicionPago;
+        private Guna.UI2.WinForms.Guna2TileButton guna2TileButton1;
+        private Guna.UI2.WinForms.Guna2CircleButton guna2CircleButton6;
+        private Guna.UI2.WinForms.Guna2HtmlLabel LblFecha;
+        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel3;
+        private Guna.UI2.WinForms.Guna2TextBox TxtFiltro;
+        private Guna.UI2.WinForms.Guna2HtmlLabel LblTituloTab;
+        private System.Windows.Forms.Panel PnlSubMenu;
+        private Guna.UI2.WinForms.Guna2Button BTNCERRAR;
+        private Guna.UI2.WinForms.Guna2Button BTNMANUEAL;
+        private Guna.UI2.WinForms.Guna2Button BtnMyUsuario;
     }
 }

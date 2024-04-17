@@ -71,11 +71,17 @@ namespace MARKET_GRUPO_01.Presentaciones
             nCondicionPago.GuardarCondicionPago(CondicionPagp);
 
             Limpiar();
+            this.Close();
         }
 
         private void BtnGuardar_Click(object sender, EventArgs e)
         {
             guardar();
+        }
+
+        private void BtnDescartar_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

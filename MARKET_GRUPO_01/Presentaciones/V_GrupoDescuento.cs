@@ -70,11 +70,17 @@ namespace MARKET_GRUPO_01.Presentaciones
             nGrupoDescuento.GuardarGrupoDescuento(grupoDescuento);
 
             Limpiar();
+            this.Close();
         }
 
         private void BtnGuardar_Click(object sender, EventArgs e)
         {
             guardar();
+        }
+
+        private void BtnDescartar_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

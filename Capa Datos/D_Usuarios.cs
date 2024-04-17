@@ -1,5 +1,6 @@
 ﻿using Capa_Datos.Core;
 using Capa_Datos.Modelos;
+using Capa_Negocio;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -24,8 +25,8 @@ namespace Capa_Datos
         {
             usuario.FechaCreacion = DateTime.Now;
             usuario.FechaModificacion = DateTime.Now;
-            usuario.UsuarioCreador = "JDOMINGUEZ";
-            usuario.UsuarioModifica = "JDOMINGUEZ";
+            usuario.UsuarioCreador = D_ParametrosActivos.Usuario;
+            usuario.UsuarioModifica = D_ParametrosActivos.Usuario;
             _unitOfWork.Repository<Usuarios>().Agregar(usuario);
             return _unitOfWork.Guardar();
         }
@@ -42,7 +43,7 @@ namespace Capa_Datos
                 usuarioEnDB.Correo = usuario.Correo;
                 usuarioEnDB.RolID = usuario.RolID;
                 usuarioEnDB.FechaModificacion = DateTime.Now;
-                usuarioEnDB.UsuarioModifica = "JMODIFICA";
+                usuarioEnDB.UsuarioModifica = D_ParametrosActivos.Usuario;
                 usuarioEnDB.Estado = usuario.Estado;
                 _unitOfWork.Repository<Usuarios>().Editar(usuarioEnDB);
                 return _unitOfWork.Guardar();

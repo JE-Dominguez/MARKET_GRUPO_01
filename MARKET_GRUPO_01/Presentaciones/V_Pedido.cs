@@ -306,6 +306,7 @@ namespace MARKET_GRUPO_01.Presentaciones
                 {
                     DataGridViewRow filaEliminar = DgvDatos.Rows[e.RowIndex];
                     DgvDatos.Rows.Remove(filaEliminar);
+                    ActualizarTotales();
                 }
             }
         }
@@ -425,6 +426,11 @@ namespace MARKET_GRUPO_01.Presentaciones
             LblSubTotal.Text = "0";
             LblTotalPago.Text = "0";
             LblUnidades.Text = "0";
+        }
+
+        private void BtnDescartar_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

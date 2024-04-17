@@ -94,6 +94,10 @@
     <Compile Include="Migrations\202404160351351_eliminacioncolimnaunidadid.Designer.cs">
       <DependentUpon>202404160351351_eliminacioncolimnaunidadid.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202404170157546_EDICIONTABLAROLES.cs" />
+    <Compile Include="Migrations\202404170157546_EDICIONTABLAROLES.Designer.cs">
+      <DependentUpon>202404170157546_EDICIONTABLAROLES.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Modelos\Categoria.cs" />
     <Compile Include="Modelos\Clientes.cs" />
@@ -108,6 +112,7 @@
     <Compile Include="Modelos\Roles.cs" />
     <Compile Include="Modelos\UnidadMedida.cs" />
     <Compile Include="Modelos\Usuarios.cs" />
+    <Compile Include="D_ParametrosActivos.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -132,6 +137,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202404160351351_eliminacioncolimnaunidadid.resx">
       <DependentUpon>202404160351351_eliminacioncolimnaunidadid.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202404170157546_EDICIONTABLAROLES.resx">
+      <DependentUpon>202404170157546_EDICIONTABLAROLES.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

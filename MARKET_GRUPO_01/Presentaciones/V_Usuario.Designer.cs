@@ -67,6 +67,7 @@
             this.TxtIdUsuario.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
             this.TxtIdUsuario.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.TxtIdUsuario.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.TxtIdUsuario.Enabled = false;
             this.TxtIdUsuario.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.TxtIdUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TxtIdUsuario.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
@@ -279,7 +280,7 @@
             this.TxtContraseña.Location = new System.Drawing.Point(48, 228);
             this.TxtContraseña.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.TxtContraseña.Name = "TxtContraseña";
-            this.TxtContraseña.PasswordChar = '\0';
+            this.TxtContraseña.PasswordChar = '●';
             this.TxtContraseña.PlaceholderText = "Contraseña";
             this.TxtContraseña.SelectedText = "";
             this.TxtContraseña.ShadowDecoration.BorderRadius = 10;
@@ -409,6 +410,7 @@
             this.BtnDescartar.Size = new System.Drawing.Size(149, 45);
             this.BtnDescartar.TabIndex = 65;
             this.BtnDescartar.Text = "Descartar";
+            this.BtnDescartar.Click += new System.EventHandler(this.BtnDescartar_Click);
             // 
             // BtnGuardar
             // 
