@@ -32,7 +32,6 @@ namespace Capa_Datos
 
             if (ImpuestosEnDB != null)
             {
-                ImpuestosEnDB.ImpuestoId = impuestos.ImpuestoId;
                 ImpuestosEnDB.Estado = impuestos.Estado;
                 ImpuestosEnDB.Porcentaje = impuestos.Porcentaje;
                 ImpuestosEnDB.Codigo = impuestos.Codigo;

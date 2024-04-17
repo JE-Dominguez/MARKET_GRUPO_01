@@ -1,12 +1,16 @@
 ﻿using Capa_Negocio;
 using System;
+using System.Collections.Generic;
+using System.Data;
 using System.Linq;
+using System.Web.UI.WebControls;
 using System.Windows.Forms;
 
 namespace MARKET_GRUPO_01.Presentaciones
 {
     public partial class V_Clientes : Form
     {
+        private V_Login login = null;
         private readonly AbrirForm AF;
         private readonly V_Inicio inicio;
         private readonly N_Clientes ncliente;
@@ -29,6 +33,8 @@ namespace MARKET_GRUPO_01.Presentaciones
 
         private void V_Clientes_Load(object sender, EventArgs e)
         {
+            LblFecha.Text = DateTime.Now.ToString("dd MMMM, yyyy");
+            PnlSubMenu.Visible = false;
             Recargar();
         }
 
@@ -142,11 +148,11 @@ namespace MARKET_GRUPO_01.Presentaciones
                     int id = ObtenerID(LineaID);
 
                     if (BtnClientes.Checked)
-                        AF.VentanaEmergente(new V_Cliente(id), inicio, true);
+                        AF.VentanaEmergente(new V_Cliente(id), inicio, D_ParametrosActivos.cl_clientes);
                     else if (BtnGrupoDescuento.Checked)
-                        AF.VentanaEmergente(new V_GrupoDescuento(id), inicio, true);
+                        AF.VentanaEmergente(new V_GrupoDescuento(id), inicio, D_ParametrosActivos.cl_grupodescuentos);
                     else if (BtnCondicionPago.Checked)
-                        AF.VentanaEmergente(new V_CondicionPago(id), inicio, true);
+                        AF.VentanaEmergente(new V_CondicionPago(id), inicio, D_ParametrosActivos.cl_condicionpago);
                 }
             }
         }
@@ -154,11 +160,11 @@ namespace MARKET_GRUPO_01.Presentaciones
         private void Nuevo()
         {
             if (BtnClientes.Checked)
-                AF.VentanaEmergente(new V_Cliente(), inicio, true);
+                AF.VentanaEmergente(new V_Cliente(), inicio, D_ParametrosActivos.cl_clientes);
             else if (BtnGrupoDescuento.Checked)
-                AF.VentanaEmergente(new V_GrupoDescuento(), inicio, true);
+                AF.VentanaEmergente(new V_GrupoDescuento(), inicio, D_ParametrosActivos.cl_grupodescuentos);
             else if (BtnCondicionPago.Checked)
-                AF.VentanaEmergente(new V_CondicionPago(), inicio, true);
+                AF.VentanaEmergente(new V_CondicionPago(), inicio, D_ParametrosActivos.cl_condicionpago);
         }
 
         private void Eliminar()
@@ -176,12 +182,16 @@ namespace MARKET_GRUPO_01.Presentaciones
 
                     if (resultado == DialogResult.Yes)
                     {
-                        if (BtnClientes.Checked)
+                        if (BtnClientes.Checked && D_ParametrosActivos.cl_clientes == true)
                             ncliente.EliminarCliente(id);
-                        else if (BtnGrupoDescuento.Checked)
+                        else if (BtnGrupoDescuento.Checked && D_ParametrosActivos.cl_grupodescuentos == true)
                             nGrupoDescuento.EliminarGrupoDescuento(id);
-                        else if (BtnCondicionPago.Checked)
+                        else if (BtnCondicionPago.Checked && D_ParametrosActivos.cl_condicionpago == true)
                             nCondicionPago.EliminarCondicionPago(id);
+                        else
+                        {
+                            MessageBox.Show("Permisos Insuficientes", "Acceso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
                     }
                 }
             }
@@ -197,6 +207,77 @@ namespace MARKET_GRUPO_01.Presentaciones
             else if (BtnCondicionPago.Checked)
                 id = (int)DgvDatos.Rows[LiniaID].Cells["CondicionPagoId"].Value;
             return id;
+        }
+
+        private void TxtFiltro_TextChanged(object sender, EventArgs e)
+        {
+            filtro();
+        }
+        void filtro()
+        {
+            string filtro = TxtFiltro.Text.ToLower();
+
+            if (DgvDatos.DataSource is List<object> dataSource)
+            {
+                if (string.IsNullOrWhiteSpace(filtro))
+                {
+                    Recargar();
+                }
+                else
+                {
+                    // Filtrar la lista de objetos según el filtro ingresado
+                    var resultadoFiltro = dataSource.Where(item =>
+                    {
+                        var properties = item.GetType().GetProperties();
+                        foreach (var property in properties)
+                        {
+                            var value = property.GetValue(item);
+                            if (value != null && value.ToString().ToLower().Contains(filtro))
+                            {
+                                return true; // Devolver verdadero si se encuentra una coincidencia en cualquier propiedad
+                            }
+                        }
+                        return false; // Si no se encuentra ninguna coincidencia en ninguna propiedad, devolver falso
+                    }).ToList();
+
+                    // Asignar los resultados del filtro al origen de datos del DataGridView
+                    DgvDatos.DataSource = resultadoFiltro;
+                }
+            }
+        }
+
+        private void BtnMenu_Click(object sender, EventArgs e)
+        {
+            if (BtnMenu.Checked == false)
+            {
+                PnlSubMenu.Visible = false;
+            }
+            else
+            {
+                PnlSubMenu.Visible = true;
+            }
+        }
+
+        private void BTNCERRAR_Click(object sender, EventArgs e)
+        {
+            DialogResult resultado = MessageBox.Show("¿Estás seguro de que deseas cerrar sesión?", "Cerrar sesión", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            if (resultado == DialogResult.Yes)
+            {
+                if (login == null || login.IsDisposed)
+                {
+                    login = new V_Login();
+                }
+
+                login.Show();
+                inicio.Close();
+            }
+        }
+
+        private void BtnMyUsuario_Click(object sender, EventArgs e)
+        {
+            AF.VentanaEmergente(new V_Usuario(D_ParametrosActivos.UsuarioID, true), inicio, true);
+            BtnMenu.Checked = false;
         }
     }
 }

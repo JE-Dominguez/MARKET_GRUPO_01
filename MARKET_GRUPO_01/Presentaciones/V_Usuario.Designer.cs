@@ -279,7 +279,7 @@
             this.TxtContraseña.Location = new System.Drawing.Point(48, 228);
             this.TxtContraseña.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.TxtContraseña.Name = "TxtContraseña";
-            this.TxtContraseña.PasswordChar = '\0';
+            this.TxtContraseña.PasswordChar = '●';
             this.TxtContraseña.PlaceholderText = "Contraseña";
             this.TxtContraseña.SelectedText = "";
             this.TxtContraseña.ShadowDecoration.BorderRadius = 10;

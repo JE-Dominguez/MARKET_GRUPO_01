@@ -31,5 +31,23 @@ namespace Capa_Datos.Modelos
 
         [Required]
         public bool Estado { get; set; }
+
+        public bool p_pedidos { get; set; }
+        public bool p_detalles { get; set; }
+        public bool p_facturas { get; set; }
+        public bool p_detallesFac { get; set; }
+
+        public bool pr_productos { get; set; }
+        public bool pr_categorias { get; set; }
+        public bool pr_unidadMedida { get; set; }
+        public bool pr_impuesto { get; set; }
+
+        public bool cl_clientes { get; set; }
+        public bool cl_grupodescuentos { get; set; }
+        public bool cl_condicionpago { get; set; }
+
+        public bool seg_usuarios { get; set; }
+        public bool seg_roles { get; set; }
+
     }
 }

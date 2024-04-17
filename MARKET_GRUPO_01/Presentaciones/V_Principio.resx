@@ -117,29 +117,4 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <metadata name="Form.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 17</value>
-  </metadata>
-  <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>25</value>
-  </metadata>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="BtnSeguridad.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAABGdBTUEAALGPC/xhBQAAAtJJREFUaEPt
-        WdFx1DAUvBIogRLoADogHZAOoAPoADpIOtBZB7bJj9MBdHDp4OgAtOI5+OS135PR+S4MO7MzN/bb1UqW
-        ZDnZ/Me/Cvfl7sXWN3sQv+Xy00C1a96H4D+HrHbtW7l9uXBN8zyE7dLwA3aokfLLgeu6Z2zUp4haaER+
-        PvwJXh9Y0HnWh7N1xPv2dQhxMw61mDfwFPuy8P7uJYhFuPWtWzbaVsK7dWirb1di5MFVzYfTBs1lfUAm
-        iaeDm5yb9UHi6eAG56fE08HEl0CJp4OJL4ESTwcT59D55nr4xsVvXGO1ORQ7HUxsZQh6LzYj4B7TWCk2
-        Oph4jsNgc9vd7+15rLFSbHQw8RT7wHGaGI7NqOmn17BDFkYDC5iYcW66WJHzJESig4kZSxyN4cG8GUWi
-        g4lThpHbSvlfA16sjZRSroOJU2pnk8q3H6V2j2OzXKawrgUp18HEI1b1t6lF63b1p7Qe1+T2EeK3c/BK
-        6xlFooOJJ7gXyRFI3VwtPvxZ/Ygi0cHEjGHuPojkCLS2an7I7SPAg9UzikSHZWsLNd+zptDEmonvheCV
-        1qdEJpHoMHVAWcToBEY9cmL+94AXa2PIkMm+6xU3VAAv1saQ2oAdwe2aV8wk5ZovMmQSiQ149MwoYSfl
-        iwGPxHNEZJFyO0KPb5lZyv7RYiSnFvUQcdHKk7NMVRBZojgH1mkkfBzFubmaBFZHvmf29OkRFpe6vaXE
-        DibyEXCPaeaIDCLPh9t9vWKmGqvPzZvhAsdvXGO1GpFBbJZhyaiV4tzTNCMetoj5GrRsCiZYd4uSdL59
-        J82XQXicpo+OEkRb0mw54O/42BFYgyWJNk72P4NTd+Kk4XucqhOrhO8RO2E8algIr9XCD4GdggXKYfHd
-        JhfWL6qUQXNfbJ8vAYxkeF+oR3DUhPDXIrssxLURXnqsIzE47p1jrufisSO+eYh8KsHXx2bzC9ifFw+r
-        +YnrAAAAAElFTkSuQmCC
-</value>
-  </data>
 </root>
